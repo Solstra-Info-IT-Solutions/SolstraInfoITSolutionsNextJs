@@ -219,10 +219,10 @@ export default function FooterSection() {
             <Link href="/LegalPolices" className="text-gray-500 hover:text-black text-sm">
               Privacy Policy
             </Link>
-            <Link href="/LegalPolices" className="text-gray-500 hover:text-black text-sm">
+            <Link href="/terms" className="text-gray-500 hover:text-black text-sm">
               Terms of Service
             </Link>
-            <Link href="/LegalPolices" className="text-gray-500 hover:text-black text-sm">
+            <Link href="/refund-policy" className="text-gray-500 hover:text-black text-sm">
               Refund Policy
             </Link>
           </div>

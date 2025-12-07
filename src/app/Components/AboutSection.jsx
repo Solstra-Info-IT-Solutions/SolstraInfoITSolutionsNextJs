@@ -58,7 +58,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="text-gray-600 mt-5 leading-relaxed text-sm sm:text-base">
-            Solstra Info IT Solutions has been a <span className="font-semibold">Top Web and App Development Company</span> since 2025.
+            Solstra Info IT Solutions has been a Top Web and App Development Company since 2025.
            Solstra Info IT Solutions always aims at the infusion of the latest technologies
 for the development of Websites and Mobile Applications. As a Top Mobile App
 Development Company, we know how a Website and Mobile App can take off with a

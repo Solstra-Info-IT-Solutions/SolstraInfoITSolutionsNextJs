@@ -2,104 +2,174 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
+// Importing specific icons for the modal
+import { FaPhoneAlt, FaEnvelope, FaPhoneVolume } from "react-icons/fa"; 
+import { BsMicrosoftTeams } from "react-icons/bs"; 
+import { RxDashboard } from "react-icons/rx"; // For the grid icon in the image
 
 export default function Navbar({ type = "home", icons = [] }) {
   const [open, setOpen] = useState(false);
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const router = useRouter();
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Careers", path: "/careerHub" },
+    { name: "Our Work", path: "/work" },
+    { name: "Case Study", path: "/case-study" },
+    { name: "Company Profile", path: "/profile" },
   ];
 
   const isHome = type === "home";
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <header className="w-full fixed top-0 left-0 bg-white shadow-md z-50 h-24">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-6 px-6">
-
-        {/* Logo */}
-        <img
-          src="/image1.png"
-          alt="Logo"
-          className="h-12 cursor-pointer transition-transform duration-300 hover:scale-110"
-          onClick={() => router.push("/")}
-        />
-
-        {/* Desktop Menu - Only on HOME */}
-        {isHome && (
-          <nav className="hidden md:flex flex-1 justify-center relative">
-            <ul className="flex gap-10 text-lg ">
-              {menuItems.map((item, index) => (
-                <li
-                  key={item.name}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  className="relative cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:text-orange-500"
-                  onClick={() => router.push(item.path)}
-                >
-                  {item.name}
-                  <span
-                    className="absolute left-0 -bottom-1 h-1 bg-orange-500 transition-all duration-300"
-                    style={{
-                      width: hoveredIndex === index ? "100%" : "0%",
-                    }}
-                  ></span>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-
-        {/* Right Side */}
-        <div className="hidden md:flex items-center gap-4">
-
-          {/* HOME → only CTA */}
-          {isHome && (
-            <button
-              onClick={() => router.push("/contact")}
-              className="bg-orange-500 text-white px-5 py-2 rounded-full hover:-translate-y-1 hover:shadow-lg transition"
-            >
-              Get a Quote →
-            </button>
-          )}
-
-          {/* OTHER → Icons become dynamic */}
-          {!isHome && (
-            <>
-              {icons.map((icon, idx) => (
-                <a
-                  key={idx}
-                  href={icon.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full hover:-translate-y-1 hover:shadow-md transition inline-flex items-center justify-center"
-                >
-                  <img src={icon.src} alt={icon.alt} className="w-6 h-6" />
-                </a>
-              ))}
-
-              <button className="bg-orange-500 text-white px-5 py-2 rounded-md hover:-translate-y-1 hover:shadow-lg transition">
-                Get a Quote →
-              </button>
-
-              <button className="border px-5 py-2 rounded-md hover:-translate-y-1 hover:shadow-md transition">
-                <span className="text-orange-500">Hire Us</span>
-              </button>
-            </>
-          )}
+    <header className="w-full fixed top-0 left-0 bg-white shadow-sm z-50 h-24 font-sans">
+      <div className="max-w-[1400px] mx-auto flex justify-between items-center py-4 px-6 h-full">
+        
+        {/* --- LEFT: LOGO --- */}
+        <div className="flex-shrink-0">
+          <img
+            src="/image1.png" // Ensure you have your logo here
+            alt="Solstra Logo"
+            className="h-12 w-auto cursor-pointer"
+            onClick={() => router.push("/")}
+          />
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* --- CENTER: MENU (Desktop) --- */}
+        <nav className="hidden xl:flex items-center justify-center">
+          <ul className="flex gap-8 text-[15px] font-semibold text-gray-600 uppercase tracking-wide">
+            {menuItems.map((item, index) => (
+              <li
+                key={item.name}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="relative cursor-pointer hover:text-orange-500 transition-colors duration-200"
+                onClick={() => router.push(item.path)}
+              >
+                {item.name}
+                {/* Hover Underline Effect */}
+                <span
+                  className="absolute left-0 -bottom-1 h-0.5 bg-orange-500 transition-all duration-300"
+                  style={{ width: hoveredIndex === index ? "100%" : "0%" }}
+                ></span>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* --- RIGHT: BUTTONS & ACTIONS --- */}
+        <div className="hidden md:flex items-center gap-4">
+          
+          {/* 1. Get a Quote Button */}
+          <button
+            onClick={() => router.push("/contact")}
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-full shadow-md transition-all duration-300 font-medium text-sm"
+          >
+            Get a Quote
+          </button>
+
+          {/* 2. Hire Us Button */}
+          <button 
+            className="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white"
+          >
+            Hire Us
+          </button>
+
+          {/* 3. CALL ICON WITH MODAL */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsCallModalOpen(true)}
+            onMouseLeave={() => setIsCallModalOpen(false)}
+          >
+            {/* Trigger Icon */}
+            <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-orange-600 transition shadow-md">
+                <FaPhoneVolume size={18} />
+            </div>
+
+            {/* --- THE MODAL --- */}
+            <div 
+                className={`absolute right-0 top-full mt-4 w-[340px] bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] border border-gray-100 p-6 z-[60] transition-all duration-300 origin-top-right transform ${
+                    isCallModalOpen 
+                    ? "opacity-100 scale-100 translate-y-0 visible" 
+                    : "opacity-0 scale-95 -translate-y-2 invisible"
+                }`}
+            >
+                {/* Modal Header */}
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-[2px] bg-orange-500"></div>
+                    <h3 className="text-xl font-semibold text-gray-800">Get In Touch</h3>
+                </div>
+
+                {/* Section: Sales Team */}
+                <div className="mb-6">
+                    <h4 className="text-gray-500 font-medium mb-4 text-sm">Solstra Sales Team</h4>
+                    <div className="space-y-5">
+                        
+                        {/* Item: USA Phone */}
+                        <div className="flex items-start gap-4 group cursor-pointer">
+                            <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 group-hover:border-orange-500 group-hover:text-orange-500 transition-colors duration-300 shrink-0">
+                                <FaPhoneAlt size={14} />
+                            </div>
+                            <div>
+                                <p className="text-xs text-gray-400 font-medium">USA</p>
+                                <a href="tel:+13054826524" className="text-gray-700 font-medium text-sm hover:text-orange-500 transition">+1-3054826524</a>
+                            </div>
+                        </div>
+
+                        {/* Item: Teams */}
+                        <div className="flex items-start gap-4 group cursor-pointer">
+                            <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-[#5c6bc0] group-hover:border-[#5c6bc0] transition-colors duration-300 shrink-0">
+                                <BsMicrosoftTeams size={18}/>
+                            </div>
+                            <div>
+                                <p className="text-xs text-gray-400 font-medium">Teams</p>
+                                <a href="#" className="text-gray-700 font-medium text-sm hover:text-orange-500 transition">Nextbigtechnology</a>
+                            </div>
+                        </div>
+
+                         {/* Item: Email Sales */}
+                         <div className="flex items-start gap-4 group cursor-pointer">
+                            <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-orange-500 group-hover:border-orange-500 transition-colors duration-300 shrink-0">
+                                <FaEnvelope size={14} />
+                            </div>
+                            <div>
+                                <p className="text-xs text-gray-400 font-medium">Email</p>
+                                <a href="mailto:Sales@nextbigtechnology.com" className="text-gray-700 font-medium text-sm hover:text-orange-500 transition">Sales@nextbigtechnology.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Section: HR Team */}
+                <div>
+                    <h4 className="text-gray-500 font-medium mb-4 text-sm">Solstra HR Team</h4>
+                     {/* Item: Email HR */}
+                     <div className="flex items-start gap-4 group cursor-pointer">
+                        <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-orange-500 group-hover:border-orange-500 transition-colors duration-300 shrink-0">
+                             <FaEnvelope size={14} />
+                        </div>
+                        <div>
+                            <p className="text-xs text-gray-400 font-medium">Email</p>
+                            <a href="mailto:Hr@Nextbigtechnology.com" className="text-gray-700 font-medium text-sm hover:text-orange-500 transition">Hr@Nextbigtechnology.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* --- MOBILE: BURGER MENU --- */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 border rounded-md transition hover:scale-110"
+          className="xl:hidden p-2 text-gray-700 hover:text-orange-500 transition"
         >
-          <GiHamburgerMenu />
+          <GiHamburgerMenu size={24} />
         </button>
+
       </div>
     </header>
   );

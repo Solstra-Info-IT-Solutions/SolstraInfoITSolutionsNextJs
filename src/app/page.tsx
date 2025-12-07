@@ -6,12 +6,12 @@ import Marquee from "./Components/Marquee";
 import WhySolstra from "./Components/WhySolstra";
 import ServicesSection from "./Components/ServicesSection";
 import AboutSection from "./Components/AboutSection";
-import Industriesservice from "./Components/Industriesservice";
 import FooterSection from "./Components/FooterSection";
 import AutoPopup from "./components/AutoPopup"
 import TabContent from "./Components/tabContent"
 import TalkToConsultantSection from "./Components/TalkToConsultantSection"
 import BlogSection from "./Components/BlogSection"
+import StatsCounter from "./Components/StatsCounter"
 export default function HomePage() {
   return (
     <div>
@@ -20,9 +20,10 @@ export default function HomePage() {
       <Herosection />
       <Marquee />
       <WhySolstra />
+      <StatsCounter/>
       <ServicesSection />
       <AboutSection />
-      <Industriesservice />
+  
       <TabContent />
         <TalkToConsultantSection />
         <BlogSection />
