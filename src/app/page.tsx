@@ -11,6 +11,7 @@ import FooterSection from "./Components/FooterSection";
 import AutoPopup from "./components/AutoPopup"
 import TabContent from "./Components/tabContent"
 import TalkToConsultantSection from "./Components/TalkToConsultantSection"
+import BlogSection from "./Components/BlogSection"
 export default function HomePage() {
   return (
     <div>
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Industriesservice />
       <TabContent />
         <TalkToConsultantSection />
+        <BlogSection />
       <FooterSection />
     </div>
   );
