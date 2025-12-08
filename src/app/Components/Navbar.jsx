@@ -6,10 +6,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaPhoneAlt, FaEnvelope, FaPhoneVolume } from "react-icons/fa";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { RxDashboard } from "react-icons/rx"; // For the grid icon in the image
+import GetQuoteDialog from "./GetADialog";
 
 export default function Navbar({ type = "home", icons = [] }) {
   const [open, setOpen] = useState(false);
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const router = useRouter();
 
   const menuItems = [
@@ -63,7 +65,7 @@ export default function Navbar({ type = "home", icons = [] }) {
         <div className="hidden md:flex items-center gap-4">
           {/* 1. Get a Quote Button */}
           <button
-            onClick={() => router.push("/contact")}
+            onClick={() => setIsQuoteModalOpen(true)}
             className="
             bg-orange-500 hover:bg-orange-600 
             text-white px-6 py-2.5 
@@ -85,6 +87,11 @@ export default function Navbar({ type = "home", icons = [] }) {
           >
             Get a Quote
           </button>
+          <GetQuoteDialog
+  open={isQuoteModalOpen}
+  onClose={() => setIsQuoteModalOpen(false)}
+/>
+
 
           {/* 2. Hire Us Button */}
           <button className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer">
