@@ -1,14 +1,34 @@
-// src/components/about/CoreVerticals.tsx
-import React from "react";
+"use client";
+import React, { useRef, useEffect, useState } from "react";
 
 const CoreVerticals: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+        else setVisible(false);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
   return (
-    <section className="space-y-6">
-      <div className="text-center">
-        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
-          Our Two Core Verticals
+    <section className="py-10 md:py-16">
+      {/* Section Header */}
+      <div className="text-center px-5 md:px-0">
+        
+        <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
+          Our Two  <span className="font-semibold text-[#E28217]">Core Verticals</span> 
         </p>
-        <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-gray-900">
           Technology &amp; Talent Under One Roof
         </h2>
         <p className="mt-3 text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
@@ -18,10 +38,16 @@ const CoreVerticals: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 m-10">
-        {/* Technology Arm */}
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4">
-          <div className="flex items-center gap-3">
+      {/* Cards */}
+      <div
+        ref={ref}
+        className={`grid gap-6 md:gap-8 md:grid-cols-2 px-5 md:px-0 mt-10 transition-all duration-700 m-10 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        {/* Technology Arm Card */}
+        <article className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4 ">
+          <header className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl">
               💻
             </span>
@@ -31,37 +57,36 @@ const CoreVerticals: React.FC = () => {
                 Product &amp; Services
               </span>
             </h3>
-          </div>
+          </header>
 
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            We don&apos;t just write code; we engineer solutions. Our IT division
-            specializes in turning complex business challenges into streamlined
-            digital products. From startups needing an MVP to enterprises
-            requiring large-scale digital transformation, our approach is agile,
-            secure, and scalable.
+            We don't just write code; we engineer solutions. Our IT division
+            turns complex business challenges into streamlined digital products.
+            From startups needing an MVP to enterprises requiring large-scale
+            digital transformation, our approach is agile, secure, and scalable.
           </p>
 
           <div className="space-y-3 text-sm sm:text-base">
             <div>
               <p className="font-semibold text-gray-900">What We Do:</p>
               <p className="text-gray-700">
-                Custom Software Development, Mobile App Development
-                (iOS/Android/Flutter), Web Development, and UI/UX Design.
+                Custom Software Development, Mobile App Development (iOS/Android/Flutter),
+                Web Development, and UI/UX Design.
               </p>
             </div>
             <div>
               <p className="font-semibold text-gray-900">Our Standard:</p>
               <p className="text-gray-700">
-                We bring enterprise-grade coding standards—learned from working
-                with giants like TCS and Infosys—to every project we touch.
+                We follow enterprise-grade coding standards learned from giants like TCS
+                and Infosys to ensure high-quality deliverables.
               </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        {/* Talent Arm */}
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4">
-          <div className="flex items-center gap-3">
+        {/* Talent Arm Card */}
+        <article className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4 ">
+          <header className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">
               👥
             </span>
@@ -71,14 +96,12 @@ const CoreVerticals: React.FC = () => {
                 Recruitment &amp; Staffing
               </span>
             </h3>
-          </div>
+          </header>
 
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            Technology is useless without the right people to drive it. Our
-            recruitment division acts as a strategic partner to HR departments
-            globally. We go beyond keyword matching; we technically vet
-            candidates to ensure they fit both the skill requirements and the
-            company culture.
+            Technology is useless without the right people. Our recruitment division
+            is a strategic partner to HR departments globally, technically vetting
+            candidates to match skill requirements and company culture.
           </p>
 
           <div className="space-y-3 text-sm sm:text-base">
@@ -92,12 +115,12 @@ const CoreVerticals: React.FC = () => {
             <div>
               <p className="font-semibold text-gray-900">Our Reach:</p>
               <p className="text-gray-700">
-                We have successfully placed talent for leading firms like
-                NeevSystem, OpenMalo Technologies, and Capgemini.
+                Successfully placed talent for leading firms like NeevSystem,
+                OpenMalo Technologies, and Capgemini.
               </p>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );

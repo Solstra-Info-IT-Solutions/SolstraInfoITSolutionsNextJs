@@ -80,14 +80,14 @@ export default function Navbar({ type = "home", icons = [] }) {
               after:shadow-[0_0_12px_3px_rgba(0,0,0,0.7)]
               after:animate-ping after:scale-110
 
-             hover:scale-105
+             hover:scale-105 cursor-pointer
               "
           >
             Get a Quote
           </button>
 
           {/* 2. Hire Us Button */}
-          <button className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white">
+          <button className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer">
             Hire Us
           </button>
 

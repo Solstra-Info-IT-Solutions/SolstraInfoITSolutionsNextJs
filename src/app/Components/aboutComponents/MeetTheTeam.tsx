@@ -1,14 +1,34 @@
-// src/components/about/MeetTheTeam.tsx
-import React from "react";
+"use client";
+import React, { useRef, useEffect, useState } from "react";
 
 const MeetTheTeam: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && containerRef.current) {
+            // Animate cards one by one
+            setVisibleCards([true, true, true]);
+            observer.unobserve(entry.target); // Animate only once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) observer.observe(containerRef.current);
+  }, []);
+
   return (
-    <section className="py-10">
+    <section className="space-y-6">
       <div className="text-center">
-        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
-          Meet The Team
+        <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
+          Meet <span className="font-semibold text-[#E28217]">The Team</span>
         </p>
-        <h2 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
           The Minds Behind Solstra
         </h2>
         <p className="mt-3 text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
@@ -19,9 +39,13 @@ const MeetTheTeam: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-3 m-10">
+      <div ref={containerRef} className="grid gap-8 md:grid-cols-3 m-10">
         {/* Leadership & Strategy */}
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3">
+        <div
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+            ${visibleCards[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          style={{ transitionDelay: "100ms" }}
+        >
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 text-xl font-bold">
               SJ
@@ -47,7 +71,11 @@ const MeetTheTeam: React.FC = () => {
         </div>
 
         {/* Tech Innovators */}
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3">
+        <div
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+            ${visibleCards[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          style={{ transitionDelay: "200ms" }}
+        >
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xl">
               🧠
@@ -75,7 +103,11 @@ const MeetTheTeam: React.FC = () => {
         </div>
 
         {/* Talent Scouts */}
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3">
+        <div
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+            ${visibleCards[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          style={{ transitionDelay: "300ms" }}
+        >
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-xl">
               🎯

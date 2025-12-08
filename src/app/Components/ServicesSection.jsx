@@ -65,7 +65,7 @@ export default function Services() {
 
   return (
     <section className="bg-[#0a3d62] rounded-3xl p-6 sm:p-10 mt-10 m-4 text-white relative">
-      <h3 className="tracking-widest text-sm mb-1">SERVICES</h3>
+      <h3 className="tracking-widest text-2xl mb-1">SERVICES</h3>
       <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
         Explore the innovative solutions <br />
         we provide to meet your needs.
@@ -78,13 +78,13 @@ export default function Services() {
       <div className="flex gap-3 absolute right-6 sm:right-10 top-6 sm:top-8 z-10">
         <button
           onClick={prev}
-          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition"
+          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30  transition-transform active:scale-95 cursor-pointer"
         >
           ←
         </button>
         <button
           onClick={next}
-          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition"
+          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30  transition-transform active:scale-95 cursor-pointer"
         >
           →
         </button>

@@ -52,7 +52,7 @@ const TalkToConsultantSection: React.FC = () => {
                     className="rounded-full bg-white text-gray-900 px-5 py-3 outline-none focus:ring-2 focus:ring-orange-500" />
 
                   <select
-                    className="rounded-full bg-white text-gray-900 px-5 py-3 outline-none focus:ring-2 focus:ring-orange-500"
+                    className="rounded-full bg-white text-gray-900 px-5 py-3 outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
                     defaultValue="Web Development"
                   >
                     <option>Web Development</option>
@@ -66,7 +66,7 @@ const TalkToConsultantSection: React.FC = () => {
 
                   <div className="sm:col-span-2">
                     <input type="file"
-                      className="w-full rounded-full bg-white text-gray-800 file:bg-orange-500 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-full" />
+                      className="w-full rounded-full bg-white text-gray-800 file:bg-orange-500 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-full cursor-pointer" />
                   </div>
 
                 </div>
@@ -75,7 +75,7 @@ const TalkToConsultantSection: React.FC = () => {
                   className="w-full rounded-3xl bg-white text-gray-900 px-5 py-3 outline-none focus:ring-2 focus:ring-orange-500"
                 />
 
-                <button className="mt-2 bg-orange-500 hover:bg-orange-600 transition px-8 py-3 rounded-full font-semibold">
+                <button className="mt-2 bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full font-semibold transition-transform active:scale-95 cursor-pointer">
                   Submit
                 </button>
               </form>

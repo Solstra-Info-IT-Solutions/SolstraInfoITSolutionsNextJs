@@ -25,8 +25,8 @@ export default function HomePage() {
       <AboutSection />
   
       <TabContent />
-        <TalkToConsultantSection />
-        <BlogSection />
+      <TalkToConsultantSection />
+      <BlogSection />
       <FooterSection />
     </div>
   );

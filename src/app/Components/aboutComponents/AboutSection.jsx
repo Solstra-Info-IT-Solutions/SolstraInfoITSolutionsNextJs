@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-14 px-4 sm:px-6 mt-20">
+    <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-2 px-4 sm:px-6 mt-20">
       {/* LEFT IMAGE BLOCK */}
       <div className="relative w-full">
         {/* Main Image */}
@@ -10,8 +10,8 @@ export default function AboutSection() {
           src="/about-sec1.png"
           alt="About section image"
           width={600}
-          height={600}
-          className="w-full h-auto object-cover rounded-md"
+          height={200}
+          className="w-full h-140 object-cover rounded-md"
         />
 
         {/* Quote Card */}
@@ -39,7 +39,7 @@ export default function AboutSection() {
       <div className="flex flex-col gap-6">
         {/* About Content */}
         <div>
-          <p className="text-blue-600 uppercase tracking-wide font-medium text-sm sm:text-base">
+          <p className="text-blue-600 uppercase tracking-wide text-2xl font-extrabold sm:text-base">
             About Solstra Info IT Solutions
           </p>
 

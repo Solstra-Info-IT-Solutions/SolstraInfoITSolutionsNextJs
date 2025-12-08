@@ -11,6 +11,8 @@ import MeetTheTeam from "../components/aboutComponents/MeetTheTeam";
 import TrustedBy from "../components/aboutComponents/TrustedBy";
 import CultureSection from "../components/aboutComponents/CultureSection";
 import OurOffices from "../Components/aboutComponents/OurOffices";
+import TrustedLeadingCompany from "../Components/aboutComponents/TrustedLeadingCompany";
+import FooterSection from "../Components/FooterSection"
 export default function AboutPage() {
   return (
     <main>
@@ -30,10 +32,12 @@ export default function AboutPage() {
       <MissionVision />
       <MeetTheTeam />
       <TrustedBy />
+      <TrustedLeadingCompany />
       <AboutValues />
       <CultureSection />
       <ContactSection />
       <OurOffices />
+      <FooterSection /> 
     </main>
   );
 }

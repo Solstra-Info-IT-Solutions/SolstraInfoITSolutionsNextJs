@@ -44,7 +44,7 @@ export default function Herosection() {
   {/* Previous Slide */}
         <button
             onClick={prevSlide}
-            className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-r-2xl h-24 w-20  hover:bg-orange-200 transition items-center justify-center"
+            className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-r-2xl h-20 w-20  hover:bg-gray-200 transition items-center justify-center cursor-pointer "
              >
             <img src="/smalll-left-arrow.png" alt="Previous" className="w-6 h-6"/>
         </button>
@@ -52,7 +52,7 @@ export default function Herosection() {
   {/* Next Slide */}
          <button
               onClick={nextSlide}
-              className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-l-2xl h-24 w-20 hover:bg-orange-200 transition items-center justify-center"
+              className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-l-2xl h-20 w-20 hover:bg-gray-200 transition items-center justify-center  cursor-pointer"
                >    
              <img src="/icons8-right-arrow-24.png" alt="Next" className="w-6 h-6"/>
           </button>
@@ -90,13 +90,13 @@ export default function Herosection() {
                 )}
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 rounded-xl">
+                <div className="absolute inset-0 mx-5 bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 rounded-xl">
                   <div className="max-w-xl">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    <h1 className="text-3xl  sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                       {slide.title}
                     </h1>
 
-                    <button className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30 transition w-full sm:w-48 md:w-56">
+                    <button className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30 transition w-full sm:w-48 md:w-56 cursor-pointer transition-transform active:scale-95">
                       Talk To Consultant
                     </button>
                   </div>

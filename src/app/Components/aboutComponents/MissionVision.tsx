@@ -1,21 +1,44 @@
-// src/components/about/MissionVision.tsx
-import React from "react";
+"use client";
+import React, { useRef, useEffect, useState } from "react";
 
 const MissionVision: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && containerRef.current) {
+            setVisibleCards([true, true]); // animate both cards
+            observer.unobserve(entry.target); // animate once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) observer.observe(containerRef.current);
+  }, []);
+
   return (
     <section className="space-y-6">
       <div className="text-center">
-        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
-          Our Mission &amp; Vision
+        <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
+          Our Mission <span className="font-semibold text-[#E28217]">Vision</span> 
         </p>
-        <h2 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="mt-2 text-xl sm:text-2xl md:text-4xl font-bold text-gray-900">
           Why Solstra Exists &amp; Where We&apos;re Headed
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 m-10">
+      <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-8 m-10">
         {/* Mission */}
-        <div className="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col gap-3">
+        <div
+          className={`bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col gap-3 transform transition-all duration-700 ease-out
+            ${visibleCards[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          style={{ transitionDelay: "100ms" }}
+        >
           <h3 className="text-xl font-semibold text-orange-500">Our Mission</h3>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
             To democratize access to high-quality technology and elite talent.
@@ -26,7 +49,11 @@ const MissionVision: React.FC = () => {
         </div>
 
         {/* Vision */}
-        <div className="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col gap-3">
+        <div
+          className={`bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col gap-3 transform transition-all duration-700 ease-out
+            ${visibleCards[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          style={{ transitionDelay: "200ms" }}
+        >
           <h3 className="text-xl font-semibold text-orange-500">Our Vision</h3>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
             To become a global leader in the &quot;Tech-Talent&quot; ecosystem,

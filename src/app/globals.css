@@ -146,3 +146,17 @@ body {
 .animate-smallPing {
   animation: smallPing 1.4s linear infinite;
 }
+@keyframes slide-up {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}

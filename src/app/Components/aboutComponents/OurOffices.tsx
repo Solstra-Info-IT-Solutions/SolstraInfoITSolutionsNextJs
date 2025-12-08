@@ -31,12 +31,16 @@ export default function OurOffices() {
   return (
     <section className="w-full px-4 sm:px-[5%] py-16 bg-white">
       {/* Heading */}
-      <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#06114f] mb-12">
+      {/* <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#06114f] mb-12">
         Our Offices
-      </h2>
+      </h2> */}
+
+      <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
+        Our <span className="font-semibold text-[#E28217]">Offices</span> 
+        </p>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-5">
         {offices.map((office, index) => (
           <div key={index} className="text-left">
             

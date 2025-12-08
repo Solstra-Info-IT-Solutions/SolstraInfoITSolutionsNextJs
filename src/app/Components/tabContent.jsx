@@ -120,7 +120,7 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
     <section className="max-w-7xl mx-auto py-16 mb-10 px-4">
 
       {/* Tabs Container */}
-      <div className="flex flex-wrap gap-2 sm:gap-4 mb-10">
+      <div className="flex flex-wrap gap-2 sm:gap-4 mb-10 ">
         {tabData.map((item, index) => (
           <button
             key={item.id}
@@ -136,7 +136,7 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
               alt={item.title}
               width={64}
               height={64}
-              className="object-contain shrink-0"
+              className="object-contain shrink-0 cursor-pointer"
             />
             
             {active === index && (
@@ -200,7 +200,7 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
 
 <button 
                 onClick={() => setIsModalOpen(true)}
-                className="
+                className=" cursor-pointer
                 vibrate-hover
                 flex items-center gap-2 
                 px-10 py-3 
@@ -209,7 +209,7 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
                 rounded-full 
                 text-base sm:text-lg font-medium 
                 hover:bg-orange-500 hover:text-white
-                transition-colors duration-300
+                 duration-300 transition-transform active:scale-95
              ">
                 Connect with Experts <FaArrowRight size={16} />
              </button>
