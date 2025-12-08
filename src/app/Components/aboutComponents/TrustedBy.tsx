@@ -13,7 +13,7 @@ const TrustedBy: React.FC = () => {
   return (
     <section className="space-y-6">
       <div className="text-center">
-        <p className="text-sm font-semibold tracking-wide text-orange-500 uppercase">
+        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
           Why Leading Brands Trust Us
         </p>
         <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">

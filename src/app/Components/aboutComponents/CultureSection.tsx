@@ -19,9 +19,9 @@ const CultureCard: React.FC<CultureCardProps> = ({ title, description }) => {
 
 const CultureSection: React.FC = () => {
   return (
-    <section className="space-y-6">
+    <section className="py-6">
       <div className="text-center">
-        <p className="text-sm font-semibold tracking-wide text-orange-500 uppercase">
+        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
           Our Culture
         </p>
         <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
@@ -33,7 +33,7 @@ const CultureSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3 m-10">
         <CultureCard
           title="We Code the Future"
           description="By staying ahead of tech trends like AI and Machine Learning, we build solutions designed not just for today, but for the next decade."

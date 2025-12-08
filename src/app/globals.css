@@ -127,3 +127,22 @@ body {
 .animate-\[fadeSlideUp_1s_ease-out_forwards\] {
   animation: fadeSlideUp 1s ease-out forwards;
 }
+
+@keyframes smallPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.12); /* <-- small expansion */
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.18); /* <-- area smaller */
+    opacity: 0;
+  }
+}
+
+.animate-smallPing {
+  animation: smallPing 1.4s linear infinite;
+}

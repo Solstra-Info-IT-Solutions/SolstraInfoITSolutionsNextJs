@@ -3,12 +3,12 @@ import React from "react";
 
 const MeetTheTeam: React.FC = () => {
   return (
-    <section className="space-y-6">
+    <section className="py-10">
       <div className="text-center">
-        <p className="text-sm font-semibold tracking-wide text-orange-500 uppercase">
+        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
           Meet The Team
         </p>
-        <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-gray-900">
           The Minds Behind Solstra
         </h2>
         <p className="mt-3 text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
@@ -19,7 +19,7 @@ const MeetTheTeam: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-3 m-10">
         {/* Leadership & Strategy */}
         <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3">
           <div className="flex items-center gap-3">

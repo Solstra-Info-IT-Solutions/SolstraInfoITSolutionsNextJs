@@ -5,7 +5,7 @@ const CoreVerticals: React.FC = () => {
   return (
     <section className="space-y-6">
       <div className="text-center">
-        <p className="text-sm font-semibold tracking-wide text-orange-500 uppercase">
+        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
           Our Two Core Verticals
         </p>
         <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
@@ -18,7 +18,7 @@ const CoreVerticals: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 m-10">
         {/* Technology Arm */}
         <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4">
           <div className="flex items-center gap-3">

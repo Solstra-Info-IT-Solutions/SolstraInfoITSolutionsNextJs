@@ -5,15 +5,15 @@ const MissionVision: React.FC = () => {
   return (
     <section className="space-y-6">
       <div className="text-center">
-        <p className="text-sm font-semibold tracking-wide text-orange-500 uppercase">
+        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
           Our Mission &amp; Vision
         </p>
-        <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-gray-900">
           Why Solstra Exists &amp; Where We&apos;re Headed
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 m-10">
         {/* Mission */}
         <div className="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col gap-3">
           <h3 className="text-xl font-semibold text-orange-500">Our Mission</h3>

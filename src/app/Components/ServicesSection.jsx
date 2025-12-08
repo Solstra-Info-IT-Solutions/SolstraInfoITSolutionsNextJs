@@ -61,7 +61,7 @@ export default function Services() {
     }
   }, [cardsPerView]); // run effect when cardsPerView changes
 
-  const cardWidth = 100 / cardsPerView;
+  const cardWidth = 40 / cardsPerView;
 
   return (
     <section className="bg-[#0a3d62] rounded-3xl p-6 sm:p-10 mt-10 m-4 text-white relative">
