@@ -30,17 +30,40 @@ export default function HomeSection({
           </div>
 
           {/* Right Images */}
-     <div className="grid grid-cols-2 gap-4 justify-items-center">
-  {heroImages.map((img, index) => (
-    <img
-      key={index}
-      src={img.src}
-      className={`rounded-full shadow-lg w-32 md:w-48 ${img.className}`}
-      alt={`Hero ${index}`}
-      loading="lazy"
-    />
-  ))}
+          {/* Hero Images - Premium Official Look */}
+<div className="relative flex justify-center md:justify-end mt-8">
+  <div className="grid grid-cols-2 gap-6 md:gap-8 justify-items-center items-center">
+
+    {heroImages.map((img, index) => (
+      <div
+        key={index}
+        className={`
+          relative
+          w-32 md:w-40 lg:w-48
+          rounded-full
+          hover:scale-105 hover:shadow-2xl
+          transition-transform duration-500
+          ${index % 2 === 0 ? "md:-translate-y-4" : "md:translate-y-4"}
+        `}
+      >
+        {/* Inner white circle */}
+        <div className="bg-white rounded-full overflow-hidden w-full h-full">
+          <img
+            src={img.src}
+            alt={`Hero ${index}`}
+            className="w-full h-full object-cover rounded-full"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Optional subtle glow */}
+        <div className="absolute inset-0 rounded-full pointer-events-none ring-2 ring-white/20"></div>
+      </div>
+    ))}
+
+  </div>
 </div>
+
 
 
         </div>
@@ -63,17 +86,17 @@ export default function HomeSection({
             </div>
 
             <p className="mt-6 text-lg">
-              Need expert <strong>web & mobile development services?</strong>  
+              Need expert <strong>web & mobile development services?</strong>
               Contact <strong>Solstra Info Technology</strong> today!
             </p>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-4">
-  {stats.map((item, i) => (
-    <div
-      key={i}
-      className="
+            {stats.map((item, i) => (
+              <div
+                key={i}
+                className="
         group
         bg-white 
         rounded-2xl 
@@ -87,10 +110,10 @@ export default function HomeSection({
         transition-all 
         duration-300
       "
-    >
-      {/* Icon wrapper */}
-      <div
-        className={`
+              >
+                {/* Icon wrapper */}
+                <div
+                  className={`
           w-16 h-16 mx-auto flex items-center justify-center 
           rounded-full 
           bg-gray-100
@@ -102,23 +125,23 @@ export default function HomeSection({
           transition-all duration-300
           animate-softFloat
         `}
-      >
-        <i >{item.icon}</i>
-      </div>
+                >
+                  <i >{item.icon}</i>
+                </div>
 
-      {/* Number */}
-      <h3 className="text-3xl font-bold text-gray-900 mt-4">
-        {item.count}+
-      </h3>
+                {/* Number */}
+                <h3 className="text-3xl font-bold text-gray-900 mt-4">
+                  {item.count}+
+                </h3>
 
-      {/* Label */}
-      <p className="text-gray-500 text-[15px] mt-1 tracking-wide">
-        {item.label}
-      </p>
-    </div>
-  ))}
-</div>  
-{/* <div className="grid grid-cols-2 gap-6 p-2">
+                {/* Label */}
+                <p className="text-gray-500 text-[15px] mt-1 tracking-wide">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          {/* <div className="grid grid-cols-2 gap-6 p-2">
             {stats.map((item, i) => (
               <div
                 key={i}
@@ -147,7 +170,7 @@ export default function HomeSection({
             </h2>
 
             <p className="text-gray-700 text-lg mb-10">
-              The Solstra Advantage: We build for performance, security, and scalability. Our agile development process ensures transparency and rapid delivery, while our focus on clean code guarantees a sustainable product that grows with your business.  
+              The Solstra Advantage: We build for performance, security, and scalability. Our agile development process ensures transparency and rapid delivery, while our focus on clean code guarantees a sustainable product that grows with your business.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">

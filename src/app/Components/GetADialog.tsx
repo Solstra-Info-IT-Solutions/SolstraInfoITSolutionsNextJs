@@ -74,9 +74,9 @@ const GetQuoteDialog: React.FC = () => {
         onClick={() => setOpen(true)}
         className="group relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(37,99,235,0.5)] transition-all hover:translate-y-[1px] hover:shadow-[0_10px_30px_rgba(37,99,235,0.6)]"
       >
-        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-xs">
+        {/* <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-xs">
           ✨
-        </span>
+        </span> */}
         <span className="flex text-sm">Get a Premium Quote</span>
         <span className="pointer-events-none absolute -inset-px rounded-full border border-white/40 opacity-0 transition-opacity group-hover:opacity-100" />
       </button>
@@ -105,7 +105,7 @@ const GetQuoteDialog: React.FC = () => {
                   </div>
 
                   <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-                    Shubham IT Consultancy
+                    Solstra Info IT Solutions
                   </h2>
                   <p className="mt-2 text-xs text-slate-200/80 md:text-sm">
                     Tailored IT, Product & Consulting solutions to transform your
@@ -116,7 +116,7 @@ const GetQuoteDialog: React.FC = () => {
                   <div className="mt-5 grid grid-cols-3 gap-3">
                     <div className="rounded-2xl bg-white/5 p-3 text-center">
                       <div className="text-sm font-semibold text-white">
-                        50+
+                        10+
                       </div>
                       <div className="mt-1 text-[11px] text-slate-300">
                         Projects Delivered
@@ -132,7 +132,7 @@ const GetQuoteDialog: React.FC = () => {
                     </div>
                     <div className="rounded-2xl bg-white/5 p-3 text-center">
                       <div className="text-sm font-semibold text-white">
-                        7+
+                        1+
                       </div>
                       <div className="mt-1 text-[11px] text-slate-300">
                         Years Experience
