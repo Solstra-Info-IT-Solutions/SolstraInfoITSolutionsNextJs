@@ -8,6 +8,7 @@ import { BsMicrosoftTeams } from "react-icons/bs";
 import { RxDashboard } from "react-icons/rx"; // For the grid icon in the image
 import GetQuoteDialog from "./GetADialog";
 
+
 export default function Navbar({ type = "home", icons = [] }) {
   const [open, setOpen] = useState(false);
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
@@ -18,9 +19,9 @@ export default function Navbar({ type = "home", icons = [] }) {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Our Work", path: "/work" },
-    { name: "Case Study", path: "/case-study" },
-    { name: "Company Profile", path: "/profile" },
+    { name: "Our Work", path: "/commingsoon" },
+    { name: "Case Study", path: "/commingsoon" },
+    { name: "Company Profile", path: "/commingsoon" },
   ];
 
   const isHome = type === "home";
