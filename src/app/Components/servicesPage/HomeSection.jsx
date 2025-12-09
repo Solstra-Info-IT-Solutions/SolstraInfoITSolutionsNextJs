@@ -69,7 +69,56 @@ export default function HomeSection({
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-6 p-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-4">
+  {stats.map((item, i) => (
+    <div
+      key={i}
+      className="
+        group
+        bg-white 
+        rounded-2xl 
+        p-6 
+        text-center 
+        border 
+        border-gray-100 
+        shadow-sm
+        hover:shadow-xl
+        hover:-translate-y-1
+        transition-all 
+        duration-300
+      "
+    >
+      {/* Icon wrapper */}
+      <div
+        className={`
+          w-16 h-16 mx-auto flex items-center justify-center 
+          rounded-full 
+          bg-gray-100
+          text-${item.color}-600
+          text-3xl
+          shadow-sm
+          ring-4 ring-${item.color}-500/10
+          group-hover:ring-${item.color}-500/30
+          transition-all duration-300
+          animate-softFloat
+        `}
+      >
+        <i >{item.icon}</i>
+      </div>
+
+      {/* Number */}
+      <h3 className="text-3xl font-bold text-gray-900 mt-4">
+        {item.count}+
+      </h3>
+
+      {/* Label */}
+      <p className="text-gray-500 text-[15px] mt-1 tracking-wide">
+        {item.label}
+      </p>
+    </div>
+  ))}
+</div>  
+{/* <div className="grid grid-cols-2 gap-6 p-2">
             {stats.map((item, i) => (
               <div
                 key={i}
@@ -82,7 +131,7 @@ export default function HomeSection({
                 <p className="text-gray-600 mt-2">{item.label}</p>
               </div>
             ))}
-          </div>
+          </div> */}
 
         </div>
       </section>
