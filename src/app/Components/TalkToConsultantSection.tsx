@@ -132,7 +132,7 @@ export default function TalkToConsultantSection() {
                               setValue(item);
                               setOpen(false);
                             }}
-                            className="px-4 py-3 hover:bg-orange-400 text-black cursor-pointer"
+                            className="px-4 py-3 hover:bg-orange-400 text-black hover:text-white cursor-pointer"
                           >
                             {item}
                           </div>

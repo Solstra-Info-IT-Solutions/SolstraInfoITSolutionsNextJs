@@ -1,5 +1,5 @@
 import Navbar from "../Components/Navbar";
-import FooterSection from "../components/FooterSection";
+import FooterSection from "../Components/FooterSection";
 import CommonHeader from "../Components/careerHub/CommonHeader";
 import CTASection from "../Components/careerHub/CTASection";
 import TipsSection from "../Components/careerHub/TipsSection";

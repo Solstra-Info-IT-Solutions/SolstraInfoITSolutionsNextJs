@@ -5,11 +5,11 @@ import AboutHero from "../Components/aboutComponents/AboutHero";
 import AboutSection from "../Components/aboutComponents/AboutSection";
 import AboutValues from "../Components/aboutComponents/AboutValues";
 import ContactSection from "../Components/aboutComponents/ContactSection";
-import CoreVerticals from "../components/aboutComponents/CoreVerticals";
-import MissionVision from "../components/aboutComponents/MissionVision";
-import MeetTheTeam from "../components/aboutComponents/MeetTheTeam";
-import TrustedBy from "../components/aboutComponents/TrustedBy";
-import CultureSection from "../components/aboutComponents/CultureSection";
+import CoreVerticals from "../Components/aboutComponents/CoreVerticals";
+import MissionVision from "../Components/aboutComponents/MissionVision";
+import MeetTheTeam from "../Components/aboutComponents/MeetTheTeam";
+import TrustedBy from "../Components/aboutComponents/TrustedBy";
+import CultureSection from "../Components/aboutComponents/CultureSection";
 import OurOffices from "../Components/aboutComponents/OurOffices";
 import TrustedLeadingCompany from "../Components/aboutComponents/TrustedLeadingCompany";
 import FooterSection from "../Components/FooterSection"
