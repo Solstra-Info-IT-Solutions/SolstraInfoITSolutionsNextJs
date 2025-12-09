@@ -40,59 +40,23 @@ export default function Herosection() {
       <div className="relative w-full">
 
         {/* BUTTONS → now hidden on mobile */}
-        <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
-          {/* Previous Slide */}
-          {/* <button
+       <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
+  {/* Previous Slide */}
+        {/* <button
             onClick={prevSlide}
-<<<<<<< Updated upstream
             className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-full h-20 w-20  hover:bg-gray-200 transition items-center justify-center cursor-pointer "
              >
             <img src="/smalll-left-arrow.png" alt="Previous" className="w-6 h-6"/>
-        </button>
+        </button> */}
 
   {/* Next Slide */}
-         <button
+         {/* <button
               onClick={nextSlide}
               className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-full h-20 w-20 hover:bg-gray-200 transition items-center justify-center  cursor-pointer"
                >    
              <img src="/icons8-right-arrow-24.png" alt="Next" className="w-6 h-6"/>
-          </button>
+          </button> */}
       </div>
-=======
-            className="hidden sm:flex pointer-events-auto  text-black shadow-md p-3 rounded-r-2xl h-20 w-20  bg-gray-400 transition items-center justify-center cursor-pointer "
-          >
-            <img src="/smalll-left-arrow.png" alt="Previous" className="w-6 h-6" />
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M19 12H5" strokeLinecap="round" />
-              <path d="M12 5L5 12L12 19" strokeLinecap="round" />
-            </svg>
-          </button> */}
-
-          {/* Next Slide */}
-          {/* <button
-            onClick={nextSlide}
-            className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-l-2xl h-20 w-20 hover:bg-gray-200 transition items-center justify-center  cursor-pointer"
-          >
-            <img src="/icons8-right-arrow-24.png" alt="Next" className="w-6 h-6" />
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12H19" strokeLinecap="round" />
-              <path d="M12 5L19 12L12 19" strokeLinecap="round" />
-            </svg>
-          </button> */}
-        </div>
->>>>>>> Stashed changes
 
 
         {/* SLIDER */}
