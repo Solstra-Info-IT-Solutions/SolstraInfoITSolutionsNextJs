@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Preloader from "./Components/Preloader"; // import Preloader
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Preloader logoSrc="/logo.jpg" companyName="  SOLSTRA INFO" duration={6000} />
+
+
         {children}
       </body>
     </html>
   );
 }
-

@@ -192,3 +192,11 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+@keyframes circle-loader {
+  0% {
+    stroke-dashoffset: 283; /* circumference = 2*π*45 */
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

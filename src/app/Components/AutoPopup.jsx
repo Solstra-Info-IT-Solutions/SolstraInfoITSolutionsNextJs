@@ -17,7 +17,7 @@ export default function AutoPopup() {
   const router = useRouter();
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 1000);
+    const timer = setTimeout(() => setOpen(true), 8000);
     return () => clearTimeout(timer);
   }, []);
 

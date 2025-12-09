@@ -30,17 +30,19 @@ export default function HomeSection({
           </div>
 
           {/* Right Images */}
-          <div className="relative flex justify-center md:justify-end">
-            {heroImages.map((img, index) => (
-              <img
-                key={index}
-                src={img.src}
-                className={`absolute rounded-full shadow-lg w-32 md:w-48 ${img.className}`}
-                alt={`Hero ${index}`}
-                loading="lazy"
-              />
-            ))}
-          </div>
+     <div className="grid grid-cols-2 gap-4 justify-items-center">
+  {heroImages.map((img, index) => (
+    <img
+      key={index}
+      src={img.src}
+      className={`rounded-full shadow-lg w-32 md:w-48 ${img.className}`}
+      alt={`Hero ${index}`}
+      loading="lazy"
+    />
+  ))}
+</div>
+
+
         </div>
       </section>
 
