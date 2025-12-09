@@ -72,11 +72,8 @@ const GetQuoteDialog: React.FC = () => {
       {/* TRIGGER BUTTON */}
       <button
         onClick={() => setOpen(true)}
-        className="group relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(37,99,235,0.5)] transition-all hover:translate-y-[1px] hover:shadow-[0_10px_30px_rgba(37,99,235,0.6)]"
+        className="group relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_5px_15px_rgba(37,99,235,0.5)] transition-all hover:translate-y-[1px] hover:shadow-[0_5px_10px_rgba(37,99,235,0.6)]"
       >
-        {/* <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-xs">
-          ✨
-        </span> */}
         <span className="flex text-sm">Get a Premium Quote</span>
         <span className="pointer-events-none absolute -inset-px rounded-full border border-white/40 opacity-0 transition-opacity group-hover:opacity-100" />
       </button>
