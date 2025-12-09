@@ -7,7 +7,7 @@ import WhySolstra from "./Components/WhySolstra";
 import ServicesSection from "./Components/ServicesSection";
 import AboutSection from "./Components/AboutSection";
 import FooterSection from "./Components/FooterSection";
-import AutoPopup from "./components/AutoPopup"
+import AutoPopup from "./Components/AutoPopup"
 import TabContent from "./Components/tabContent"
 import TalkToConsultantSection from "./Components/TalkToConsultantSection"
 import BlogSection from "./Components/BlogSection"
