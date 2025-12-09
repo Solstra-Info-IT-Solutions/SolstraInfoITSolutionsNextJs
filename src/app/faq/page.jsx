@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../Components/Navbar";
 import FAQItem from "../Components/FAQItem/FaqItem";
 import FooterSection from "../Components/FooterSection";
 
@@ -11,16 +11,15 @@ export const metadata = {
 export default function FAQPage() {
   return (
     <>
-       <Navbar 
-              type="other"
-              icons={[
-                { src: "/telephone2.png", alt: "Email", link: "mailto:test@gmail.com" },
-                { src: "/whatsapp.png", alt: "WhatsApp", link: "https://wa.me/9999" },
-                { src: "/skype.png", alt: "Skype", link: "skype:live:username" },
-                { src: "/orangeemail.png", alt: "Email", link: "mailto:test@gmail.com" },
-                
-              ]}
-            />
+       <Navbar
+                   type="other"
+                   extraIcons={[
+                     { src: "/telephone2.png", alt: "Email", link: "mailto:test@gmail.com" },
+                     { src: "/whatsapp.png", alt: "WhatsApp", link: "https://wa.me/9999" },
+                     { src: "/skype.png", alt: "Skype", link: "skype:live:username" },
+                     { src: "/orangeemail.png", alt: "Email", link: "mailto:test@gmail.com" },
+                   ]}
+                 />
 
       <main className="py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">

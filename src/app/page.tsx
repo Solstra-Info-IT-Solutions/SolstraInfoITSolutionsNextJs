@@ -12,6 +12,9 @@ import TabContent from "./Components/tabContent"
 import TalkToConsultantSection from "./Components/TalkToConsultantSection"
 import BlogSection from "./Components/BlogSection"
 import StatsCounter from "./Components/StatsCounter"
+
+
+
 export default function HomePage() {
   return (
     <div>

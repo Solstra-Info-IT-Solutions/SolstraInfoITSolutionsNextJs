@@ -59,7 +59,7 @@ export default function FooterSection() {
                   href="mailto:info@devtechnosys.com"
                   className="text-blue-500 text-sm hover:text-black"
                 >
-                  info@devtechnosys.com
+                  sjain01ajmer@gmail.com
                 </a>
               </div>
             </div>
@@ -71,11 +71,13 @@ export default function FooterSection() {
               <div>
                 <p className="text-xs font-bold">SALES</p>
                 <a href="tel:+14155787849" className="text-blue-500 text-sm hover:text-black">
-                  +1 415 578 7849
+                  +91-9001638396
+
                 </a>
                 <br />
                 <a href="tel:+447733868733" className="text-blue-500 text-sm hover:text-black">
-                  +44 7733 868733
+                  +91-9001638396
+
                 </a>
               </div>
             </div>
@@ -87,11 +89,13 @@ export default function FooterSection() {
               <div>
                 <p className="text-xs font-bold">HR</p>
                 <a href="tel:+911414107667" className="text-blue-500 text-sm hover:text-black">
-                  +91 141 4107667
+                  +91-9001638396
+
                 </a>
                 <br />
                 <a href="tel:+917852883297" className="text-blue-500 text-sm hover:text-black">
-                  +91 7852883297
+                  +91-9001638396
+
                 </a>
               </div>
             </div>
