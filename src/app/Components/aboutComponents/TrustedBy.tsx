@@ -12,19 +12,7 @@ const brands = [
 const TrustedBy: React.FC = () => {
   return (
     <section className="space-y-6">
-      {/* <div className="text-center">
-        <p className="text-2xl font-semibold tracking-wide text-orange-500 uppercase">
-          Why Leading Brands Trust Us
-        </p>
-        <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-          Trusted by Industry Giants
-        </h2>
-        <p className="mt-3 text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
-          Trust is earned through consistency. We adhere to strict SLAs and
-          deliver quality with the agility of a startup and the reliability of a
-          seasoned enterprise partner.
-        </p>
-      </div> */}
+   
 
          <div className="space-y-2 text-center ">
          

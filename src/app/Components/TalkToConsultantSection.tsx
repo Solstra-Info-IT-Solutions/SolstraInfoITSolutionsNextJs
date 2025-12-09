@@ -4,32 +4,25 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const offices = [
+ 
   {
-    country: "USA",
-    img: "https://nextbigtechnology.com/wp-content/uploads/2018/06/usa.jpg",
-    address1: "2710 Pace West Dr, Tucson",
-    address2: "AZ 85730",
-    phone: "+1 305-482-6524",
-    email: "sales@nextbigtechnology.com",
-  },
-  {
-    country: "Australia",
-    img: "https://nextbigtechnology.com/wp-content/uploads/2018/06/aus.jpg",
+    country: "Noida",
+     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
     address1: "21 Benalia Cres Marayong",
     address2: "2148",
     phone: "+61 478053599",
     email: "sales@nextbigtechnology.com",
   },
   {
-    country: "UK",
-    img: "https://nextbigtechnology.com/wp-content/uploads/2018/06/uk.jpg",
+    country: "Jaipur",
+    img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
     address1: "18 Tuesday Market Place,",
     address2: "Norfolk, PE30 1JW",
     phone: "+44 01553600090",
     email: "sales@nextbigtechnology.com",
   },
   {
-    country: "India",
+    country: "Indore",
     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
     address1: "Sikar Road, Jaipur",
     address2: "Rajasthan",

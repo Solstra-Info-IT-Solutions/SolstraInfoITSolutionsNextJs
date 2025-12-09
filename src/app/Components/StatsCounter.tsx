@@ -11,10 +11,10 @@ interface StatItem {
 
 // --- Data ---
 const statsData: StatItem[] = [
-  { value: 3000, label: "Completed Project", suffix: "+" },
-  { value: 70, label: "Countries Served", suffix: "+" },
-  { value: 150000, label: "Hours of Coding", suffix: "+" },
-  { value: 14, label: "Years of Business", suffix: "+" },
+  { value: 10, label: "Completed Project", suffix: "+" },
+  { value: 1, label: "Countries Served", suffix: "+" },
+  { value: 1000, label: "Hours of Coding", suffix: "+" },
+  { value: 1, label: "Years of Business", suffix: "+" },
 ];
 
 // --- Helper Component for Animation ---
