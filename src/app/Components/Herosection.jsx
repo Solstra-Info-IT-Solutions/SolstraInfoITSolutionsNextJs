@@ -42,23 +42,23 @@ export default function Herosection() {
       <div className="relative w-full">
 
         {/* BUTTONS → now hidden on mobile */}
-       <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
-  {/* Previous Slide */}
-        {/* <button
+       {/* <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
+  Previous Slide
+        <button
             onClick={prevSlide}
             className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-full h-20 w-20  hover:bg-gray-200 transition items-center justify-center cursor-pointer "
              >
             <img src="/smalll-left-arrow.png" alt="Previous" className="w-6 h-6"/>
-        </button> */}
+        </button>
 
-  {/* Next Slide */}
-         {/* <button
+  Next Slide
+         <button
               onClick={nextSlide}
               className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-full h-20 w-20 hover:bg-gray-200 transition items-center justify-center  cursor-pointer"
                >    
              <img src="/icons8-right-arrow-24.png" alt="Next" className="w-6 h-6"/>
-          </button> */}
-      </div>
+          </button>
+      </div> */}
 
 
         {/* SLIDER */}

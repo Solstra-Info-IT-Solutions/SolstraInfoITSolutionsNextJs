@@ -115,7 +115,7 @@ const tabData = [
 
 export default function TabsSection() {
   const [active, setActive] = useState(0);
-const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
   return (
     <section className="max-w-7xl mx-auto py-16 mb-10 px-4">
 
@@ -125,7 +125,7 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
           <button
             key={item.id}
             onClick={() => setActive(index)}
-            className={`rounded-xl transition-all duration-300 flex items-center h-24
+            className={`rounded-full transition-all duration-300 flex items-center h-20
               ${active === index
                 ? "w-auto px-6 gap-4 border-2 border-orange-500 bg-white shadow-lg scale-105 z-10"
                 : "w-24 justify-center border border-transparent hover:bg-gray-50"
@@ -138,7 +138,7 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
               height={64}
               className="object-contain shrink-0 cursor-pointer"
             />
-            
+
             {active === index && (
               <span className="text-left font-bold text-orange-500 text-sm sm:text-base leading-tight animate-fadeIn">
                 {item.title}
@@ -173,8 +173,8 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
           {/* Icons Grid with Text Below */}
           <div className="flex flex-wrap gap-x-6 gap-y-6 mt-7 mb-8">
             {tabData[active].icons.map((iconItem, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="flex flex-col items-center gap-2 group cursor-pointer"
               >
                 <div className="flex items-center justify-center p-3 bg-white border border-gray-200 rounded-lg shadow-sm group-hover:shadow-md transition w-16 h-16">
@@ -196,11 +196,11 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
 
           {/* Connect With Our Experts Section */}
           <div className="flex items-center gap-4">
-             
 
-<button 
-                onClick={() => setIsModalOpen(true)}
-                className=" cursor-pointer
+
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className=" cursor-pointer
                 vibrate-hover
                 flex items-center gap-2 
                 px-10 py-3 
@@ -211,60 +211,60 @@ const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal
                 hover:bg-orange-500 hover:text-white
                  duration-300 transition-transform active:scale-95
              ">
-                Connect with Experts <FaArrowRight size={16} />
-             </button>
+              Connect with Experts <FaArrowRight size={16} />
+            </button>
           </div>
 
         </div>
       </div>
 
-{/* 4. POPUP MODAL */}
+      {/* 4. POPUP MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm p-4">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative modal-animate overflow-hidden">
-                
-                {/* Modal Header */}
-                <div className="bg-orange-500 px-8 py-6 flex justify-between items-center">
-                    <h3 className="text-2xl font-bold text-white">Let's Talk!</h3>
-                    <button 
-                        onClick={() => setIsModalOpen(false)}
-                        className="text-white hover:text-gray-200 transition"
-                    >
-                        <FaTimes size={24} />
-                    </button>
-                </div>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative modal-animate overflow-hidden">
 
-                {/* Modal Form */}
-                <div className="p-8">
-                    <p className="text-gray-600 mb-6">Fill out the form below and our experts will get back to you shortly.</p>
-                    <form className="space-y-4">
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                            <input type="text" placeholder="John Doe" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                            <input type="email" placeholder="john@example.com" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                            <input type="tel" placeholder="+1 234 567 890" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea rows={3} placeholder="Tell us about your project..." className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"></textarea>
-                        </div>
-                        
-                        <button type="button" className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition-colors shadow-lg mt-2">
-                            Submit Request
-                        </button>
-                    </form>
-                </div>
-
+            {/* Modal Header */}
+            <div className="bg-orange-500 px-8 py-6 flex justify-between items-center">
+              <h3 className="text-2xl font-bold text-white">Let's Talk!</h3>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="text-white hover:text-gray-200 transition"
+              >
+                <FaTimes size={24} />
+              </button>
             </div>
+
+            {/* Modal Form */}
+            <div className="p-8">
+              <p className="text-gray-600 mb-6">Fill out the form below and our experts will get back to you shortly.</p>
+              <form className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <input type="text" placeholder="John Doe" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input type="email" placeholder="john@example.com" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input type="tel" placeholder="+1 234 567 890" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <textarea rows={3} placeholder="Tell us about your project..." className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"></textarea>
+                </div>
+
+                <button type="button" className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition-colors shadow-lg mt-2">
+                  Submit Request
+                </button>
+              </form>
+            </div>
+
+          </div>
         </div>
       )}
-      
+
     </section>
   );
 }
