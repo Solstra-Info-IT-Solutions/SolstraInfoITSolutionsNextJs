@@ -1,8 +1,9 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-
+import { useRouter } from "next/navigation";  
 export default function AboutSection() {
   const ref = useRef();
+   const router = useRouter();  
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -80,7 +81,7 @@ export default function AboutSection() {
 
           {/* BUTTON */}
           <div className="mt-8 flex justify-center md:justify-start">
-            <button className=" cursor-pointer 
+            <button onClick={() => router.push("/about")} className=" cursor-pointer 
               px-10 py-3 
               border-2 border-orange-400 
               text-orange-500 

@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation"; 
 
 export default function Herosection() {
   const [current, setCurrent] = useState(0);
+  const router = useRouter(); 
 
   const slides = [
     {
