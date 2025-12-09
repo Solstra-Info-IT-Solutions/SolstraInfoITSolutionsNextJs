@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaEnvelope } from "react-icons/fa";
 import { BsMicrosoftTeams } from "react-icons/bs";
+import { IoMdClose } from "react-icons/io";
 import GetQuoteDialog from "./GetADialog";
 
 export default function Navbar({ type = "home", extraIcons = [] }) {
@@ -77,7 +78,10 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
           <GetQuoteDialog open={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
 
-          <button className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer">
+          <button
+            className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
+            onClick={() => setIsQuoteModalOpen(true)}
+          >
             Hire Us
           </button>
 
@@ -89,33 +93,46 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
             <div className="w-10 h-10 rounded-full flex items-center justify-center text-white cursor-pointer transition-transform duration-300 hover:scale-110 shadow-md">
               <img src="/telephone-call (2).png" />
             </div>
-
-            {/* CALL MODAL */}
-            <div className={`absolute right-0 top-full mt-4 w-[340px] bg-white rounded-xl shadow-lg border border-gray-100 p-6 z-[60] transition-all duration-300 origin-top-right transform ${
-                isCallModalOpen ? "opacity-100 scale-100 translate-y-0 visible" : "opacity-0 scale-95 -translate-y-2 invisible"
-              }`}>
-              {/* Modal content (same as your code) */}
-            </div>
           </div>
         </div>
 
         {/* MOBILE HAMBURGER */}
         <button
-          onClick={() => setOpen(!open)}
-          className="xl:hidden p-2 text-gray-700 hover:text-orange-500 transition"
+          onClick={() => setOpen(true)}
+          className="xl:hidden p-2 text-gray-700 hover:text-orange-500 transition md:hidden"
         >
           <GiHamburgerMenu size={24} />
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* FULLSCREEN MOBILE MENU */}
       {open && (
-        <div className="xl:hidden bg-white shadow-md w-full absolute top-24 left-0 z-40 p-4">
-          <ul className="flex flex-col gap-4">
+        <div className="xl:hidden fixed inset-0 bg-white z-50 overflow-auto p-6 flex flex-col">
+          {/* Header with Logo and Close */}
+          <div className="flex justify-between items-center mb-10">
+            <img
+              src="/image1.png"
+              alt="Solstra Logo"
+              className="h-12 w-auto cursor-pointer"
+              onClick={() => {
+                router.push("/");
+                setOpen(false);
+              }}
+            />
+            <button
+              className="p-2 rounded-full hover:bg-gray-200 transition"
+              onClick={() => setOpen(false)}
+            >
+              <IoMdClose size={28} />
+            </button>
+          </div>
+
+          {/* Menu Items */}
+          <ul className="flex flex-col gap-6 mb-6 text-lg font-semibold text-gray-700 uppercase hover:bg-orange-400">
             {menuItems.map((item) => (
               <li
                 key={item.name}
-                className="cursor-pointer hover:text-orange-500 transition-colors duration-200"
+                className="cursor-pointer hover:text-orange-500 justify-center flex  transition"
                 onClick={() => {
                   router.push(item.path);
                   setOpen(false);
@@ -124,29 +141,35 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                 {item.name}
               </li>
             ))}
-
-            {/* Hire Us Button */}
-            <li>
-              <button
-                className="w-full border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
-                onClick={() => setIsQuoteModalOpen(true)}
-              >
-                Hire Us
-              </button>
-            </li>
-
-            {/* Extra Icons */}
-            {extraIcons && extraIcons.map((icon, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <a href={icon.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <img src={icon.src} alt={icon.alt} className="w-8 h-8" />
-                  <span className="text-sm">{icon.alt}</span>
-                </a>
-              </li>
-            ))}
           </ul>
+
+          {/* Hire Us Button */}
+          <button
+            className="w-full border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-3 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm mb-6"
+            onClick={() => {
+              setIsQuoteModalOpen(true);
+              setOpen(false);
+            }}
+          >
+            Hire Us
+          </button>
+
+         
+
+          {/* Call Button */}
+          <button
+            className="w-full flex items-center justify-center gap-2 border border-gray-300 px-4 py-3 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300"
+            onClick={() => {
+              setIsCallModalOpen(!isCallModalOpen);
+              setOpen(false);
+            }}
+          >
+            <img src="/telephone-call (2).png" className="w-5 h-5" />
+            Call Us
+          </button>
         </div>
       )}
+
     </header>
   );
 }
