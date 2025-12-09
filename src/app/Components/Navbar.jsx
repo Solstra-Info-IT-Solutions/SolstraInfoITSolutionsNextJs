@@ -2,15 +2,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaEnvelope } from "react-icons/fa";
-import { BsMicrosoftTeams } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import GetQuoteDialog from "./GetADialog";
 
 export default function Navbar({ type = "home", extraIcons = [] }) {
   const [open, setOpen] = useState(false);
-  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const router = useRouter();
 
   const menuItems = [
@@ -85,14 +83,107 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
             Hire Us
           </button>
 
+          {/* CALL ICON */}
           <div
             className="relative rounded-full"
             onMouseEnter={() => setIsCallModalOpen(true)}
             onMouseLeave={() => setIsCallModalOpen(false)}
           >
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white cursor-pointer transition-transform duration-300 hover:scale-110 shadow-md">
-              <img src="/telephone-call (2).png" />
+            <div className=" rounded-full flex items-center justify-center text-white cursor-pointer transition-transform duration-300 hover:scale-110 shadow-md">
+              <img src="/telephone.png" alt="Call" className="w-10 h-10 " />
             </div>
+
+            {/* CALL MODAL */}
+                  {isCallModalOpen && (
+                  <div
+                    className="absolute right-0 top-full mt-3 z-[60]"
+                    onClick={(e) => e.stopPropagation()} // modal click se close nahi hoga
+                  >
+                    <div className="w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+
+                      {/* Header */}
+                      <div className="mb-4 ">
+                        <div className="w-8 h-1 bg-orange-500 rounded-full mb-1"></div>
+                        <h3 className="text-lg font-semibold text-gray-900">Get In Touch</h3>
+                      </div>
+
+                      {/* Sales Team */}
+                      <div className="space-y-4">
+                        <h4 className="text-base font-semibold text-gray-900">
+                          Solstra Sales Team
+                        </h4>
+
+                        {/* Phone */}
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                            <img src="/telephone.png" className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">INDIA</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              +91-9001638396
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Teams */}
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <img src="/business.png" className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">Teams</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              SolstraInfoItsolutions
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Email */}
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <img src="/emailorange.png" className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">Email</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              sjain01ajmer@gmail.com
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* HR Team */}
+                      <div className="space-y-4 pt-4 border-t mt-5">
+                        <h4 className="text-base font-semibold text-gray-900">
+                          Solstra HR Team
+                        </h4>
+
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <img src="/emailorange.png" className="w-6 h-6"  />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">Email</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              sjain01ajmer@gmail.com
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Close Button */}
+                      <button
+                        className="w-full mt-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
+                        onClick={() => setIsCallModalOpen(false)}
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+
           </div>
         </div>
 
@@ -128,11 +219,11 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
           </div>
 
           {/* Menu Items */}
-          <ul className="flex flex-col gap-6 mb-6 text-lg font-semibold text-gray-700 uppercase hover:bg-orange-400">
+          <ul className="flex flex-col gap-6 mb-6 text-lg font-semibold text-gray-700 uppercase">
             {menuItems.map((item) => (
               <li
                 key={item.name}
-                className="cursor-pointer hover:text-orange-500 justify-center flex  transition"
+                className="cursor-pointer hover:text-orange-500  justify-center flex transition"
                 onClick={() => {
                   router.push(item.path);
                   setOpen(false);
@@ -153,23 +244,8 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
           >
             Hire Us
           </button>
-
-         
-
-          {/* Call Button */}
-          <button
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 px-4 py-3 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300"
-            onClick={() => {
-              setIsCallModalOpen(!isCallModalOpen);
-              setOpen(false);
-            }}
-          >
-            <img src="/telephone-call (2).png" className="w-5 h-5" />
-            Call Us
-          </button>
         </div>
       )}
-
     </header>
   );
 }

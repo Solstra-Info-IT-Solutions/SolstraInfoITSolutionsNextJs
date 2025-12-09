@@ -195,7 +195,7 @@ export default function TabsSection() {
           </div>
 
           {/* Connect With Our Experts Section */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ">
 
 
             <button
@@ -220,7 +220,7 @@ export default function TabsSection() {
 
       {/* 4. POPUP MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative modal-animate overflow-hidden">
 
             {/* Modal Header */}

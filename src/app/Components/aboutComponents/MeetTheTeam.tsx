@@ -39,7 +39,7 @@ const MeetTheTeam: React.FC = () => {
         </p>
       </div>
 
-      <div ref={containerRef} className="grid gap-8 md:grid-cols-3 m-10">
+      <div ref={containerRef} className="grid gap-8 md:grid-cols-3 m-8 ">
         {/* Leadership & Strategy */}
         <div
           className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out

@@ -32,7 +32,7 @@ const MissionVision: React.FC = () => {
         </h2>
       </div>
 
-      <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-8 m-10">
+      <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-8 m-8">
         {/* Mission */}
         <div
           className={`bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col gap-3 transform transition-all duration-700 ease-out

@@ -30,7 +30,7 @@ export default function AutoPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] bg-black bg-opacity-60 flex items-start md:items-center justify-center p-4 md:p-8 overflow-auto md:overflow-hidden"
+      className="fixed inset-0 z-100 bg-black/50  flex items-start md:items-center justify-center p-4 md:p-8 overflow-auto md:overflow-hidden"
       role="dialog"
       aria-modal="true"
     >

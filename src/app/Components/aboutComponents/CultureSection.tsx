@@ -61,7 +61,7 @@ const CultureSection: React.FC = () => {
         </p>
       </div>
 
-      <div ref={containerRef} className="grid gap-6 md:grid-cols-3 m-10">
+      <div ref={containerRef} className="grid gap-6 md:grid-cols-3 m-8 ">
         <CultureCard
           title="We Code the Future"
           description="By staying ahead of tech trends like AI and Machine Learning, we build solutions designed not just for today, but for the next decade."

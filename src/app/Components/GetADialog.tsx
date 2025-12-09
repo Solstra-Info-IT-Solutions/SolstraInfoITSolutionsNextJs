@@ -94,7 +94,7 @@ const GetQuoteDialog: React.FC = () => {
 
             <div className="relative flex w-full flex-col md:flex-row">
               {/* LEFT PANEL */}
-              <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-6 md:max-w-sm md:px-7 md:py-7">
+              <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-6 md:max-w-sm md:px-7 md:py-7 overflow-y-auto h-screen ">
                 <div>
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-sky-100">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -397,7 +397,7 @@ const GetQuoteDialog: React.FC = () => {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(56,189,248,0.6)] transition hover:translate-y-[1px] hover:shadow-[0_10px_32px_rgba(56,189,248,0.7)] disabled:cursor-not-allowed disabled:opacity-60"
+                      className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-400 to-blue-950 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_5px_10px_rgba(56,189,248,0.6)] transition hover:translate-y-[1px] hover:shadow-[0_6px_12px_rgba(56,189,248,0.7)] disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {submitting ? (
                         <>

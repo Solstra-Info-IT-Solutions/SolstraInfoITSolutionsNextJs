@@ -92,7 +92,7 @@ export default function Herosection() {
                 )}
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 mx-5 bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 rounded-xl">
+                <div className="absolute inset-0  bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 rounded-xl">
                   <div className="max-w-xl">
                     <h1 className="text-3xl  sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                       {slide.title}

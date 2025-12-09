@@ -107,8 +107,8 @@ export default function FooterSection() {
               <div>
                 <p className="text-xs font-bold">HEADQUARTER INDIA</p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  B-11, Behind Genpact Lal Bahadur Nagar, Sector 9<br />
-                  Malviya Nagar, Jaipur, Rajasthan - INDIA 302017
+                  Uday Nagar A Mansarovar<br />
+                  Jaipur, Rajasthan - INDIA 302017
                 </p>
               </div>
             </div>

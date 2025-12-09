@@ -8,16 +8,16 @@ const blogs = [
     date: "06 Dec 2025",
     title:
       "Cross-Platform App Development in 2026: A Strategic Guide for Smart Businesses",
-    href: "https://nextbigtechnology.com/cross-platform-app-development-in-2026-a-strategic-guide-for-smart-businesses/",
-    img: "https://nextbigtechnology.com/wp-content/uploads/2025/12/Cross-Platform-App-Development-in-2025-740x400.jpg",
-    excerpt:
+      href: "/",    
+      img: "https://nextbigtechnology.com/wp-content/uploads/2025/12/Cross-Platform-App-Development-in-2025-740x400.jpg",
+     excerpt:
       "In the ever-evolving digital ecosystem, building mobile apps is no longer about choosing between Android and iOS—it’s...",
   },
   {
     date: "06 Dec 2025",
     title:
       "The Future of Outsourcing: Cloud-Native, Remote Staffing & Hybrid Teams",
-    href: "https://nextbigtechnology.com/the-future-of-outsourcing-cloud-native-remote-staffing-hybrid-teams/",
+    href: "/",
     img: "https://nextbigtechnology.com/wp-content/uploads/2025/12/The-Future-of-Outsourcing-Cloud-Native-Remote-Staffing-Hybrid-Teams-740x400.jpeg",
     excerpt:
       "The world of outsourcing is changing fast, thanks to new tech and shifts in the workforce. Cloud-native...",
@@ -26,7 +26,7 @@ const blogs = [
     date: "06 Dec 2025",
     title:
       "When to Choose Progressive Web Apps (PWA) vs Native vs Hybrid Mobile Apps — Pros & Cons for Startups",
-    href: "https://nextbigtechnology.com/when-to-choose-progressive-web-apps-pwa-vs-native-vs-hybrid-mobile-apps-pros-cons-for-startups/",
+    href: "/",
     img: "https://nextbigtechnology.com/wp-content/uploads/2025/12/Web-Apps-PWA-vs-Native-vs-Hybrid-Mobile-Apps-—-Pros-Cons-for-Startups-740x400.jpeg",
     excerpt:
       "Choosing the right mobile app is key for startups. You have three options: Progressive Web Apps, Native...",
@@ -53,7 +53,7 @@ const BlogSection = () => {
           </div>
 
           <a
-            href="https://nextbigtechnology.com/blog/"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-orange-500 px-6 py-2 text-orange-500 font-semibold hover:bg-orange-500 hover:text-white transition"

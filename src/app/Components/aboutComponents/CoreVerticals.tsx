@@ -41,7 +41,7 @@ const CoreVerticals: React.FC = () => {
       {/* Cards */}
       <div
         ref={ref}
-        className={`grid gap-6 md:gap-8 md:grid-cols-2 px-5 md:px-0 mt-10 transition-all duration-700 m-10 ${
+        className={`grid gap-6 md:gap-8 md:grid-cols-2 px-5 md:px-0 mt-10 transition-all duration-700 lg:m-8 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
