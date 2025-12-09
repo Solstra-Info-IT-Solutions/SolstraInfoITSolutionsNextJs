@@ -72,7 +72,7 @@ export default function HomePage() {
 
       {/* 1 */}
       <ServiceSection
-        title="Web Servicese"
+        title="Web Services"
         subtitle="Building Your Digital Foundation for the Future."
         description="At Solstra Info IT Solutions, we don't just build websites; we create powerful, scalable web
                     platforms that drive business growth. Whether you're a startup needing a launchpad or an
