@@ -200,3 +200,7 @@ body {
     stroke-dashoffset: 0;
   }
 }
+/* Force light mode */
+body {
+  @apply bg-white text-black;
+}
