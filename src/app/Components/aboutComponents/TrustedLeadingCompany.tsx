@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-// Import Autoplay from modules
 import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper/types";   // ⭐ TypeScript Fix
 
 function TrustedLeadingCompany() {
-  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null); // ⭐ Type added
 
-  // * trusted brand logo for dynamic rendering
   const logos = [
     "/brand-1.png",
     "/brand-2.png",
@@ -25,25 +24,14 @@ function TrustedLeadingCompany() {
   return (
     <section className="mb-16">
       <div>
-        
-        {/* //*header */}
-        {/* <div className="space-y-2 text-center ">
-         
-           <h2 className="text-4xl md:text-5xl lg:text-6xl font-poppins text-center font-normal  mb-6 mt-10">
-         Trusted by <span className="font-semibold text-[#E28217]">  Leading Companies</span>
-      </h2>
-      
-          <p className="text-xl mb-10 mt-10">Join thousands of professionals working at top organizations</p>
-        </div> */}
-
         <div
           className="py-12"
-          onMouseEnter={() => swiperInstance?.autoplay.stop()}
-          onMouseLeave={() => swiperInstance?.autoplay.start()}
+          onMouseEnter={() => swiperInstance?.autoplay?.stop()}    // ⭐ Safe access
+          onMouseLeave={() => swiperInstance?.autoplay?.start()}   // ⭐ Safe access
           style={{ width: "100%", overflow: "hidden" }}
         >
           <Swiper
-            onSwiper={setSwiperInstance} // Get the swiper instance here
+            onSwiper={(swiper) => setSwiperInstance(swiper)}        // ⭐ Set typed instance
             modules={[Autoplay]}
             slidesPerView={5}
             spaceBetween={30}
@@ -54,9 +42,7 @@ function TrustedLeadingCompany() {
               disableOnInteraction: false,
             }}
             freeMode={true}
-            // freeModeMomentum={false}
           >
-            {/* //! rendering the trusted brand here */}
             {logos.map((logo, index) => (
               <SwiperSlide
                 key={index}
@@ -70,13 +56,11 @@ function TrustedLeadingCompany() {
                   src={logo}
                   alt={`Logo ${index}`}
                   style={{ maxHeight: "80px" }}
-                  // className="max-sm:w-45"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-
       </div>
     </section>
   );

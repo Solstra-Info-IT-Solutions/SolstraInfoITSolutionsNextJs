@@ -44,7 +44,7 @@ export default function Herosection() {
   {/* Previous Slide */}
         <button
             onClick={prevSlide}
-            className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-r-2xl h-20 w-20  hover:bg-gray-200 transition items-center justify-center cursor-pointer "
+            className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-full h-20 w-20  hover:bg-gray-200 transition items-center justify-center cursor-pointer "
              >
             <img src="/smalll-left-arrow.png" alt="Previous" className="w-6 h-6"/>
         </button>
@@ -52,7 +52,7 @@ export default function Herosection() {
   {/* Next Slide */}
          <button
               onClick={nextSlide}
-              className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-l-2xl h-20 w-20 hover:bg-gray-200 transition items-center justify-center  cursor-pointer"
+              className="hidden sm:flex pointer-events-auto bg-white text-black shadow-md p-3 rounded-full h-20 w-20 hover:bg-gray-200 transition items-center justify-center  cursor-pointer"
                >    
              <img src="/icons8-right-arrow-24.png" alt="Next" className="w-6 h-6"/>
           </button>
