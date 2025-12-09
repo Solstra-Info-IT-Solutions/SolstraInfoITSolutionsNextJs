@@ -28,6 +28,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/app/Components/GetADialog.jsx"  ],
   "exclude": ["node_modules"]
 }

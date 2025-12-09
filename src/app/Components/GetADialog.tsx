@@ -28,12 +28,8 @@ const initialFormState: FormState = {
   termsAccepted: false,
 };
 
-type GetQuoteDialogProps = {
-  open: boolean;
-  onClose: () => void;
-};
-
-const GetQuoteDialog: React.FC<GetQuoteDialogProps> = ({ open, onClose }) => {
+const GetQuoteDialog: React.FC = () => {
+  const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState<FormState>(initialFormState);
 
@@ -60,123 +56,378 @@ const GetQuoteDialog: React.FC<GetQuoteDialogProps> = ({ open, onClose }) => {
 
     setSubmitting(true);
 
+    // 👉 Yaha API call kar sakte ho (Next.js API route, email service, CRM, etc.)
     console.log("Quote form submitted:", form);
 
     setTimeout(() => {
       setSubmitting(false);
       setForm(initialFormState);
-      onClose(); // <- use onClose prop to close modal
+      setOpen(false);
       alert("Thank you! Your quote request has been submitted.");
     }, 900);
   };
 
-  if (!open) return null; // render only if open
-
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-md animate-fadeIn"
-      onClick={onClose}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="relative mx-4 flex w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 shadow-[0_24px_80px_rgba(15,23,42,0.85)] backdrop-blur-2xl animate-scaleIn"
+    <>
+      {/* TRIGGER BUTTON */}
+      <button
+        onClick={() => setOpen(true)}
+        className="group relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(37,99,235,0.5)] transition-all hover:translate-y-[1px] hover:shadow-[0_10px_30px_rgba(37,99,235,0.6)]"
       >
-        {/* GRADIENT AURA */}
-        <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/25 via-transparent to-purple-500/25" />
+        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-xs">
+          ✨
+        </span>
+        <span className="flex text-sm">Get a Premium Quote</span>
+        <span className="pointer-events-none absolute -inset-px rounded-full border border-white/40 opacity-0 transition-opacity group-hover:opacity-100" />
+      </button>
 
-        <div className="relative flex w-full flex-col md:flex-row">
-          {/* LEFT PANEL */}
-          <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-6 md:max-w-sm md:px-7 md:py-7">
-            <div>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-sky-100">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                100% Free Consultation – No upfront charges
-              </div>
+      {/* OVERLAY */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-md animate-fadeIn overflow-y-auto py-6"
+          onClick={() => setOpen(false)}
+        >
+          {/* DIALOG CARD */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative mx-4 flex w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-slate-900/80 shadow-[0_24px_80px_rgba(15,23,42,0.85)] backdrop-blur-2xl animate-scaleIn"
+          >
+            {/* GRADIENT AURA */}
+            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/25 via-transparent to-purple-500/25" />
 
-              <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-                Shubham IT Consultancy
-              </h2>
-              <p className="mt-2 text-xs text-slate-200/80 md:text-sm">
-                Tailored IT, Product & Consulting solutions to transform your
-                business with modern technology and reliable execution.
-              </p>
+            <div className="relative flex w-full flex-col md:flex-row">
+              {/* LEFT PANEL */}
+              <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-6 md:max-w-sm md:px-7 md:py-7">
+                <div>
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-sky-100">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    100% Free Consultation – No upfront charges
+                  </div>
 
-              {/* STATS */}
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                <div className="rounded-2xl bg-white/5 p-3 text-center">
-                  <div className="text-sm font-semibold text-white">50+</div>
-                  <div className="mt-1 text-[11px] text-slate-300">
-                    Projects Delivered
+                  <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                    Shubham IT Consultancy
+                  </h2>
+                  <p className="mt-2 text-xs text-slate-200/80 md:text-sm">
+                    Tailored IT, Product & Consulting solutions to transform your
+                    business with modern technology and reliable execution.
+                  </p>
+
+                  {/* STATS */}
+                  <div className="mt-5 grid grid-cols-3 gap-3">
+                    <div className="rounded-2xl bg-white/5 p-3 text-center">
+                      <div className="text-sm font-semibold text-white">
+                        50+
+                      </div>
+                      <div className="mt-1 text-[11px] text-slate-300">
+                        Projects Delivered
+                      </div>
+                    </div>
+                    <div className="rounded-2xl bg-white/5 p-3 text-center">
+                      <div className="text-sm font-semibold text-white">
+                        4.9★
+                      </div>
+                      <div className="mt-1 text-[11px] text-slate-300">
+                        Client Rating
+                      </div>
+                    </div>
+                    <div className="rounded-2xl bg-white/5 p-3 text-center">
+                      <div className="text-sm font-semibold text-white">
+                        7+
+                      </div>
+                      <div className="mt-1 text-[11px] text-slate-300">
+                        Years Experience
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* TAGS */}
+                  <div className="mt-5 space-y-2">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
+                      We specialise in
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
+                        Mobile & Web Apps
+                      </span>
+                      <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
+                        Product Development
+                      </span>
+                      <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
+                        IT Consulting
+                      </span>
+                      <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
+                        Automation & Integrations
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div className="rounded-2xl bg-white/5 p-3 text-center">
-                  <div className="text-sm font-semibold text-white">4.9★</div>
-                  <div className="mt-1 text-[11px] text-slate-300">Client Rating</div>
+
+                <div className="mt-6 flex items-center gap-2 text-[11px] text-slate-300">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-[13px] text-emerald-300">
+                    ✓
+                  </span>
+                  <p>We respond within 24 working hours with a customised quote.</p>
                 </div>
-                <div className="rounded-2xl bg-white/5 p-3 text-center">
-                  <div className="text-sm font-semibold text-white">7+</div>
-                  <div className="mt-1 text-[11px] text-slate-300">Years Experience</div>
+              </aside>
+
+              {/* RIGHT PANEL – FORM */}
+              <section className="flex-1 bg-slate-950/80 px-5 py-5 md:px-7 md:py-7 
+  max-h-[90vh] overflow-y-auto scrollbar-hide">
+                {/* Header row */}
+                <div className="mb-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      Share your project details
+                    </h3>
+                    <p className="mt-1 text-xs text-slate-400">
+                      The more clear you are, the better we can estimate timelines
+                      and budget for you.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="rounded-full bg-slate-800/70 px-2 py-1 text-slate-300 hover:bg-slate-700 hover:text-white"
+                  >
+                    ✕
+                  </button>
                 </div>
-              </div>
 
-              {/* TAGS */}
-              <div className="mt-5 space-y-2">
-                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
-                  We specialise in
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
-                    Mobile & Web Apps
-                  </span>
-                  <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
-                    Product Development
-                  </span>
-                  <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
-                    IT Consulting
-                  </span>
-                  <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
-                    Automation & Integrations
-                  </span>
-                </div>
-              </div>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Name / Email / Phone / Company */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Full Name <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        onChange={handleChange}
+                        value={form.name}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Email Address <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        onChange={handleChange}
+                        value={form.email}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                        placeholder="example@company.com"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Phone Number <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        onChange={handleChange}
+                        value={form.phone}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                        placeholder="+91-XXXXXXXXXX"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Company (Optional)
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        onChange={handleChange}
+                        value={form.company}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                        placeholder="Your company name"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Service / Budget */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Services Required <span className="text-red-400">*</span>
+                      </label>
+                      <select
+                        name="service"
+                        required
+                        onChange={handleChange}
+                        value={form.service}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="it-consulting">IT Consulting</option>
+                        <option value="product-development">
+                          Product Development
+                        </option>
+                        <option value="mobile-web-apps">
+                          Mobile / Web App Development
+                        </option>
+                        <option value="automation">Automation & Workflows</option>
+                        <option value="integration">
+                          API / Third-party Integrations
+                        </option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Estimated Budget <span className="text-red-400">*</span>
+                      </label>
+                      <select
+                        name="budget"
+                        required
+                        onChange={handleChange}
+                        value={form.budget}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                      >
+                        <option value="">Select range</option>
+                        <option value="25k-50k">₹25,000 – ₹50,000</option>
+                        <option value="50k-1lakh">₹50,000 – ₹1,00,000</option>
+                        <option value="1lakh-3lakh">₹1,00,000 – ₹3,00,000</option>
+                        <option value="3lakh-plus">₹3,00,000+</option>
+                        <option value="not-sure">Not sure yet</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Timeline / Project Type */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Project Timeline
+                      </label>
+                      <select
+                        name="timeline"
+                        onChange={handleChange}
+                        value={form.timeline}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                      >
+                        <option value="">When do you plan to start?</option>
+                        <option value="immediate">Immediately</option>
+                        <option value="1-month">Within 1 month</option>
+                        <option value="1-3-months">Within 1–3 months</option>
+                        <option value="3-months-plus">After 3 months</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-medium text-slate-200">
+                        Project Type
+                      </label>
+                      <select
+                        name="projectType"
+                        onChange={handleChange}
+                        value={form.projectType}
+                        className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                      >
+                        <option value="">Select type</option>
+                        <option value="new-product">
+                          New Product / Greenfield
+                        </option>
+                        <option value="modernization">
+                          Existing System Modernization
+                        </option>
+                        <option value="integration">Integration Project</option>
+                        <option value="consulting-only">
+                          Consulting Only (No Dev)
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* DETAILS */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-medium text-slate-200">
+                      Project Details / Requirements{" "}
+                      <span className="text-red-400">*</span>
+                    </label>
+                    <textarea
+                      name="details"
+                      rows={4}
+                      required
+                      onChange={handleChange}
+                      value={form.details}
+                      className="w-full rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-white outline-none ring-0 transition placeholder:text-slate-500 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/40"
+                      placeholder="Tell us about your idea, tech stack (if any), key features, target users, and any deadlines you have in mind..."
+                    />
+                  </div>
+
+                  {/* TERMS */}
+                  <div className="flex items-start gap-2 text-[11px] text-slate-300">
+                    <input
+                      type="checkbox"
+                      name="termsAccepted"
+                      checked={form.termsAccepted}
+                      onChange={handleChange}
+                      className="mt-0.5 h-4 w-4 rounded border-slate-500 bg-slate-900 text-sky-500 focus:ring-sky-500/40"
+                    />
+                    <p>
+                      I agree to the{" "}
+                      <a
+                        href="/terms"
+                        className="font-medium text-sky-400 hover:underline"
+                      >
+                        Terms &amp; Conditions
+                      </a>{" "}
+                      and{" "}
+                      <a
+                        href="/privacy"
+                        className="font-medium text-sky-400 hover:underline"
+                      >
+                        Privacy Policy
+                      </a>
+                      . <span className="text-red-400">*</span>
+                    </p>
+                  </div>
+
+                  {/* CTA + INFO */}
+                  <div className="space-y-3">
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(56,189,248,0.6)] transition hover:translate-y-[1px] hover:shadow-[0_10px_32px_rgba(56,189,248,0.7)] disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {submitting ? (
+                        <>
+                          <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/50 border-t-transparent" />
+                          Processing…
+                        </>
+                      ) : (
+                        <>
+                          <span>Request a Custom Quote</span>
+                          <span className="text-lg">➜</span>
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-[11px] text-slate-400">
+                      No spam. No sharing your details with third parties. We use
+                      this information only to understand your project and contact
+                      you back.
+                    </p>
+                  </div>
+                </form>
+              </section>
             </div>
-
-            <div className="mt-6 flex items-center gap-2 text-[11px] text-slate-300">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-[13px] text-emerald-300">
-                ✓
-              </span>
-              <p>We respond within 24 working hours with a customised quote.</p>
-            </div>
-          </aside>
-
-          {/* RIGHT PANEL – FORM */}
-          <section className="flex-1 bg-slate-950/80 px-5 py-5 md:px-7 md:py-7">
-            {/* Header row */}
-            <div className="mb-4 flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-lg font-semibold text-white">
-                  Share your project details
-                </h3>
-                <p className="mt-1 text-xs text-slate-400">
-                  The more clear you are, the better we can estimate timelines
-                  and budget for you.
-                </p>
-              </div>
-              <button
-                onClick={onClose}
-                className="rounded-full bg-slate-800/70 px-2 py-1 text-slate-300 hover:bg-slate-700 hover:text-white"
-              >
-                ✕
-              </button>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* ...rest of form remains exactly the same */}
-            </form>
-          </section>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

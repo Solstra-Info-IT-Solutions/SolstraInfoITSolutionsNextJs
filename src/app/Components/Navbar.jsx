@@ -41,7 +41,7 @@ export default function Navbar({ type = "home", icons = [] }) {
 
         {/* --- CENTER: MENU (Desktop) --- */}
         <nav className="hidden xl:flex items-center justify-center">
-          <ul className="flex gap-8 text-[15px] font-semibold text-gray-600 uppercase tracking-wide">
+          <ul className="flex gap-5 text-[15px] font-semibold text-gray-600 uppercase tracking-wide">
             {menuItems.map((item, index) => (
               <li
                 key={item.name}
@@ -64,7 +64,7 @@ export default function Navbar({ type = "home", icons = [] }) {
         {/* --- RIGHT: BUTTONS & ACTIONS --- */}
         <div className="hidden md:flex items-center gap-4">
           {/* 1. Get a Quote Button */}
-          <button
+          {/* <button
             onClick={() => setIsQuoteModalOpen(true)}
             className="
             bg-orange-500 hover:bg-orange-600 
@@ -86,11 +86,11 @@ export default function Navbar({ type = "home", icons = [] }) {
               "
           >
             Get a Quote
-          </button>
+          </button> */}
           <GetQuoteDialog
-  open={isQuoteModalOpen}
-  onClose={() => setIsQuoteModalOpen(false)}
-/>
+           open={isQuoteModalOpen}
+           onClose={() => setIsQuoteModalOpen(false)}
+            />
 
 
           {/* 2. Hire Us Button */}

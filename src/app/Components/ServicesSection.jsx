@@ -30,38 +30,53 @@ export default function Services() {
     },
   ];
 
-  const [index, setIndex] = useState(0);
+  // 🔥 Infinite smooth loop → repeat array 3 times
+  const infiniteItems = [...items, ...items, ...items];
+
+  const [index, setIndex] = useState(items.length); // start middle
   const [cardsPerView, setCardsPerView] = useState(1);
 
-  // Update cardsPerView based on window width
+  // Responsive
   useEffect(() => {
     const update = () => {
-      if (window.innerWidth < 640) setCardsPerView(1); // mobile
-      else if (window.innerWidth < 1024) setCardsPerView(2); // tablet
-      else setCardsPerView(3); // desktop
+      if (window.innerWidth < 640) setCardsPerView(1);
+      else if (window.innerWidth < 1024) setCardsPerView(2);
+      else setCardsPerView(3);
     };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  // Next Slide
   const next = () => {
-    setIndex((prev) => (prev + 1) % items.length);
+    setIndex((prev) => prev + 1);
   };
 
+  // Prev Slide
   const prev = () => {
-    setIndex((prev) => (prev - 1 + items.length) % items.length);
+    setIndex((prev) => prev - 1);
   };
 
-  // Auto slider only on mobile
+  // Auto slide only on mobile
   useEffect(() => {
     if (cardsPerView === 1) {
-      const interval = setInterval(next, 3000); // every 3 seconds
+      const interval = setInterval(next, 3000);
       return () => clearInterval(interval);
     }
-  }, [cardsPerView]); // run effect when cardsPerView changes
+  }, [cardsPerView]);
 
-  const cardWidth = 40 / cardsPerView;
+  const cardWidth =  15/ cardsPerView;
+
+  // Infinite Loop Reset Trick
+  useEffect(() => {
+    if (index >= items.length * 2) {
+      setTimeout(() => setIndex(items.length), 300); // reset silently
+    }
+    if (index <= items.length - 2) {
+      setTimeout(() => setIndex(items.length), 300);
+    }
+  }, [index, items.length]);
 
   return (
     <section className="bg-[#0a3d62] rounded-3xl p-6 sm:p-10 mt-10 m-4 text-white relative">
@@ -74,17 +89,17 @@ export default function Services() {
         Solstra Info IT Solutions provides top-notch Web & Mobile App Solutions.
       </p>
 
-      {/* Arrow buttons */}
+      {/* Buttons */}
       <div className="flex gap-3 absolute right-6 sm:right-10 top-6 sm:top-8 z-10">
         <button
           onClick={prev}
-          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30  transition-transform active:scale-95 cursor-pointer"
+          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition-transform active:scale-95 cursor-pointer"
         >
           ←
         </button>
         <button
           onClick={next}
-          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30  transition-transform active:scale-95 cursor-pointer"
+          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition-transform active:scale-95 cursor-pointer"
         >
           →
         </button>
@@ -96,10 +111,10 @@ export default function Services() {
           className="flex gap-4 sm:gap-6 transition-transform duration-500"
           style={{
             transform: `translateX(-${index * cardWidth}%)`,
-            width: `${(items.length * 100) / cardsPerView}%`,
+            width: `${(infiniteItems.length * 100) / cardsPerView}%`,
           }}
         >
-          {items.map((item, i) => (
+          {infiniteItems.map((item, i) => (
             <div
               key={i}
               className="bg-white rounded-2xl overflow-hidden relative flex-shrink-0 group"
@@ -109,12 +124,16 @@ export default function Services() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/25">
-                <h3 className="text-lg sm:text-xl font-bold drop-shadow">{item.title}</h3>
-                <p className="text-sm sm:text-base drop-shadow">{item.subtitle}</p>
+                <h3 className="text-lg sm:text-xl font-bold drop-shadow">
+                  {item.title}
+                </h3>
+                <p className="text-sm sm:text-base drop-shadow">
+                  {item.subtitle}
+                </p>
               </div>
             </div>
           ))}

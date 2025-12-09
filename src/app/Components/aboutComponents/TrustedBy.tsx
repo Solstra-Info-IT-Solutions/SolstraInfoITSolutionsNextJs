@@ -32,7 +32,7 @@ const TrustedBy: React.FC = () => {
          Trusted by <span className="font-semibold text-[#E28217]">  Leading Companies</span>
          
       </h2>
-           <p className="mt-3 text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
+           <p className="mt-3 text-black max-w-3xl font-extrabold mx-auto text-sm sm:text-base">
           Trust is earned through consistency. We adhere to strict SLAs and
           deliver quality with the agility of a startup and the reliability of a
           seasoned enterprise partner.

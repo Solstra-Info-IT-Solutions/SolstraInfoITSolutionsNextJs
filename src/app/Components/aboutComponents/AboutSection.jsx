@@ -15,24 +15,40 @@ export default function AboutSection() {
         />
 
         {/* Quote Card */}
-        <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-gradient-to-b from-sky-400 to-blue-600 text-white p-4 sm:p-6 w-[90%] sm:w-[70%] rounded-md shadow-lg">
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed">
-            <span className="text-white text-xl sm:text-2xl align-top mr-1">
-              &#8220;
-            </span>
-            We focus on building long-term partnerships with our clients,
-            supporting them through every challenge and celebrating every success
-            together.
-            <span className="text-white text-xl sm:text-2xl align-top ml-1">
-              &#8221;
-            </span>
-          </p>
+        {/* Quote Card */}
+              <div
+                className="
+                  absolute bottom-2 right-2 sm:bottom-4 sm:right-4
+                  bg-gradient-to-b from-sky-400 to-blue-600 text-white
+                  p-4 sm:p-6 w-[92%] sm:w-[70%]
+                  rounded-xl
 
-          <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base">
-            Shubham Jain{" "}
-            <span className="font-normal">Co-Founder &amp; Managing Director</span>
-          </p>
-        </div>
+                  transition-all duration-500 ease-out
+                  hover:-translate-y-2
+
+                  /* Normal blue glow */
+                  shadow-[0_0_25px_10px_rgba(59,130,246,0.8)]
+
+                  /* Hover glow */
+                  hover:shadow-[0_20px_45px_rgba(30,144,255,0.55)]
+                "
+                aria-label="Quote from Managing Director"
+              >
+                <blockquote className="text-xs sm:text-sm md:text-base leading-relaxed">
+                  <span className="text-white text-xl sm:text-2xl align-top mr-1">&#8220;</span>
+                  We focus on building long-term partnerships with our clients,
+                  supporting them through every challenge and celebrating every success
+                  together.
+                  <span className="text-white text-xl sm:text-2xl align-top ml-1">&#8221;</span>
+                </blockquote>
+
+                <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base">
+                  Shubham Jain{" "}
+                  <span className="font-normal">Co-Founder &amp; Managing Director</span>
+                </p>
+              </div>
+
+
       </div>
 
       {/* RIGHT CONTENT + MISSION & VISION */}

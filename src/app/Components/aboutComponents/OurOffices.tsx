@@ -1,4 +1,9 @@
 "use client";
+import Link from "next/link";
+
+import { IoMdCall } from "react-icons/io";
+import { MdLocationPin } from "react-icons/md";
+import { IoIosMail } from "react-icons/io";
 
 export default function OurOffices() {
   const offices = [
@@ -66,9 +71,22 @@ export default function OurOffices() {
 
             {/* Icons */}
             <div className="flex gap-4 mt-3 text-[#06114f] text-lg cursor-pointer">
-              <span>📍</span>
-              <span>📞</span>
-              <span>✉️</span>
+
+              {/* Location */}
+              <Link href="https://maps.google.com" target="_blank">
+              <MdLocationPin className="w-6 h-6"/>
+              </Link>
+
+              {/* Phone */}
+              <Link href="tel:+919999999999">
+              <IoMdCall className="w-6 h-6" />
+              </Link>
+
+              {/* Email */}
+              <Link href="mailto:example@gmail.com">
+              <IoIosMail className="w-6 h-6" />
+              </Link>
+
             </div>
           </div>
         ))}

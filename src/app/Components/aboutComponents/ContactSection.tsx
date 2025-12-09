@@ -1,4 +1,5 @@
 // Components/aboutComponents/ContactSection.tsx
+import Link from "next/link";
 export default function ContactSection() {
   return (
     <section className="relative mt-20">
@@ -54,12 +55,19 @@ export default function ContactSection() {
 
             {/* BUTTONS */}
             <div className="mt-8 flex gap-4">
-              <button className="bg-white text-blue-700 px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition">
+              <Link
+                href="/contact"
+                className="bg-white text-blue-700 px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition"
+              >
                 Get A Quote
-              </button>
-              <button className="text-white underline font-medium hover:text-gray-300 transition">
+              </Link>
+
+              <Link
+                href="/contact"
+                className="text-white underline font-medium hover:text-gray-300 transition py-2"
+              >
                 Get Started &gt;
-              </button>
+              </Link>
             </div>
           </div>
 
