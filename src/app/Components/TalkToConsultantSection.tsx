@@ -10,24 +10,24 @@ const offices = [
      img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
     address1: "21 Benalia Cres Marayong",
     address2: "2148",
-    phone: "+61 478053599",
-    email: "sales@nextbigtechnology.com",
+    phone: "+91 9001638396",
+    email: "sjain01ajmer@gmail.com ",
   },
   {
     country: "Jaipur",
     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
-    address1: "18 Tuesday Market Place,",
-    address2: "Norfolk, PE30 1JW",
-    phone: "+44 01553600090",
-    email: "sales@nextbigtechnology.com",
+    address1: "Uday Nagar",
+    address2: "A Mansarovar",
+    phone: "+91 9001638396",
+    email: "sjain01ajmer@gmail.com ",
   },
   {
     country: "Indore",
     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
     address1: "Sikar Road, Jaipur",
     address2: "Rajasthan",
-    phone: "+91 9950726570",
-    email: "sales@nextbigtechnology.com",
+    phone: "+91 9001638396",
+    email: "sjain01ajmer@gmail.com ",
   },
 ];
 
@@ -187,7 +187,10 @@ export default function TalkToConsultantSection() {
                     </div>
 
                     <p className="text-sm mt-2 leading-snug">
-                      {office.address1} <br /> {office.address2}
+                      {office.address1}
+                      <br/>{office.address2}
+                       <br /> {office.phone}
+                       <br/>{office.email}
                     </p>
 
                     <div className="flex gap-4 mt-2 text-gray-600 text-lg">
