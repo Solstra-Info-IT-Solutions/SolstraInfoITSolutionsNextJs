@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-2 px-4 sm:px-6 mt-20">
+    <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-1 px-4 sm:px-6 mt-10">
       {/* LEFT IMAGE BLOCK */}
       <div className="relative w-full">
         {/* Main Image */}
@@ -27,7 +27,7 @@ export default function AboutSection() {
                   hover:-translate-y-2
 
                   /* Normal blue glow */
-                  shadow-[0_0_25px_10px_rgba(59,130,246,0.8)]
+                  shadow-[0_0_5px_8px_rgba(59,130,246,0.8)]
 
                   /* Hover glow */
                   hover:shadow-[0_20px_45px_rgba(30,144,255,0.55)]
@@ -35,11 +35,9 @@ export default function AboutSection() {
                 aria-label="Quote from Managing Director"
               >
                 <blockquote className="text-xs sm:text-sm md:text-base leading-relaxed">
-                  <span className="text-white text-xl sm:text-2xl align-top mr-1">&#8220;</span>
-                  We focus on building long-term partnerships with our clients,
-                  supporting them through every challenge and celebrating every success
-                  together.
-                  <span className="text-white text-xl sm:text-2xl align-top ml-1">&#8221;</span>
+                  <span className="text-white text-base sm:text-xl align-top mr-1">"We focus on building long-term partnerships with our clients, supporting them through every challenge and celebrating every success
+                  together".</span>
+                  
                 </blockquote>
 
                 <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base">
@@ -55,7 +53,7 @@ export default function AboutSection() {
       <div className="flex flex-col gap-6">
         {/* About Content */}
         <div>
-          <p className="text-blue-600 uppercase tracking-wide text-2xl font-extrabold sm:text-base">
+          <p className="text-blue-600 uppercase tracking-wide text-2xl font-extrabold sm:text-2xl">
             About Solstra Info IT Solutions
           </p>
 

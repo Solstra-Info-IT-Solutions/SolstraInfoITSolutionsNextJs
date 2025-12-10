@@ -19,12 +19,7 @@ export default function OurOffices() {
       address1: "21 benalia Cres Marayong",
       address2: "2148",
     },
-    {
-      country: "UK",
-      image: "/usa.png.webp",
-      address1: "18 Tuesday Market Place,",
-      address2: "King's Lynn, Norfolk, PE30 1JW",
-    },
+   
     {
       country: "INDIA",
       image: "/india.png.webp",
@@ -45,12 +40,12 @@ export default function OurOffices() {
         </p>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 ">
         {offices.map((office, index) => (
           <div key={index} className="text-left">
             
             {/* Image */}
-            <div className="rounded-xl overflow-hidden shadow-sm bg-gray-100">
+            <div className="rounded-xl overflow-hidden shadow-sm  bg-gray-100">
               <img
                 src={office.image}
                 alt={`${office.country} office`}
@@ -60,17 +55,17 @@ export default function OurOffices() {
             </div>
 
             {/* Content */}
-            <h3 className="text-xl font-bold mt-4 text-[#06114f]">
+            <h3 className="text-xl font-bold mt-4 justify-center flex text-[#06114f]">
               {office.country}
             </h3>
 
-            <p className="text-sm text-gray-600 leading-relaxed mt-2">
+            <p className="text-sm text-gray-600 justify-center flex leading-relaxed mt-2">
               {office.address1} <br />
               {office.address2}
             </p>
 
             {/* Icons */}
-            <div className="flex gap-4 mt-3 text-[#06114f] text-lg cursor-pointer">
+            <div className="flex gap-4 mt-3 text-[#06114f] justify-center flex text-lg cursor-pointer">
 
               {/* Location */}
               <Link href="https://maps.google.com" target="_blank">

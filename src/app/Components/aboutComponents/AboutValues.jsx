@@ -29,13 +29,13 @@ export default function AboutValues() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-1">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6  ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 h-auto">
 
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`group bg-white p-6 sm:p-8 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition-all duration-300 ${card.hoverBg}`}
+            className={`group bg-white p-6 sm:p-8 rounded-xl shadow hover:shadow-xl shadow-black/40 transform hover:scale-105 transition-all duration-300 ${card.hoverBg}`}
           >
             <Image
               src={card.img}

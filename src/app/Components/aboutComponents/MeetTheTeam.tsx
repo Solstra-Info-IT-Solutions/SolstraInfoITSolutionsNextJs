@@ -23,7 +23,7 @@ const MeetTheTeam: React.FC = () => {
   }, []);
 
   return (
-    <section className="space-y-6">
+    <section className="py-10">
       <div className="text-center">
         <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
           Meet <span className="font-semibold text-[#E28217]">The Team</span>
@@ -39,10 +39,10 @@ const MeetTheTeam: React.FC = () => {
         </p>
       </div>
 
-      <div ref={containerRef} className="grid gap-8 md:grid-cols-3 m-8 ">
+      <div ref={containerRef} className="grid gap-8 md:grid-cols-3 m-2 lg:m-8 ">
         {/* Leadership & Strategy */}
         <div
-          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl p-6 border border-gray-100 flex flex-col gap-3 shadow-black/50 transform transition-all duration-700 ease-out
             ${visibleCards[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           style={{ transitionDelay: "100ms" }}
         >
@@ -72,7 +72,7 @@ const MeetTheTeam: React.FC = () => {
 
         {/* Tech Innovators */}
         <div
-          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border shadow-black/50 border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
             ${visibleCards[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           style={{ transitionDelay: "200ms" }}
         >
@@ -104,7 +104,7 @@ const MeetTheTeam: React.FC = () => {
 
         {/* Talent Scouts */}
         <div
-          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border shadow-black/50 border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
             ${visibleCards[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           style={{ transitionDelay: "300ms" }}
         >

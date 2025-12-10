@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative flex items-center justify-center h-full">
         <h1 className="text-white text-4xl md:text-5xl font-bold tracking-wide">
-          ABOUT Solstra
+          About SOLSTRA
         </h1>
       </div>
     </section>

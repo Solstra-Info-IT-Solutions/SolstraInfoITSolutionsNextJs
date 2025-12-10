@@ -11,7 +11,7 @@ type CultureCardProps = {
 const CultureCard: React.FC<CultureCardProps> = ({ title, description, visible, delay = 0 }) => {
   return (
     <div
-      className={`bg-white rounded-2xl shadow-md hover:shadow-xl  p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+      className={`bg-white rounded-2xl shadow-md  shadow-black/40 hover:shadow-xl  p-6 border border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -61,7 +61,7 @@ const CultureSection: React.FC = () => {
         </p>
       </div>
 
-      <div ref={containerRef} className="grid gap-6 md:grid-cols-3 m-8 ">
+      <div ref={containerRef} className="grid gap-6 md:grid-cols-3 m-4 ">
         <CultureCard
           title="We Code the Future"
           description="By staying ahead of tech trends like AI and Machine Learning, we build solutions designed not just for today, but for the next decade."

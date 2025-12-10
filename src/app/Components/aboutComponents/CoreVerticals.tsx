@@ -41,13 +41,13 @@ const CoreVerticals: React.FC = () => {
       {/* Cards */}
       <div
         ref={ref}
-        className={`grid gap-6 md:gap-8 md:grid-cols-2 px-5 md:px-0 mt-10 transition-all duration-700 lg:m-8 ${
+        className={`grid gap-6 md:gap-8 md:grid-cols-2 px-5 md:px-0 mt-10 transition-all   duration-700 lg:m-8 md:m-3   ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         {/* Technology Arm Card */}
-        <article className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4 ">
-          <header className="flex items-center gap-3">
+        <article className="bg-white rounded-2xl shadow-black/40 shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4 ">
+          <header className="flex items-center gap-3  shadow-black/40">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl">
               💻
             </span>
@@ -66,7 +66,7 @@ const CoreVerticals: React.FC = () => {
             digital transformation, our approach is agile, secure, and scalable.
           </p>
 
-          <div className="space-y-3 text-sm sm:text-base">
+          <div className="space-y-3 text-sm sm:text-base ">
             <div>
               <p className="font-semibold text-gray-900">What We Do:</p>
               <p className="text-gray-700">
@@ -85,7 +85,7 @@ const CoreVerticals: React.FC = () => {
         </article>
 
         {/* Talent Arm Card */}
-        <article className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4 ">
+        <article className="bg-white rounded-2xl  shadow-black/40 shadow-md hover:shadow-xl transition p-6 border border-gray-100 flex flex-col gap-4 ">
           <header className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">
               👥

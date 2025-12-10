@@ -20,11 +20,11 @@ const TrustedBy: React.FC = () => {
          Trusted by <span className="font-semibold text-[#E28217]">  Leading Companies</span>
          
       </h2>
-           <p className="mt-3 text-black max-w-3xl font-extrabold mx-auto text-sm sm:text-base ">
+           <span className="mt-3 text-black max-w-3xl font-extrabold m-4  text-sm sm:text-xl">
           Trust is earned through consistency. We adhere to strict SLAs and
           deliver quality with the agility of a startup and the reliability of a
           seasoned enterprise partner.
-        </p>
+        </span>
           <p className="text-xl mb-10 mt-10">Join thousands of professionals working at top organizations</p>
         </div> 
 

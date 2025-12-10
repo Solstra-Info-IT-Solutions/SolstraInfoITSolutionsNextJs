@@ -55,7 +55,7 @@ function TrustedLeadingCompany() {
                 <img
                   src={logo}
                   alt={`Logo ${index}`}
-                  style={{ maxHeight: "80px" }}
+                  className=" w-40 "
                 />
               </SwiperSlide>
             ))}
