@@ -1,11 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  RiMailLine,
-  RiPhoneLine,
-  RiMapPinLine,
-} from "react-icons/ri";
+import { RiMailLine, RiPhoneLine, RiMapPinLine } from "react-icons/ri";
 import { useState } from "react";
 
 export default function FooterSection() {
@@ -29,7 +25,7 @@ export default function FooterSection() {
     );
 
     if (res.ok) {
-      setStatus("Subscribed successfully!");
+      setStatus("Subscribed successfully!!");
       form.reset();
       setTimeout(() => setStatus(""), 3000);
     } else {
@@ -52,7 +48,8 @@ export default function FooterSection() {
               Subscribe Our Newsletter
             </h2>
             <p className="text-gray-600 mt-1 text-sm sm:text-base">
-              Be the first to stay updated on the latest trends, news, new product features, and events.
+              Be the first to stay updated on the latest trends, news, new
+              product features, and events.
             </p>
           </div>
 
@@ -84,9 +81,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {status && (
-          <p className="text-sm text-green-600 mb-4 ">{status}</p>
-        )}
+        {status && <p className="text-sm text-green-600 mb-4 ">{status}</p>}
 
         {/* ================= NEWSLETTER END ================= */}
 
@@ -117,7 +112,10 @@ export default function FooterSection() {
               </div>
               <div>
                 <p className="text-xs font-bold">SALES</p>
-                <a href="tel:+14155787849" className="text-blue-500 text-sm hover:text-black">
+                <a
+                  href="tel:+14155787849"
+                  className="text-blue-500 text-sm hover:text-black"
+                >
                   +91-9001638396
                 </a>
                 <br />
@@ -130,7 +128,10 @@ export default function FooterSection() {
               </div>
               <div>
                 <p className="text-xs font-bold">HR</p>
-                <a href="tel:+911414107667" className="text-blue-500 text-sm hover:text-black">
+                <a
+                  href="tel:+911414107667"
+                  className="text-blue-500 text-sm hover:text-black"
+                >
                   +91-9001638396
                 </a>
                 <br />
@@ -144,7 +145,8 @@ export default function FooterSection() {
               <div>
                 <p className="text-xs font-bold">HEADQUARTER INDIA</p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  Uday Nagar A Mansarovar<br />
+                  Uday Nagar A Mansarovar
+                  <br />
                   Jaipur, Rajasthan - INDIA 302017
                 </p>
               </div>
@@ -185,9 +187,15 @@ export default function FooterSection() {
                 { label: "Healthcare", href: "/industries/healthcare" },
                 { label: "Event & Tickets", href: "/industries/event-tickets" },
                 { label: "Travel & Tours", href: "/industries/travel-tours" },
-                { label: "Ecommerce & Retail", href: "/industries/ecommerce-retail" },
+                {
+                  label: "Ecommerce & Retail",
+                  href: "/industries/ecommerce-retail",
+                },
                 { label: "Auction", href: "/industries/auction" },
-                { label: "Food & Restaurant", href: "/industries/food-restaurant" },
+                {
+                  label: "Food & Restaurant",
+                  href: "/industries/food-restaurant",
+                },
               ].map((link, i) => (
                 <li key={i}>
                   <Link
@@ -206,9 +214,15 @@ export default function FooterSection() {
             <h3 className="text-lg font-semibold mb-4">Our services</h3>
             <ul className="space-y-2 text-sm">
               {[
-                { label: "Mobile Application Development", href: "/services/mobile-app" },
+                {
+                  label: "Mobile Application Development",
+                  href: "/services/mobile-app",
+                },
                 { label: "ServiceNow", href: "/services/servicenow" },
-                { label: "Blockchain Development", href: "/services/blockchain" },
+                {
+                  label: "Blockchain Development",
+                  href: "/services/blockchain",
+                },
                 { label: "POS Development Solution", href: "/services/pos" },
                 { label: "AI Development", href: "/services/ai" },
                 { label: "ICO Development", href: "/services/ico" },
@@ -230,22 +244,52 @@ export default function FooterSection() {
 
         {/* SOCIAL ICONS */}
         <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 mt-10">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
             <img src="/facebook.png" alt="Facebook" className="w-8 h-8" />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
             <img src="/youtube.png" alt="YouTube" className="w-8 h-8" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
             <img src="/twitter.png" alt="Twitter" className="w-8 h-8" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
             <img src="/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
           </a>
-          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+          <a
+            href="https://pinterest.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
             <img src="/pinterest.png" alt="Pinterest" className="w-8 h-8" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
             <img src="/instagram.png" alt="Instagram" className="w-8 h-8" />
           </a>
         </div>
@@ -256,13 +300,22 @@ export default function FooterSection() {
             &copy; 2025 Solstra Info IT Solution LLP. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            <Link href="/LegalPolices" className="text-gray-500 hover:text-black text-sm">
+            <Link
+              href="/LegalPolices"
+              className="text-gray-500 hover:text-black text-sm"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-gray-500 hover:text-black text-sm">
+            <Link
+              href="/terms"
+              className="text-gray-500 hover:text-black text-sm"
+            >
               Terms of Service
             </Link>
-            <Link href="/refund-policy" className="text-gray-500 hover:text-black text-sm">
+            <Link
+              href="/refund-policy"
+              className="text-gray-500 hover:text-black text-sm"
+            >
               Refund Policy
             </Link>
           </div>
