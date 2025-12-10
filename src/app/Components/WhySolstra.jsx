@@ -25,7 +25,7 @@ export default function WhySolstra() {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
       {/* LEFT CONTENT */}
       <div
         ref={ref}
@@ -65,7 +65,7 @@ export default function WhySolstra() {
       <div className="flex justify-center items-center">
         <img
           src="/why-solstra-info-it-solutions-home-page.png"
-          className="w-[280px] h-[556px] object-cover rounded-[50%] sm:rounded-[150px]"
+          className="w-[280px] h-[556px] object-cover rounded-[50%] rounded-[150px]"
           alt="Technology Illustration"
         />
       </div>

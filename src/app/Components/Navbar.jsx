@@ -4,12 +4,21 @@ import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import GetQuoteDialog from "./GetADialog";
+import { usePathname } from "next/navigation";
+import HireUsModal from "./hireuspopup";
 
 export default function Navbar({ type = "home", extraIcons = [] }) {
   const [open, setOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const router = useRouter();
+
+  // navbar color changes
+  const pathname = usePathname();
+    const isActive = (path) =>
+    pathname === path
+      ? "text-orange-500 border-b-2 border-orange-500 pb-1"
+      : "text-black hover:text-orange-500";
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -46,8 +55,8 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                   key={item.name}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  className="relative cursor-pointer hover:text-orange-500 transition-colors duration-200"
                   onClick={() => router.push(item.path)}
+                  className={`${isActive(item.path)} relative cursor-pointer hover:text-orange-500 transition-colors duration-200`}
                 >
                   {item.name}
                   <span
@@ -76,12 +85,14 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
           <GetQuoteDialog open={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
 
-          <button
+          {/* <button
             className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
             onClick={() => setIsQuoteModalOpen(true)}
           >
             Hire Us
-          </button>
+          </button> */}
+
+          <HireUsModal />
 
           {/* CALL ICON */}
           <div
@@ -116,7 +127,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                         {/* Phone */}
                         <div className="flex items-start gap-2 cursor-pointer">
                           <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                            <img src="/telephone.png" className="w-6 h-6" />
+                            <img src="/blackcallicons.png" className="w-6 h-6" />
                           </div>
                           <div>
                             <p className="text-xs text-gray-500">INDIA</p>
@@ -129,7 +140,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                         {/* Teams */}
                         <div className="flex items-start gap-2 cursor-pointer">
                           <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                            <img src="/business.png" className="w-6 h-6" />
+                            <img src="/blackteamicons.png" className="w-6 h-6" />
                           </div>
                           <div>
                             <p className="text-xs text-gray-500">Teams</p>
@@ -139,7 +150,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                           </div>
                         </div>
 
-                        {/* Email */}
+                        {/* Email
                         <div className="flex items-start gap-2 cursor-pointer">
                           <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
                             <img src="/emailorange.png" className="w-6 h-6" />
@@ -150,7 +161,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                               sjain01ajmer@gmail.com
                             </p>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
 
                       {/* HR Team */}
@@ -161,7 +172,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
                         <div className="flex items-start gap-2 cursor-pointer">
                           <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                            <img src="/emailorange.png" className="w-6 h-6"  />
+                            <img src="/blackmailicons.png" className="w-6 h-6"  />
                           </div>
                           <div>
                             <p className="text-xs text-gray-500">Email</p>
