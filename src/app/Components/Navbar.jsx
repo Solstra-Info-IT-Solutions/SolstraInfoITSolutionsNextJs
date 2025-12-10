@@ -4,12 +4,8 @@ import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import GetQuoteDialog from "./GetADialog";
-<<<<<<< HEAD
-import HireUsModal from "./HireUsModal/hireuspopup";
-=======
 import { usePathname } from "next/navigation";
 import HireUsModal from "./hireuspopup";
->>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
 
 export default function Navbar({ type = "home", extraIcons = [] }) {
   const [open, setOpen] = useState(false);
@@ -39,7 +35,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
   return (
     <header className="w-full fixed top-0 left-0 bg-white shadow-sm z-50 h-24 font-sans">
       <div className="max-w-[1400px] mx-auto flex justify-between items-center py-4 px-6 h-full">
-
+        
         {/* LOGO */}
         <div className="flex-shrink-0">
           <img
@@ -87,9 +83,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
             </a>
           ))}
 
-          <GetQuoteDialog open={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} /> 
-         
-          <HireUsModal open={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+          <GetQuoteDialog open={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
 
           {/* <button
             className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
@@ -97,11 +91,8 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
           >
             Hire Us
           </button> */}
-<<<<<<< HEAD
-=======
 
           <HireUsModal />
->>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
 
           {/* CALL ICON */}
           <div
@@ -114,37 +105,18 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
             </div>
 
             {/* CALL MODAL */}
-            {isCallModalOpen && (
-              <div
-                className="absolute right-0 top-full mt-3 z-[60]"
-                onClick={(e) => e.stopPropagation()} // modal click se close nahi hoga
-              >
-                <div className="w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+                  {isCallModalOpen && (
+                  <div
+                    className="absolute right-0 top-full mt-3 z-[60]"
+                    onClick={(e) => e.stopPropagation()} // modal click se close nahi hoga
+                  >
+                    <div className="w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4">
 
-                  {/* Header */}
-                  <div className="mb-4 ">
-                    <div className="w-8 h-1 bg-orange-500 rounded-full mb-1"></div>
-                    <h3 className="text-lg font-semibold text-gray-900">Get In Touch</h3>
-                  </div>
-
-                  {/* Sales Team */}
-                  <div className="space-y-4">
-                    <h4 className="text-base font-semibold text-gray-900">
-                      Solstra Sales Team
-                    </h4>
-
-                    {/* Phone */}
-                    <div className="flex items-start gap-2 cursor-pointer">
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                        <img src="/telephone.png" className="w-6 h-6" />
+                      {/* Header */}
+                      <div className="mb-4 ">
+                        <div className="w-8 h-1 bg-orange-500 rounded-full mb-1"></div>
+                        <h3 className="text-lg font-semibold text-gray-900">Get In Touch</h3>
                       </div>
-<<<<<<< HEAD
-                      <div>
-                        <p className="text-xs text-gray-500">INDIA</p>
-                        <p className="text-sm font-semibold text-gray-900">
-                          +91-9001638396
-                        </p>
-=======
 
                       {/* Sales Team */}
                       <div className="space-y-4">
@@ -190,16 +162,8 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                             </p>
                           </div>
                         </div> */}
->>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
                       </div>
-                    </div>
 
-<<<<<<< HEAD
-                    {/* Teams */}
-                    <div className="flex items-start gap-2 cursor-pointer">
-                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                        <img src="/business.png" className="w-6 h-6" />
-=======
                       {/* HR Team */}
                       <div className="space-y-4 pt-4 border-t mt-5">
                         <h4 className="text-base font-semibold text-gray-900">
@@ -217,59 +181,18 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                             </p>
                           </div>
                         </div>
->>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
                       </div>
-                      <div>
-                        <p className="text-xs text-gray-500">Teams</p>
-                        <p className="text-sm font-semibold text-gray-900">
-                          SolstraInfoItsolutions
-                        </p>
-                      </div>
-                    </div>
 
-                    {/* Email */}
-                    <div className="flex items-start gap-2 cursor-pointer">
-                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                        <img src="/emailorange.png" className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500">Email</p>
-                        <p className="text-sm font-semibold text-gray-900">
-                          sjain01ajmer@gmail.com
-                        </p>
-                      </div>
+                      {/* Close Button */}
+                      <button
+                        className="w-full mt-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
+                        onClick={() => setIsCallModalOpen(false)}
+                      >
+                        Close
+                      </button>
                     </div>
                   </div>
-
-                  {/* HR Team */}
-                  <div className="space-y-4 pt-4 border-t mt-5">
-                    <h4 className="text-base font-semibold text-gray-900">
-                      Solstra HR Team
-                    </h4>
-
-                    <div className="flex items-start gap-2 cursor-pointer">
-                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                        <img src="/emailorange.png" className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500">Email</p>
-                        <p className="text-sm font-semibold text-gray-900">
-                          sjain01ajmer@gmail.com
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Close Button */}
-                  <button
-                    className="w-full mt-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
-                    onClick={() => setIsCallModalOpen(false)}
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            )}
+                )}
 
 
           </div>

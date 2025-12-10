@@ -66,23 +66,8 @@ export default function Services() {
 
       {/* Buttons */}
       <div className="flex gap-3 absolute right-6 sm:right-10 top-6 sm:top-8 z-10">
-<<<<<<< HEAD
-        <button
-          onClick={prev}
-          className="w-9 h-9 flex items-center justify-center bg-white/20  rounded-full  hover:bg-white/30 transition-transform active:scale-95 cursor-pointer "
-        >
-          ←
-        </button>
-        <button
-          onClick={next}
-          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition-transform active:scale-95 cursor-pointer"
-        >
-          →
-        </button>
-=======
         <button onClick={() => setIndex((p) => p - 1)} className="w-10 h-10 bg-white/20 rounded-full">←</button>
         <button onClick={() => setIndex((p) => p + 1)} className="w-10 h-10 bg-white/20 rounded-full">→</button>
->>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
       </div>
 
       {/* Slider */}
@@ -100,11 +85,11 @@ export default function Services() {
 
               {/* Overlay */}
               <div className="  absolute inset-0 flex flex-col justify-center items-center text-white 
-    bg-black/40 
-    opacity-100
-    sm:opacity-0 sm:hover:opacity-100 
-    transition
-  ">
+                      bg-black/40 
+                      opacity-100
+                      sm:opacity-0 sm:hover:opacity-100 
+                      transition
+                    ">
                 <h3 className="text-xl mx-5  font-bold">{item.title}</h3>
                 <p className="text-sm hidden sm:block">{item.subtitle}</p>
               </div>
