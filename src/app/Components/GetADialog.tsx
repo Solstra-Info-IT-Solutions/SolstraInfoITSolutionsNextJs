@@ -46,17 +46,52 @@ const GetQuoteDialog: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  // ------------------
+  // VALIDATION FUNCTION
+  // ------------------
+  const validateForm = () => {
+    const nameRegex = /^[A-Za-z ]{3,}$/;
+    const phoneRegex = /^[0-9]{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!nameRegex.test(form.name.trim())) {
+      alert("Please enter a valid full name (only letters, minimum 3 characters).");
+      return false;
+    }
+
+    if (!emailRegex.test(form.email.trim())) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+
+    if (!phoneRegex.test(form.phone.trim())) {
+      alert("Please enter a valid 10-digit phone number.");
+      return false;
+    }
+
+    if (form.details.trim().length < 10) {
+      alert("Project details must be at least 10 characters long.");
+      return false;
+    }
 
     if (!form.termsAccepted) {
       alert("Please accept the Terms & Conditions.");
-      return;
+      return false;
     }
+
+    return true;
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    // ----------------------------------
+    // RUN VALIDATION BEFORE SUBMIT
+    // ----------------------------------
+    if (!validateForm()) return;
 
     setSubmitting(true);
 
-    // 👉 Yaha API call kar sakte ho (Next.js API route, email service, CRM, etc.)
     console.log("Quote form submitted:", form);
 
     setTimeout(() => {

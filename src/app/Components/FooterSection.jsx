@@ -6,8 +6,41 @@ import {
   RiPhoneLine,
   RiMapPinLine,
 } from "react-icons/ri";
+import { useState } from "react";
 
 export default function FooterSection() {
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const res = await fetch(
+      "https://formsubmit.co/5ae2b9ed311c67af2b570a6099a94559",
+      {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      }
+    );
+
+    if (res.ok) {
+      setStatus("Subscribed successfully!");
+      form.reset();
+      setTimeout(() => setStatus(""), 3000);
+    } else {
+      setStatus("Something went wrong!");
+      form.reset();
+      setTimeout(() => setStatus(""), 3000);
+    }
+
+    setLoading(false);
+  };
+
   return (
     <footer className="bg-gray-100 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,22 +58,36 @@ export default function FooterSection() {
 
           {/* RIGHT SIDE INPUT BOX */}
           <div className="md:w-1/2 flex justify-start md:justify-end">
-            <form className="flex w-full md:w-[70%]" aria-label="Subscribe to newsletter">
+            <form
+              className="flex w-full md:w-[70%]"
+              aria-label="Subscribe to newsletter"
+              onSubmit={handleSubscribe}
+            >
+              <input type="hidden" name="_captcha" value="false" />
+
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className="w-full px-4 py-3 rounded-l-lg bg-gray-200 text-black outline-none"
                 required
               />
+
               <button
                 type="submit"
+                disabled={loading}
                 className="px-6 bg-gray-500 text-white rounded-r-lg hover:bg-gray-600 transition"
               >
-                Send
+                {loading ? "Sending..." : "Send"}
               </button>
             </form>
           </div>
         </div>
+
+        {status && (
+          <p className="text-sm text-green-600 mb-4 ">{status}</p>
+        )}
+
         {/* ================= NEWSLETTER END ================= */}
 
         {/* Footer Links */}
@@ -72,13 +119,8 @@ export default function FooterSection() {
                 <p className="text-xs font-bold">SALES</p>
                 <a href="tel:+14155787849" className="text-blue-500 text-sm hover:text-black">
                   +91-9001638396
-
                 </a>
                 <br />
-                <a href="tel:+447733868733" className="text-blue-500 text-sm hover:text-black">
-                  +91-9001638396
-
-                </a>
               </div>
             </div>
 
@@ -90,13 +132,8 @@ export default function FooterSection() {
                 <p className="text-xs font-bold">HR</p>
                 <a href="tel:+911414107667" className="text-blue-500 text-sm hover:text-black">
                   +91-9001638396
-
                 </a>
                 <br />
-                <a href="tel:+917852883297" className="text-blue-500 text-sm hover:text-black">
-                  +91-9001638396
-
-                </a>
               </div>
             </div>
 
@@ -122,7 +159,6 @@ export default function FooterSection() {
                 { label: "About Us", href: "/about" },
                 { label: "Portfolio", href: "/portfolio" },
                 { label: "Contact Us", href: "/contact" },
-                { label: "Testimonials", href: "/testimonials" },
                 { label: "Careers", href: "/careerHub" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Sitemap", href: "/sitemap" },
@@ -177,7 +213,7 @@ export default function FooterSection() {
                 { label: "AI Development", href: "/services/ai" },
                 { label: "ICO Development", href: "/services/ico" },
                 { label: "Custom Web Development", href: "/services/web" },
-                { label: "Web3 Development", href: "/services/web3" },
+                { label: "Web Development", href: "/services/web3" },
               ].map((link, i) => (
                 <li key={i}>
                   <Link
@@ -192,7 +228,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {/* SOCIAL ICONS (using images) */}
+        {/* SOCIAL ICONS */}
         <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 mt-10">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
             <img src="/facebook.png" alt="Facebook" className="w-8 h-8" />
@@ -214,7 +250,7 @@ export default function FooterSection() {
           </a>
         </div>
 
-        {/* COPYRIGHT & POLICIES */}
+        {/* COPYRIGHT */}
         <div className=" pt-8 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-gray-500 text-sm">
             &copy; 2025 Solstra Info IT Solution LLP. All rights reserved.

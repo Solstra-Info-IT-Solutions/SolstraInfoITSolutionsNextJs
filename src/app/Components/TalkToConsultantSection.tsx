@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react"; // ✅ Added useRef
 import Image from "next/image";
 
 const offices = [
- 
   {
     country: "Noida",
-     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
+    img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
     address1: "21 Benalia Cres Marayong",
     address2: "2148",
     phone: "+91 9001638396",
@@ -45,12 +44,88 @@ export default function TalkToConsultantSection() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("Web Development");
 
+  // ✅ Create ref for file input
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Form state
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // Error state
+  const [errors, setErrors] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    let tempErrors = { fullName: "", email: "", phone: "" };
+    let isValid = true;
+
+    if (!form.fullName.trim()) {
+      tempErrors.fullName = "Full Name is required";
+      isValid = false;
+    } else if (!/^[A-Za-z\s]+$/.test(form.fullName)) {
+      tempErrors.fullName = "Full Name must be letters only";
+      isValid = false;
+    }
+
+    if (!form.email.trim()) {
+      tempErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+      tempErrors.email = "Email is not valid";
+      isValid = false;
+    }
+
+    if (!form.phone.trim()) {
+      tempErrors.phone = "Phone is required";
+      isValid = false;
+    } else if (!/^\d+$/.test(form.phone)) {
+      tempErrors.phone = "Phone must be numbers only";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validate()) {
+      // ✅ Log form data including dropdown
+      console.log({
+        fullName: form.fullName,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+        selectedService: value,
+      });
+
+      alert("Form submitted successfully!");
+
+      // ✅ Reset form fields
+      setForm({ fullName: "", email: "", phone: "", message: "" });
+
+      // ✅ Reset file input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    }
+  };
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-
         <div className="bg-[#003A63] text-white rounded-[2.5rem] shadow-xl p-6 sm:p-10">
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
             {/* LEFT SECTION */}
@@ -71,33 +146,48 @@ export default function TalkToConsultantSection() {
               </p>
 
               {/* FORM */}
-              <form className="mt-8 space-y-4">
+              <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                  <label className="sr-only">Full Name</label>
-                  <input
-                    name="fullName"
-                    type="text"
-                    placeholder="Full Name"
-                    className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
-                  />
+                  <div>
+                    <label className="sr-only">Full Name</label>
+                    <input
+                      name="fullName"
+                      type="text"
+                      placeholder="Full Name"
+                      value={form.fullName}
+                      onChange={handleChange}
+                      className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
+                    />
+                    {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
+                  </div>
 
-                  <label className="sr-only">Email</label>
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
-                  />
+                  <div>
+                    <label className="sr-only">Email</label>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
+                    />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                  </div>
 
-                  <label className="sr-only">Phone</label>
-                  <input
-                    name="phone"
-                    type="text"
-                    placeholder="Phone"
-                    className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
-                  />
+                  <div>
+                    <label className="sr-only">Phone</label>
+                    <input
+                      name="phone"
+                      type="text"
+                      placeholder="Phone"
+                      value={form.phone}
+                      onChange={handleChange}
+                      className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
+                    />
+                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                  </div>
 
                   {/* CUSTOM DROPDOWN */}
                   <div className="relative w-full">
@@ -134,10 +224,12 @@ export default function TalkToConsultantSection() {
                     )}
                   </div>
 
+                  {/* ✅ Added ref here */}
                   <div className="sm:col-span-2">
                     <input
                       type="file"
                       name="file"
+                      ref={fileInputRef} // ✅ reference added
                       className="w-full rounded-full bg-white text-gray-800 file:bg-gray-400 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-full cursor-pointer"
                     />
                   </div>
@@ -149,6 +241,8 @@ export default function TalkToConsultantSection() {
                   name="message"
                   rows={4}
                   placeholder="Message"
+                  value={form.message}
+                  onChange={handleChange}
                   className="w-full rounded-3xl bg-white text-gray-900 px-5 py-3 outline-none focus:ring-2 focus:ring-orange-500"
                 />
 
@@ -160,7 +254,6 @@ export default function TalkToConsultantSection() {
 
             {/* RIGHT SECTION */}
             <div className="bg-white text-gray-900 rounded-[2rem] p-6 sm:p-8 shadow-lg">
-
               <div className="flex items-center gap-2">
                 <span className="w-12 h-[2px] bg-orange-500"></span>
                 <p className="text-sm text-gray-600 uppercase tracking-wide">Office</p>
@@ -172,7 +265,7 @@ export default function TalkToConsultantSection() {
 
               <ul className="mt-6 space-y-6">
                 {offices.map((office) => (
-                  <li key={office.country} className="border-b border-gray-200 pb-4">
+                  <li key={office.country} className="border-t pt-1 border-gray-200 pb-4">
                     <div className="flex items-center gap-3">
                       <div className="relative h-6 w-10 overflow-hidden rounded-sm">
                         <Image
@@ -204,11 +297,9 @@ export default function TalkToConsultantSection() {
                   </li>
                 ))}
               </ul>
-
             </div>
 
           </div>
-
         </div>
       </div>
     </section>

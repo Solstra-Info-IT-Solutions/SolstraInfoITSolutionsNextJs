@@ -93,7 +93,7 @@ export default function Services() {
       <div className="flex gap-3 absolute right-6 sm:right-10 top-6 sm:top-8 z-10">
         <button
           onClick={prev}
-          className="w-9 h-9 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition-transform active:scale-95 cursor-pointer"
+          className="w-9 h-9 flex items-center justify-center bg-white/20  rounded-full  hover:bg-white/30 transition-transform active:scale-95 cursor-pointer "
         >
           ←
         </button>

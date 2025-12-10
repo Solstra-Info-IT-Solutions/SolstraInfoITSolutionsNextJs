@@ -41,10 +41,10 @@ export default function HomePage() {
           { title: "100% Client Satisfaction  ", text: "Customer success & long-term partnerships" },
         ]}
         stats={[
-          { icon: "🚀", color: "purple", count: "300", label: "Completed Projects" },
-          { icon: "😊", color: "orange", count: "6000", label: "Happy Clients" },
-          { icon: "🏆", color: "Blue", count: "1200", label: "Award Wins" },
-          { icon: "⏳", color: "Green", count: "500", label: "Years of Business" },
+          { icon: "🚀", color: "purple", count: "10", label: "Completed Projects" },
+          { icon: "😊", color: "orange", count: "5", label: "Happy Clients" },
+          { icon: "🏆", color: "Blue", count: "1", label: "Award Wins" },
+          { icon: "⏳", color: "Green", count: "1", label: "Years of Business" },
           //  { icon: "ri-database-2-line", color: "Blue", count: "1200", label: "Award Wins" },
         ]}
         services={[

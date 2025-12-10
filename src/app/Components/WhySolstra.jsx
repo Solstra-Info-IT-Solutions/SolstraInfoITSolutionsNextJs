@@ -29,9 +29,8 @@ export default function WhySolstra() {
       {/* LEFT CONTENT */}
       <div
         ref={ref}
-        className={`flex flex-col justify-center transition-all duration-700 ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`flex flex-col justify-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
       >
         <div className="flex items-center gap-2 mb-4">
           <span className="w-10 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full"></span>
@@ -65,10 +64,11 @@ export default function WhySolstra() {
       <div className="flex justify-center items-center">
         <img
           src="/why-solstra-info-it-solutions-home-page.png"
-          className="w-[280px] h-[556px] object-cover rounded-[50%] sm:rounded-[150px]"
+          className="w-[280px] h-[556px] object-cover rounded-[150px] "
           alt="Technology Illustration"
         />
       </div>
+     
     </section>
   );
 }
