@@ -4,13 +4,25 @@ import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import GetQuoteDialog from "./GetADialog";
+<<<<<<< HEAD
 import HireUsModal from "./HireUsModal/hireuspopup";
+=======
+import { usePathname } from "next/navigation";
+import HireUsModal from "./hireuspopup";
+>>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
 
 export default function Navbar({ type = "home", extraIcons = [] }) {
   const [open, setOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const router = useRouter();
+
+  // navbar color changes
+  const pathname = usePathname();
+    const isActive = (path) =>
+    pathname === path
+      ? "text-orange-500 border-b-2 border-orange-500 pb-1"
+      : "text-black hover:text-orange-500";
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -47,8 +59,8 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                   key={item.name}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  className="relative cursor-pointer hover:text-orange-500 transition-colors duration-200"
                   onClick={() => router.push(item.path)}
+                  className={`${isActive(item.path)} relative cursor-pointer hover:text-orange-500 transition-colors duration-200`}
                 >
                   {item.name}
                   <span
@@ -85,6 +97,11 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
           >
             Hire Us
           </button> */}
+<<<<<<< HEAD
+=======
+
+          <HireUsModal />
+>>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
 
           {/* CALL ICON */}
           <div
@@ -121,18 +138,86 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                       <div className="w-8 h-8 rounded-full flex items-center justify-center">
                         <img src="/telephone.png" className="w-6 h-6" />
                       </div>
+<<<<<<< HEAD
                       <div>
                         <p className="text-xs text-gray-500">INDIA</p>
                         <p className="text-sm font-semibold text-gray-900">
                           +91-9001638396
                         </p>
+=======
+
+                      {/* Sales Team */}
+                      <div className="space-y-4">
+                        <h4 className="text-base font-semibold text-gray-900">
+                          Solstra Sales Team
+                        </h4>
+
+                        {/* Phone */}
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                            <img src="/blackcallicons.png" className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">INDIA</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              +91-9001638396
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Teams */}
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <img src="/blackteamicons.png" className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">Teams</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              SolstraInfoItsolutions
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Email
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <img src="/emailorange.png" className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">Email</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              sjain01ajmer@gmail.com
+                            </p>
+                          </div>
+                        </div> */}
+>>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
                       </div>
                     </div>
 
+<<<<<<< HEAD
                     {/* Teams */}
                     <div className="flex items-start gap-2 cursor-pointer">
                       <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
                         <img src="/business.png" className="w-6 h-6" />
+=======
+                      {/* HR Team */}
+                      <div className="space-y-4 pt-4 border-t mt-5">
+                        <h4 className="text-base font-semibold text-gray-900">
+                          Solstra HR Team
+                        </h4>
+
+                        <div className="flex items-start gap-2 cursor-pointer">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <img src="/blackmailicons.png" className="w-6 h-6"  />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">Email</p>
+                            <p className="text-sm font-semibold text-gray-900">
+                              sjain01ajmer@gmail.com
+                            </p>
+                          </div>
+                        </div>
+>>>>>>> 906022163bce22cc37653d3616c0a5634dae77b8
                       </div>
                       <div>
                         <p className="text-xs text-gray-500">Teams</p>

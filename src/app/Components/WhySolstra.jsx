@@ -25,7 +25,7 @@ export default function WhySolstra() {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
       {/* LEFT CONTENT */}
       <div
         ref={ref}

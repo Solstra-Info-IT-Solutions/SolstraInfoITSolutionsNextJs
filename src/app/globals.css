@@ -204,3 +204,28 @@ body {
 body {
   @apply bg-white text-black;
 }
+
+/* Custom Scrollbar for Tailwind */
+.scrollbar {
+  scrollbar-width: thin;              /* Firefox */
+  scrollbar-color: #475569 #0f172a;   /* Firefox colors (thumb, track) */
+}
+
+/* Chrome, Edge, Safari */
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #0f172a; /* dark track */
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}

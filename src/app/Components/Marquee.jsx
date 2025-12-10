@@ -21,7 +21,7 @@ export default function Marquee() {
         {items.concat(items).map((item, index) => (
           <span
             key={index}
-            className={`text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold ${
+            className={`text-4xl sm:text-3xl md:text-5xl lg:text-6xl font-bold ${
               item.filled ? "text-orange-500" : "outline-text"
             }`}
           >

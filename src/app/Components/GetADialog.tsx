@@ -129,7 +129,7 @@ const GetQuoteDialog: React.FC = () => {
 
             <div className="relative flex w-full flex-col md:flex-row">
               {/* LEFT PANEL */}
-              <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-6 md:max-w-sm md:px-7 md:py-7 overflow-y-auto h-screen ">
+              <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-2 md:max-w-sm md:px-7 md:py-7  ">
                 <div>
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-sky-100">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -190,21 +190,23 @@ const GetQuoteDialog: React.FC = () => {
                       <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-100">
                         Automation & Integrations
                       </span>
-                    </div>
-                  </div>
+
+                      <div className="  flex items-center gap-2 text-[11px] text-slate-300 py-10">
+                          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-[13px] text-emerald-300">
+                            ✓
+                          </span>
+                          <p>We respond within 24 working hours with a customised quote.</p>
+                        </div>
+                            </div>
+                          </div>
                 </div>
 
-                <div className="mt-6 flex items-center gap-2 text-[11px] text-slate-300">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-[13px] text-emerald-300">
-                    ✓
-                  </span>
-                  <p>We respond within 24 working hours with a customised quote.</p>
-                </div>
+                
               </aside>
 
               {/* RIGHT PANEL – FORM */}
               <section className="flex-1 bg-slate-950/80 px-5 py-5 md:px-7 md:py-7 
-  max-h-[90vh] overflow-y-auto scrollbar-hide">
+                   max-h-[90vh] overflow-y-auto scrollbar ">
                 {/* Header row */}
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div>
