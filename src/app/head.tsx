@@ -3,6 +3,7 @@ export default function Head() {
   return (
     <>
       <title>SOLSTRA INFO</title>
+      <link rel="icon" href="/logo.jpg" sizes="32x32" />
       <link
         href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
         rel="stylesheet"
