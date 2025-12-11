@@ -29,7 +29,7 @@ export default function HomePage() {
   
       <TabContent />
       <TalkToConsultantSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <FooterSection />
     </div>
   );

@@ -16,10 +16,10 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-    <Navbar
-                type="home"
-               
-              />
+      <Navbar
+        type="home"
+
+      />
       <HomeSection
         heroDescription="At Solstra Info IT Solutions, we don't just build websites; we create powerful, scalable web platforms that drive business growth. Whether you're a startup needing a launchpad or an enterprise requiring complex system integration, our full-stack developers deliver custom solutions tailored to your unique needs. We combine cutting-edge technology with strategic design to ensure your web presence is robust, secure, and engaging.st build websites; we create powerful, scalable web platforms that drive business growth. Whether you're a startup needing a launchpad or an enterprise requiring complex system integration, our full-stack developers deliver custom solutions tailored to your unique needs."
         heroImages={[
@@ -43,12 +43,12 @@ export default function HomePage() {
           //  { icon: "ri-database-2-line", color: "Blue", count: "1200", label: "Award Wins" },
         ]}
         services={[
-          { img: "https://img.icons8.com/color/512/source-code.png",title: "Web Development",},
-          { img: "https://img.icons8.com/color/512/shopping-cart--v1.png",title: "Ecommerce Development",},
-          { img: "https://img.icons8.com/color/512/development-skill.png",title: "App Development",},
-          { img: "https://img.icons8.com/color/512/design--v2.png",title: "UI/UX Designing",},
-          { img: "https://img.icons8.com/?size=100&id=12929&format=png&color=000000",title: "Software Solutions",},
-          { img: "https://img.icons8.com/color/512/commercial.png",title: "Digital Marketing",},
+          { img: "https://img.icons8.com/color/512/source-code.png", title: "Web Development", },
+          { img: "https://img.icons8.com/color/512/shopping-cart--v1.png", title: "Ecommerce Development", },
+          { img: "https://img.icons8.com/color/512/development-skill.png", title: "App Development", },
+          { img: "https://img.icons8.com/color/512/design--v2.png", title: "UI/UX Designing", },
+          { img: "https://img.icons8.com/?size=100&id=12929&format=png&color=000000", title: "Software Solutions", },
+          { img: "https://img.icons8.com/color/512/commercial.png", title: "Digital Marketing", },
         ]}
         serviceImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
         offeringImages={[
@@ -147,69 +147,6 @@ export default function HomePage() {
       />
 
       {/* 4 */}
-
-
-      <ServiceSection
-        title="Cloud Services"
-        subtitle="Empowering Your Business with Scalable & Secure Cloud Solutions."
-        description="Migrating to the cloud is no longer an option; it's a necessity for staying competitive.
-                    Solstra Info IT Solutions helps businesses leverage the full potential of cloud computing
-                    to increase agility, reduce costs, and improve operational efficiency. Whether you're looking
-                    to migrate existing infrastructure or build cloud-native applications, our certified experts
-                    guide you through every step of your cloud journey on major platforms like AWS, Azure, and Google
-                    Cloud.
-"
-        points={[
-          { title: "Cloud Migration Strategy & Execution:", text: " We assess your current infrastructure, develop a customized migration plan, and execute aseamless transition of your applications and data to the cloud with minimal downtime." },
-          { title: "Cloud Infrastructure Management:", text: "We provide ongoing management, monitoring, and optimization of your cloud resources to ensure high availability, performance, and cost-effectiveness." },
-          { title: "Cloud-Native Application Development:", text: "                          Save time and cost with a single codebase that runs on both iOS and Android. We are experts in leading frameworks like Flutter and React Native." },
-          { title: "App Strategy & Consulting:", text: "We design and build scalable applications using microservices, serverless computing, and containers (Docker/Kubernetes) optimized for the cloud environment." },
-          { title: "Cloud Security & Compliance::", text: "We implement robust security measures and ensure your cloud environment complies with industry standards and regulations." },
-          { title: "The Solstra Advantage:", text: "                            We are vendor-agnostic, meaning we recommend the cloud platform and solutions that best fit your specific business needs and budget. Our focus is on creating a secure, resilient, and cost-optimized cloud foundation for your growth." },
-        ]}
-        images={[
-          "/images/Cloud.png",
-          "/images/Cloud2.jfif",
-          "/images/Cloud3.png",
-
-        ]}
-        bg="from-orange-50 to-orange-100"
-      />
-
-
-      {/* 5 */}
-
-
-      <ServiceSection
-        title="Cloud Services"
-        subtitle="Empowering Your Business with Scalable & Secure Cloud Solutions."
-        description="Migrating to the cloud is no longer an option; it's a necessity for staying competitive.
-                    Solstra Info IT Solutions helps businesses leverage the full potential of cloud computing
-                    to increase agility, reduce costs, and improve operational efficiency. Whether you're looking
-                    to migrate existing infrastructure or build cloud-native applications, our certified experts
-                    guide you through every step of your cloud journey on major platforms like AWS, Azure, and Google
-                    Cloud.
-"
-        points={[
-          { title: "Cloud Migration Strategy & Execution:", text: " We assess your current infrastructure, develop a customized migration plan, and execute aseamless transition of your applications and data to the cloud with minimal downtime." },
-          { title: "Cloud Infrastructure Management:", text: "We provide ongoing management, monitoring, and optimization of your cloud resources to ensure high availability, performance, and cost-effectiveness." },
-          { title: "Cloud-Native Application Development:", text: "                          Save time and cost with a single codebase that runs on both iOS and Android. We are experts in leading frameworks like Flutter and React Native." },
-          { title: "App Strategy & Consulting:", text: "We design and build scalable applications using microservices, serverless computing, and containers (Docker/Kubernetes) optimized for the cloud environment." },
-          { title: "Cloud Security & Compliance::", text: "We implement robust security measures and ensure your cloud environment complies with industry standards and regulations." },
-          { title: "The Solstra Advantage:", text: "                            We are vendor-agnostic, meaning we recommend the cloud platform and solutions that best fit your specific business needs and budget. Our focus is on creating a secure, resilient, and cost-optimized cloud foundation for your growth." },
-        ]}
-        images={[
-          "/images/Cloud.png",
-          "/images/Cloud2.jfif",
-          "/images/Cloud3.png",
-
-        ]}
-        bg="from-orange-50 to-orange-100"
-      />
-
-
-
-      {/* 6 */}
 
 
       <ServiceSection

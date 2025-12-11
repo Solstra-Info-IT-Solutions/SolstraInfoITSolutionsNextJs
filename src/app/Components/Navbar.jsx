@@ -62,7 +62,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                   {item.name}
                   <span
                     className="absolute left-0 -bottom-1 h-0.5 bg-orange-500 transition-all duration-300"
-                    // style={{ width: hoveredIndex === index ? "100%" : "0%" }}
+                    style={{ width: hoveredIndex === index ? "100%" : "0%" }}
                   ></span>
                 </li>
               ))}

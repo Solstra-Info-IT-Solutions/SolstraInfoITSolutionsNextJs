@@ -159,11 +159,11 @@ export default function FooterSection() {
             <ul className="space-y-2 text-sm">
               {[
                 { label: "About Us", href: "/about" },
-                { label: "Portfolio", href: "/portfolio" },
+                { label: "Portfolio", href: "/" },
                 { label: "Contact Us", href: "/contact" },
                 { label: "Careers", href: "/careerHub" },
                 { label: "FAQ", href: "/faq" },
-                { label: "Sitemap", href: "/sitemap" },
+                { label: "Sitemap", href: "/" },
               ].map((link, i) => (
                 <li key={i}>
                   <Link
@@ -182,19 +182,18 @@ export default function FooterSection() {
             <h3 className="text-lg font-semibold mb-4">Our industries</h3>
             <ul className="space-y-2 text-sm">
               {[
-                { label: "Real Estate", href: "/industries/real-estate" },
-                { label: "On-Demand", href: "/industries/on-demand" },
-                { label: "Healthcare", href: "/industries/healthcare" },
-                { label: "Event & Tickets", href: "/industries/event-tickets" },
-                { label: "Travel & Tours", href: "/industries/travel-tours" },
-                {
-                  label: "Ecommerce & Retail",
-                  href: "/industries/ecommerce-retail",
+                { label: "Real Estate", href: "/" },
+                { label: "On-Demand", href: "/" },
+                { label: "Healthcare", href: "/" },
+                { label: "Event & Tickets", href: "/" },
+                { label: "Travel & Tours", href: "/" },
+                { label: "Ecommerce & Retail",
+                  href: "/",
                 },
-                { label: "Auction", href: "/industries/auction" },
+                { label: "Auction", href: "/" },
                 {
                   label: "Food & Restaurant",
-                  href: "/industries/food-restaurant",
+                  href: "/",
                 },
               ].map((link, i) => (
                 <li key={i}>
@@ -216,18 +215,18 @@ export default function FooterSection() {
               {[
                 {
                   label: "Mobile Application Development",
-                  href: "/services/mobile-app",
+                  href: "/",
                 },
-                { label: "ServiceNow", href: "/services/servicenow" },
+                { label: "ServiceNow", href: "/" },
                 {
                   label: "Blockchain Development",
-                  href: "/services/blockchain",
+                  href: "/",
                 },
-                { label: "POS Development Solution", href: "/services/pos" },
-                { label: "AI Development", href: "/services/ai" },
-                { label: "ICO Development", href: "/services/ico" },
-                { label: "Custom Web Development", href: "/services/web" },
-                { label: "Web Development", href: "/services/web3" },
+                { label: "POS Development Solution", href: "/" },
+                { label: "AI Development", href: "/" },
+                { label: "ICO Development", href: "/" },
+                { label: "Custom Web Development", href: "/" },
+                { label: "Web Development", href: "/" },
               ].map((link, i) => (
                 <li key={i}>
                   <Link

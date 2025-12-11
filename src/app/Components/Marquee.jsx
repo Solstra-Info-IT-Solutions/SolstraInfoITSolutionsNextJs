@@ -14,10 +14,10 @@ export default function Marquee() {
 
   return (
     <div 
-      className="overflow-hidden whitespace-nowrap py-4" 
+      className="overflow-hidden whitespace-nowrap py-8" 
       aria-label="Our Services We Provide"
     >
-      <div className="animate-marquee flex gap-8 sm:gap-12 md:gap-16">
+      <div className="animate-marquee flex gap-8 sm:gap-12 md:gap-16 ">
         {items.concat(items).map((item, index) => (
           <span
             key={index}
