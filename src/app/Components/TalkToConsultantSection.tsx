@@ -2,6 +2,10 @@
 
 import React, { useState, useRef } from "react"; // ✅ Added useRef
 import Image from "next/image";
+import Link from "next/link";
+import { IoMdCall } from "react-icons/io";
+import { MdLocationPin } from "react-icons/md";
+import { IoIosMail } from "react-icons/io";
 
 const offices = [
   {
@@ -62,7 +66,9 @@ export default function TalkToConsultantSection() {
     phone: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -123,15 +129,14 @@ export default function TalkToConsultantSection() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className=" px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="bg-[#003A63] text-white rounded-[2.5rem] shadow-xl p-6 sm:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
             {/* LEFT SECTION */}
             <div>
               <div className="flex items-center gap-3">
-                <span className="w-12 h-px bg-sky-100" />
+                <span className="w-12 h-px bg-sky-100 " />
                 <span className="text-sky-100 text-sm font-medium tracking-wide">
                   Get in touch
                 </span>
@@ -147,9 +152,7 @@ export default function TalkToConsultantSection() {
 
               {/* FORM */}
               <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
                   <div>
                     <label className="sr-only">Full Name</label>
                     <input
@@ -160,7 +163,11 @@ export default function TalkToConsultantSection() {
                       onChange={handleChange}
                       className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
                     />
-                    {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
+                    {errors.fullName && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.fullName}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -173,7 +180,11 @@ export default function TalkToConsultantSection() {
                       onChange={handleChange}
                       className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
                     />
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -186,7 +197,11 @@ export default function TalkToConsultantSection() {
                       onChange={handleChange}
                       className="rounded-full bg-white text-gray-900 px-5 py-3 w-full outline-none focus:ring-2 focus:ring-orange-500"
                     />
-                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
 
                   {/* CUSTOM DROPDOWN */}
@@ -199,7 +214,11 @@ export default function TalkToConsultantSection() {
                       className="w-full bg-white text-gray-900 px-5 py-3 rounded-full border border-gray-300 cursor-pointer flex justify-between items-center"
                     >
                       {value}
-                      <img src="/down-arrow.png" className="w-6 h-6" alt="Dropdown" />
+                      <img
+                        src="/down-arrow.png"
+                        className="w-6 h-6"
+                        alt="Dropdown"
+                      />
                     </div>
 
                     {open && (
@@ -233,7 +252,6 @@ export default function TalkToConsultantSection() {
                       className="w-full rounded-full bg-white text-gray-800 file:bg-gray-400 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-full cursor-pointer"
                     />
                   </div>
-
                 </div>
 
                 <label className="sr-only">Message</label>
@@ -246,7 +264,7 @@ export default function TalkToConsultantSection() {
                   className="w-full rounded-3xl bg-white text-gray-900 px-5 py-3 outline-none focus:ring-2 focus:ring-orange-500"
                 />
 
-                <button className="mt-2 bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full font-semibold transition-transform active:scale-95 cursor-pointer">
+                <button className="mt-2 bg-orange-500 hover:bg-orange-600 px-8 py-3  rounded-full font-semibold transition-transform active:scale-95 cursor-pointer">
                   Submit
                 </button>
               </form>
@@ -255,19 +273,24 @@ export default function TalkToConsultantSection() {
             {/* RIGHT SECTION */}
             <div className="bg-white text-gray-900 rounded-[2rem] p-6 sm:p-8 shadow-lg">
               <div className="flex items-center gap-2">
-                <span className="w-12 h-[2px] bg-orange-500"></span>
-                <p className="text-sm text-gray-600 uppercase tracking-wide">Office</p>
+                <span className="w-12 h-[2px] bg-gradient-to-r from-orange-400 to-blue-950"></span>
+                <p className="text-sm  uppercase bg-clip-text text-transparent bg-gradient-to-r font-bold from-orange-500 to-blue-950 tracking-wide">
+                  Office
+                </p>
               </div>
 
               <h3 className="text-3xl font-bold mt-2">
                 Our <span className="text-orange-500">Offices</span>
               </h3>
 
-              <ul className="mt-6 space-y-6">
+              <ul className="mt-6 space-y-2">
                 {offices.map((office) => (
-                  <li key={office.country} className="border-t pt-1 border-gray-200 pb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="relative h-6 w-10 overflow-hidden rounded-sm">
+                  <li
+                    key={office.country}
+                    className="border-t pt-1 border-gray-200 pb-4"
+                  >
+                    <div className="flex items-center gap-3 py-1">
+                      <div className="relative h-6 w-10 overflow-hidden  rounded-sm">
                         <Image
                           src={office.img}
                           alt={`${office.country} office`}
@@ -276,29 +299,35 @@ export default function TalkToConsultantSection() {
                           className="object-cover"
                         />
                       </div>
-                      <h4 className="font-semibold text-lg">{office.country}</h4>
+                      <h4 className="font-semibold text-lg">
+                        {office.country}
+                      </h4>
                     </div>
 
-                    <p className="text-sm mt-2 leading-snug">
+                    <p className="text-sm mt-2 leading-snug py-1">
                       {office.address1}
-                      <br/>{office.address2}
-                       <br /> {office.phone}
-                       <br/>{office.email}
                     </p>
 
-                    <div className="flex gap-4 mt-2 text-gray-600 text-lg">
-                      <a href={`tel:${office.phone}`} className="hover:text-orange-500">
-                        <i className="fa-solid fa-phone"></i>
-                      </a>
-                      <a href={`mailto:${office.email}`} className="hover:text-orange-500">
-                        <i className="fa-solid fa-envelope"></i>
-                      </a>
+                    <div className="flex gap-4 mt-3 text-[#06114f]  text-lg cursor-pointer">
+                      {/* Location */}
+                      <Link href="https://maps.google.com" target="_blank">
+                        <MdLocationPin className="w-5 h-5" />
+                      </Link>
+
+                      {/* Phone */}
+                      <Link href="tel:+919999999999">
+                        <IoMdCall className="w-5 h-5" />
+                      </Link>
+
+                      {/* Email */}
+                      <Link href="mailto:example@gmail.com">
+                        <IoIosMail className="w-5 h-5" />
+                      </Link>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-
           </div>
         </div>
       </div>

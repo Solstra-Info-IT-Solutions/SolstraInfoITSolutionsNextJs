@@ -41,9 +41,7 @@ const BlogSection = () => {
         {/* Header row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <h6 className="text-sm font-semibold text-orange-500 uppercase tracking-wide">
-              Blog
-            </h6>
+            
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-1">
               Our <span className="text-orange-500">Blog</span>
             </h2>

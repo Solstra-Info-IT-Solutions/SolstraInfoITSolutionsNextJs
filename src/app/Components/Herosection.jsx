@@ -70,7 +70,7 @@ export default function Herosection() {
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="min-w-full h-[70vh] sm:h-[75vh] md:h-[80vh] relative"
+                className="min-w-full h-[70vh] sm:h-[75vh] md:h-[80vh]  relative"
               >
                 {/* VIDEO OR IMAGE */}
                 {slide.type === "video" ? (

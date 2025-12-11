@@ -15,7 +15,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
   // navbar color changes
   const pathname = usePathname();
-    const isActive = (path) =>
+  const isActive = (path) =>
     pathname === path
       ? "text-orange-500 border-b-2 border-orange-500 pb-1"
       : "text-black hover:text-orange-500";
@@ -35,7 +35,6 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
   return (
     <header className="w-full fixed top-0 left-0 bg-white shadow-sm z-50 h-24 font-sans">
       <div className="max-w-[1400px] mx-auto flex justify-between items-center py-4 px-6 h-full">
-        
         {/* LOGO */}
         <div className="flex-shrink-0">
           <img
@@ -56,7 +55,9 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   onClick={() => router.push(item.path)}
-                  className={`${isActive(item.path)} relative cursor-pointer hover:text-orange-500 transition-colors duration-200`}
+                  className={`${isActive(
+                    item.path
+                  )} relative cursor-pointer hover:text-orange-500 transition-colors duration-200`}
                 >
                   {item.name}
                   <span
@@ -71,19 +72,23 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
         {/* DESKTOP BUTTONS */}
         <div className="hidden md:flex items-center gap-4">
-          {extraIcons && extraIcons.map((icon, i) => (
-            <a
-              key={i}
-              href={icon.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
-            >
-              <img src={icon.src} alt={icon.alt} className="w-8 h-8" />
-            </a>
-          ))}
+          {extraIcons &&
+            extraIcons.map((icon, i) => (
+              <a
+                key={i}
+                href={icon.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
+              >
+                <img src={icon.src} alt={icon.alt} className="w-8 h-8" />
+              </a>
+            ))}
 
-          <GetQuoteDialog open={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
+          <GetQuoteDialog
+            open={isQuoteModalOpen}
+            onClose={() => setIsQuoteModalOpen(false)}
+          />
 
           {/* <button
             className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
@@ -98,59 +103,60 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
           <div
             className="relative rounded-full"
             onMouseEnter={() => setIsCallModalOpen(true)}
-            onMouseLeave={() => setIsCallModalOpen(false)}
+            // onMouseLeave={() => setIsCallModalOpen(false)}
           >
             <div className=" rounded-full flex items-center justify-center text-white cursor-pointer transition-transform duration-300 hover:scale-110 shadow-md">
               <img src="/telephone.png" alt="Call" className="w-10 h-10 " />
             </div>
 
             {/* CALL MODAL */}
-                  {isCallModalOpen && (
-                  <div
-                    className="absolute right-0 top-full mt-3 z-[60]"
-                    onClick={(e) => e.stopPropagation()} // modal click se close nahi hoga
-                  >
-                    <div className="w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+            {isCallModalOpen && (
+              <div
+                className="absolute right-0 top-full mt-3 z-[60]"
+                onClick={(e) => e.stopPropagation()} // modal click se close nahi hoga
+              >
+                <div className="w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+                  {/* Header */}
+                  <div className="mb-4 ">
+                    <div className="w-8 h-1 bg-orange-500 rounded-full mb-1"></div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Get In Touch
+                    </h3>
+                  </div>
 
-                      {/* Header */}
-                      <div className="mb-4 ">
-                        <div className="w-8 h-1 bg-orange-500 rounded-full mb-1"></div>
-                        <h3 className="text-lg font-semibold text-gray-900">Get In Touch</h3>
+                  {/* Sales Team */}
+                  <div className="space-y-4">
+                    <h4 className="text-base font-semibold text-gray-900">
+                      Solstra Sales Team
+                    </h4>
+
+                    {/* Phone */}
+                    <div className="flex items-start gap-2 cursor-pointer">
+                      <div className="w-8 h-8 rounded-full flex items-center bg-gray-100 justify-center">
+                        <img src="/phone-call (1).png" className="w-6 h-6" />
                       </div>
+                      <div>
+                        <p className="text-xs text-gray-500">INDIA</p>
+                        <p className="text-sm font-semibold text-gray-900">
+                          +91-9001638396
+                        </p>
+                      </div>
+                    </div>
 
-                      {/* Sales Team */}
-                      <div className="space-y-4">
-                        <h4 className="text-base font-semibold text-gray-900">
-                          Solstra Sales Team
-                        </h4>
+                    {/* Teams */}
+                    <div className="flex items-start gap-2 cursor-pointer">
+                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                        <img src="/blackteamicons.png" className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500">Teams</p>
+                        <p className="text-sm font-semibold text-gray-900">
+                          SolstraInfoItsolutions
+                        </p>
+                      </div>
+                    </div>
 
-                        {/* Phone */}
-                        <div className="flex items-start gap-2 cursor-pointer">
-                          <div className="w-8 h-8 rounded-full flex items-center bg-gray-100 justify-center">
-                            <img src="/phone-call (1).png" className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <p className="text-xs text-gray-500">INDIA</p>
-                            <p className="text-sm font-semibold text-gray-900">
-                              +91-9001638396
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Teams */}
-                        <div className="flex items-start gap-2 cursor-pointer">
-                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                            <img src="/blackteamicons.png" className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <p className="text-xs text-gray-500">Teams</p>
-                            <p className="text-sm font-semibold text-gray-900">
-                              SolstraInfoItsolutions
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Email
+                    {/* Email
                         <div className="flex items-start gap-2 cursor-pointer">
                           <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
                             <img src="/emailorange.png" className="w-6 h-6" />
@@ -162,39 +168,66 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                             </p>
                           </div>
                         </div> */}
+                  </div>
+
+                  {/* HR Team */}
+                  <div className="space-y-4 pt-4 border-t mt-5">
+                    <h4 className="text-base font-semibold text-gray-900">
+                      Solstra HR Team
+                    </h4>
+
+                    <div className="flex items-start gap-2 cursor-pointer">
+                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                        <img src="/blackmailicons.png" className="w-6 h-6" />
                       </div>
-
-                      {/* HR Team */}
-                      <div className="space-y-4 pt-4 border-t mt-5">
-                        <h4 className="text-base font-semibold text-gray-900">
-                          Solstra HR Team
-                        </h4>
-
-                        <div className="flex items-start gap-2 cursor-pointer">
-                          <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                            <img src="/blackmailicons.png" className="w-6 h-6"  />
-                          </div>
-                          <div>
-                            <p className="text-xs text-gray-500">Email</p>
-                            <p className="text-sm font-semibold text-gray-900">
-                              sjain01ajmer@gmail.com
-                            </p>
-                          </div>
-                        </div>
+                      <div>
+                        <p className="text-xs text-gray-500">Email</p>
+                        <p className="text-sm font-semibold text-gray-900">
+                          sjain01ajmer@gmail.com
+                        </p>
                       </div>
-
-                      {/* Close Button */}
-                      <button
-                        className="w-full mt-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
-                        onClick={() => setIsCallModalOpen(false)}
-                      >
-                        Close
-                      </button>
                     </div>
                   </div>
-                )}
 
+                  {/* Social Media Icons */}
+                  <div className="flex justify-center gap-5 py-4">
+                    <a
+                      href="https://wa.me/9001638396"
+                      target="_blank"
+                      className="w-8 h-8 flex items-center justify-center  rounded-full transition"
+                    >
+                      <img src="/whatsapp.png" alt="WhatsApp" />
+                    </a>
 
+                    {/* skype */}
+                    <a
+                      href="skype:live:username"
+                      target="_blank"
+                      className="w-8 h-8 flex items-center justify-center rounded-full  transition"
+                    >
+                      <img src="/skype.png" alt="skype" />
+                    </a>
+
+                    {/* Email / X */}
+                    <a
+                      href="sjain01ajmer@gmail.com"
+                      target="_blank"
+                      className="w-8 h-8 flex items-center justify-center rounded-full   transition"
+                    >
+                      <img src="mail.png" alt="Email" />
+                    </a>
+                  </div>
+
+                  {/* Close Button */}
+                  <button
+                    className="w-full mt-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
+                    onClick={() => setIsCallModalOpen(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

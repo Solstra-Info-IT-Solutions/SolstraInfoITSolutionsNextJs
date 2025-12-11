@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 import { Autoplay } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper/types";   // ⭐ TypeScript Fix
+import type { Swiper as SwiperType } from "swiper/types"; // ⭐ TypeScript Fix
 
 function TrustedLeadingCompany() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null); // ⭐ Type added
@@ -25,13 +25,13 @@ function TrustedLeadingCompany() {
     <section className="mb-16">
       <div>
         <div
-          className="py-12"
-          onMouseEnter={() => swiperInstance?.autoplay?.stop()}    // ⭐ Safe access
-          onMouseLeave={() => swiperInstance?.autoplay?.start()}   // ⭐ Safe access
+          className="py-12 "
+          onMouseEnter={() => swiperInstance?.autoplay?.stop()} // ⭐ Safe access
+          onMouseLeave={() => swiperInstance?.autoplay?.start()} // ⭐ Safe access
           style={{ width: "100%", overflow: "hidden" }}
         >
           <Swiper
-            onSwiper={(swiper) => setSwiperInstance(swiper)}        // ⭐ Set typed instance
+            onSwiper={(swiper) => setSwiperInstance(swiper)} // ⭐ Set typed instance
             modules={[Autoplay]}
             slidesPerView={5}
             spaceBetween={30}
@@ -52,11 +52,7 @@ function TrustedLeadingCompany() {
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={logo}
-                  alt={`Logo ${index}`}
-                  className=" w-40 "
-                />
+                <img src={logo} alt={`Logo ${index}`} className=" w-40" />
               </SwiperSlide>
             ))}
           </Swiper>

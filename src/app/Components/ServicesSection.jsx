@@ -54,7 +54,7 @@ export default function Services() {
   }, [index]);
 
   return (
-    <section className="bg-[#0a3d62] rounded-3xl p-6 sm:p-10 mt-10 m-4 text-white relative">
+    <section className="bg-[#0a3d62]  p-6 sm:p-10 mt-10  text-white relative">
       <h3 className="tracking-widest text-2xl mb-1">SERVICES</h3>
       <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
         Explore the innovative solutions <br />
@@ -71,13 +71,13 @@ export default function Services() {
       </div>
 
       {/* Slider */}
-      <div className="mt-8 overflow-hidden  ">
-        <div ref={sliderRef} className="flex gap-4 sm:gap-6 transition-transform duration-500">
+      <div className="mt-8 overflow-hidden ">
+        <div ref={sliderRef} className="flex gap-2 sm:gap-8 transition-transform duration-500">
           {infiniteItems.map((item, i) => (
             <div
               key={i}
               className="bg-white rounded-2xl  overflow-hidden relative flex-shrink-0 group
-                w-40 sm:w-80 lg:w-80]"
+                w-[60vw] sm:w-72 md:w-80"
             >
               <div className="h-72 sm:h-80 md:h-96 overflow-hidden">
                 <img src={item.image} className="w-full h-full object-cover" />

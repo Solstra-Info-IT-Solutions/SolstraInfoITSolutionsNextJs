@@ -35,8 +35,7 @@ const tabData = [
     imgicons: "/web-applications.png",
     // Assuming same icons for now based on previous code, or you can update these to Web specific technologies
     icons: [
-      { src: "/TabServices Images/apple.png", label: "iOS" },
-      { src: "/TabServices Images/android.png", label: "Android" },
+      
       { src: "/TabServices Images/flutter.png", label: "Flutter" },
       { src: "/TabServices Images/React.jfif", label: "React" },
       { src: "/TabServices Images/Java.jfif", label: "Java" },
@@ -125,7 +124,7 @@ export default function TabsSection() {
           <button
             key={item.id}
             onClick={() => setActive(index)}
-            className={`rounded-full transition-all duration-300 flex items-center h-20
+            className={`rounded-full transition-all duration-300 flex items-center h-15
               ${active === index
                 ? "w-auto px-6 gap-4 border-2 border-orange-500 bg-white shadow-lg scale-105 z-10"
                 : "w-24 justify-center border border-transparent hover:bg-gray-50"
@@ -134,8 +133,8 @@ export default function TabsSection() {
             <Image
               src={item.imgicons}
               alt={item.title}
-              width={64}
-              height={64}
+              width={50}
+              height={50}
               className="object-contain shrink-0 cursor-pointer"
             />
 
