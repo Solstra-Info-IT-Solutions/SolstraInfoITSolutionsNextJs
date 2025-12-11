@@ -71,7 +71,7 @@ export default function HireUsModal() {
       {/* Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
+        className="border border-gray-300 text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-orange-500 px-6 py-2.5 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm bg-white cursor-pointer"
       >
         Hire Us
       </button>

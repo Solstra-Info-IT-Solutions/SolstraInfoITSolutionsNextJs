@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Shivam Namdev",
+    "email": "shivamnamdev32@gmail.com",
+    "phone": "7566872767",
+    "company": "solestra",
+    "service": "mobile-web-apps",
+    "budget": "3lakh-plus",
+    "timeline": "1-month",
+    "projectType": "new-product",
+    "details": "hellow shivam",
+    "termsAccepted": true,
+    "submittedAt": "2025-12-11T11:14:07.481Z"
+  },
+  {
+    "name": "suryabhai",
+    "email": "suryaking@gmail.com",
+    "phone": "7777888899",
+    "company": "google",
+    "service": "mobile-web-apps",
+    "budget": "3lakh-plus",
+    "timeline": "immediate",
+    "projectType": "new-product",
+    "details": "bhai mera jinda bad ",
+    "termsAccepted": true,
+    "submittedAt": "2025-12-11T16:41:42.294Z"
+  },
+  {
+    "name": "shubhamjain",
+    "email": "shubhamjain@gmail.com",
+    "phone": "4578695478",
+    "company": "google",
+    "service": "product-development",
+    "budget": "50k-1lakh",
+    "timeline": "1-3-months",
+    "projectType": "new-product",
+    "details": "hellow how a ",
+    "termsAccepted": true,
+    "submittedAt": "2025-12-11T17:13:52.445Z"
+  }
+]

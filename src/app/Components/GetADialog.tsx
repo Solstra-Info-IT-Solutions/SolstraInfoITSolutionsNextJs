@@ -47,7 +47,7 @@ const GetQuoteDialog: React.FC = () => {
   };
 
   // ------------------
-  // VALIDATION FUNCTION
+  // VALIDATION FUNCTION (UNCHANGED)
   // ------------------
   const validateForm = () => {
     const nameRegex = /^[A-Za-z ]{3,}$/;
@@ -82,24 +82,37 @@ const GetQuoteDialog: React.FC = () => {
     return true;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  // ----------------------------
+  // UPDATED SUBMIT - JSON SAVE
+  // ----------------------------
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    // ----------------------------------
-    // RUN VALIDATION BEFORE SUBMIT
-    // ----------------------------------
     if (!validateForm()) return;
 
     setSubmitting(true);
 
-    console.log("Quote form submitted:", form);
+    try {
+      const response = await fetch("/api/saveQuote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    setTimeout(() => {
-      setSubmitting(false);
-      setForm(initialFormState);
-      setOpen(false);
-      alert("Thank you! Your quote request has been submitted.");
-    }, 900);
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Thank you! Your quote request has been submitted.");
+        setForm(initialFormState); // blank form
+        setOpen(false);
+      } else {
+        alert("Something went wrong while saving your data.");
+      }
+    } catch (error) {
+      alert("Server error! Unable to save.");
+    }
+
+    setSubmitting(false);
   };
 
   return (
@@ -124,11 +137,11 @@ const GetQuoteDialog: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
             className="relative mx-4 flex w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-slate-900/80 shadow-[0_24px_80px_rgba(15,23,42,0.85)] backdrop-blur-2xl animate-scaleIn"
           >
-            {/* GRADIENT AURA */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/25 via-transparent to-purple-500/25" />
 
             <div className="relative flex w-full flex-col md:flex-row">
-              {/* LEFT PANEL */}
+              
+              {/* LEFT PANEL (UNCHANGED) */}
               <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-2 md:max-w-sm md:px-7 md:py-7  ">
                 <div>
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-sky-100">
@@ -147,32 +160,25 @@ const GetQuoteDialog: React.FC = () => {
                   {/* STATS */}
                   <div className="mt-5 grid grid-cols-3 gap-3">
                     <div className="rounded-2xl bg-white/5 p-3 text-center">
-                      <div className="text-sm font-semibold text-white">
-                        10+
-                      </div>
+                      <div className="text-sm font-semibold text-white">10+</div>
                       <div className="mt-1 text-[11px] text-slate-300">
                         Projects Delivered
                       </div>
                     </div>
                     <div className="rounded-2xl bg-white/5 p-3 text-center">
-                      <div className="text-sm font-semibold text-white">
-                        4.9★
-                      </div>
+                      <div className="text-sm font-semibold text-white">4.9★</div>
                       <div className="mt-1 text-[11px] text-slate-300">
                         Client Rating
                       </div>
                     </div>
                     <div className="rounded-2xl bg-white/5 p-3 text-center">
-                      <div className="text-sm font-semibold text-white">
-                        1+
-                      </div>
+                      <div className="text-sm font-semibold text-white">1+</div>
                       <div className="mt-1 text-[11px] text-slate-300">
                         Years Experience
                       </div>
                     </div>
                   </div>
 
-                  {/* TAGS */}
                   <div className="mt-5 space-y-2">
                     <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
                       We specialise in
@@ -191,31 +197,29 @@ const GetQuoteDialog: React.FC = () => {
                         Automation & Integrations
                       </span>
 
-                      <div className="  flex items-center gap-2 text-[11px] text-slate-300 py-10">
-                          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-[13px] text-emerald-300">
-                            ✓
-                          </span>
-                          <p>We respond within 24 working hours with a customised quote.</p>
-                        </div>
-                            </div>
-                          </div>
+                      <div className="flex items-center gap-2 text-[11px] text-slate-300 py-10">
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-[13px] text-emerald-300">
+                          ✓
+                        </span>
+                        <p>We respond within 24 working hours with a customised quote.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                
               </aside>
 
-              {/* RIGHT PANEL – FORM */}
+              {/* RIGHT PANEL – FORM (UNCHANGED except submit) */}
               <section className="flex-1 bg-slate-950/80 px-5 py-5 md:px-7 md:py-7 
                    max-h-[90vh] overflow-y-auto scrollbar ">
-                {/* Header row */}
+
+                {/* Header */}
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div>
                     <h3 className="text-lg font-semibold text-white">
                       Share your project details
                     </h3>
                     <p className="mt-1 text-xs text-slate-400">
-                      The more clear you are, the better we can estimate timelines
-                      and budget for you.
+                      The more clear you are, the better we can estimate.
                     </p>
                   </div>
                   <button
@@ -226,7 +230,7 @@ const GetQuoteDialog: React.FC = () => {
                   </button>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit}  className="space-y-4">
                   {/* Name / Email / Phone / Company */}
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <div className="space-y-1">
@@ -456,7 +460,7 @@ const GetQuoteDialog: React.FC = () => {
                     </p>
                   </div>
                 </form>
-              </section>
+       </section>
             </div>
           </div>
         </div>

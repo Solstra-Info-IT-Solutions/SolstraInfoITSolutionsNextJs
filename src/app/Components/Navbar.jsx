@@ -17,7 +17,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
   const pathname = usePathname();
   const isActive = (path) =>
     pathname === path
-      ? "text-orange-500 border-b-2 border-orange-500 pb-1"
+      ? "text-orange-500  pb-1"
       : "text-black hover:text-orange-500";
 
   const menuItems = [
@@ -36,7 +36,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
     <header className="w-full fixed top-0 left-0 bg-white shadow-sm z-50 h-24 font-sans">
       <div className="max-w-[1400px] mx-auto flex justify-between items-center py-4 px-6 h-full">
         {/* LOGO */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <img
             src="/image1.png"
             alt="Solstra Logo"
@@ -280,7 +280,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
           {/* Hire Us Button */}
           <button
-            className="w-full border border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-3 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm mb-6"
+            className="w-full border border-gray-300 text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-orange-500 px-6 py-3 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300 font-medium text-sm mb-6"
             onClick={() => {
               setIsQuoteModalOpen(true);
               setOpen(false);
