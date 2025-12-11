@@ -17,13 +17,8 @@ export default function HomePage() {
   return (
     <>
     <Navbar
-                type="other"
-                extraIcons={[
-                  { src: "/telephone2.png", alt: "Email", link: "mailto:test@gmail.com" },
-                  { src: "/whatsapp.png", alt: "WhatsApp", link: "https://wa.me/9999" },
-                  { src: "/skype.png", alt: "Skype", link: "skype:live:username" },
-                  { src: "/orangeemail.png", alt: "Email", link: "mailto:test@gmail.com" },
-                ]}
+                type="home"
+               
               />
       <HomeSection
         heroDescription="At Solstra Info IT Solutions, we don't just build websites; we create powerful, scalable web platforms that drive business growth. Whether you're a startup needing a launchpad or an enterprise requiring complex system integration, our full-stack developers deliver custom solutions tailored to your unique needs. We combine cutting-edge technology with strategic design to ensure your web presence is robust, secure, and engaging.st build websites; we create powerful, scalable web platforms that drive business growth. Whether you're a startup needing a launchpad or an enterprise requiring complex system integration, our full-stack developers deliver custom solutions tailored to your unique needs."

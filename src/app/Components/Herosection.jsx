@@ -37,7 +37,7 @@ export default function Herosection() {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="w-full mt-20 px-3 sm:px-6 lg:px-10 py-6">
+    <section className="w-full mt-20 ">
 
       <div className="relative w-full">
 
@@ -62,7 +62,7 @@ export default function Herosection() {
 
 
         {/* SLIDER */}
-        <div className="flex overflow-hidden rounded-xl">
+        <div className="flex overflow-hidden ">
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${current * 100}%)` }}
@@ -75,7 +75,7 @@ export default function Herosection() {
                 {/* VIDEO OR IMAGE */}
                 {slide.type === "video" ? (
                   <video
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-cover "
                     autoPlay
                     loop
                     muted
@@ -86,13 +86,13 @@ export default function Herosection() {
                 ) : (
                   <img
                     src={slide.src}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-cover "
                     alt=""
                   />
                 )}
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0  bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 rounded-xl">
+                <div className="absolute inset-0  bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 ">
                   <div className="max-w-xl">
                     <h1 className="text-3xl  sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                       {slide.title}

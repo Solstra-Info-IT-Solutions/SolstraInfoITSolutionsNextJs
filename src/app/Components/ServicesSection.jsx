@@ -71,13 +71,13 @@ export default function Services() {
       </div>
 
       {/* Slider */}
-      <div className="mt-8 overflow-hidden">
+      <div className="mt-8 overflow-hidden  ">
         <div ref={sliderRef} className="flex gap-4 sm:gap-6 transition-transform duration-500">
           {infiniteItems.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl overflow-hidden relative flex-shrink-0 group
-                w-50 sm:w-80 lg:w-80]"
+              className="bg-white rounded-2xl  overflow-hidden relative flex-shrink-0 group
+                w-40 sm:w-80 lg:w-80]"
             >
               <div className="h-72 sm:h-80 md:h-96 overflow-hidden">
                 <img src={item.image} className="w-full h-full object-cover" />

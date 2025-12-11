@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <Preloader logoSrc="/logo.jpg" companyName="  SOLSTRA INFO" duration={6000} />
 

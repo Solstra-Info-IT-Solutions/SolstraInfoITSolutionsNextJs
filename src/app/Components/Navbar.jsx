@@ -61,7 +61,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
                   {item.name}
                   <span
                     className="absolute left-0 -bottom-1 h-0.5 bg-orange-500 transition-all duration-300"
-                    style={{ width: hoveredIndex === index ? "100%" : "0%" }}
+                    // style={{ width: hoveredIndex === index ? "100%" : "0%" }}
                   ></span>
                 </li>
               ))}
@@ -126,8 +126,8 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
 
                         {/* Phone */}
                         <div className="flex items-start gap-2 cursor-pointer">
-                          <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                            <img src="/blackcallicons.png" className="w-6 h-6" />
+                          <div className="w-8 h-8 rounded-full flex items-center bg-gray-100 justify-center">
+                            <img src="/phone-call (1).png" className="w-6 h-6" />
                           </div>
                           <div>
                             <p className="text-xs text-gray-500">INDIA</p>

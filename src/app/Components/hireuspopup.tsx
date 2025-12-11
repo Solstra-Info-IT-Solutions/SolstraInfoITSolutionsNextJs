@@ -102,7 +102,7 @@ export default function HireUsModal() {
 
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
+                className="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-500 transition"
               >
                 Submit
               </button>
