@@ -83,11 +83,11 @@ export default function AboutSection() {
             <button
               onClick={() => router.push("/about")}
               className=" cursor-pointer 
-              px-10 py-3 h-5 
+              px-10 py-1 h-12 
               border-2 border-orange-400 
               text-orange-500 
               rounded-full 
-              text-sm sm:text-lg font-medium 
+              text-base sm:text-lg font-medium 
               hover:bg-orange-500 hover:text-white
               transition-all duration-150
               active:scale-95 active:shadow-sm
