@@ -9,7 +9,7 @@ export default function Herosection() {
   const slides = [
     {
       type: "video",
-      src: "/WhatsApp Video 2025-11-29 at 5.10.11 PM.mp4",
+      src: "/herovedio.mp4",
       title: "Empowering Next-gen Apps with AI Solutions",
     },
     {
