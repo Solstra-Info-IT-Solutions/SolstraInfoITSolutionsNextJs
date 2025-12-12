@@ -23,7 +23,7 @@ const CoreVerticals: React.FC = () => {
   return (
     <section className="py-10 md:py-16">
       {/* Section Header */}
-      <div className="text-center px-5 md:px-0">
+      {/* <div className="text-center px-5 md:px-0">
         
         <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
           Our Two  <span className="font-semibold text-[#E28217]">Core Verticals</span> 
@@ -36,6 +36,25 @@ const CoreVerticals: React.FC = () => {
           technology arm that builds products and services, and a talent arm
           that connects businesses with elite professionals.
         </p>
+      </div> */}
+
+      <div className=" px-5 lg:mx-8 md:mx-8 md:px-0">
+        <div className="flex items-center gap-4">
+          {/* Left Vertical Orange Line */}
+          <div className="w-2 h-16  bg-orange-500 rounded-md"></div>
+
+          {/* Text Block */}
+          <div className="flex flex-col">
+            <span className="text-4xl md:text-4xl lg:text-5xl font-poppins text-blue-950 font-extrabold leading-tight">
+              Our Two Core <br />
+              {/* Verticals + Right Line */}
+              <span className="flex items-center gap-4">
+                Verticals
+                <span className="h-1 w-20 md:w-40 lg:w-80 bg-orange-500 rounded-md"></span>
+              </span>
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Cards */}
@@ -70,15 +89,15 @@ const CoreVerticals: React.FC = () => {
             <div>
               <p className="font-semibold text-gray-900">What We Do:</p>
               <p className="text-gray-700">
-                Custom Software Development, Mobile App Development (iOS/Android/Flutter),
-                Web Development, and UI/UX Design.
+                Custom Software Development, Mobile App Development
+                (iOS/Android/Flutter), Web Development, and UI/UX Design.
               </p>
             </div>
             <div>
               <p className="font-semibold text-gray-900">Our Standard:</p>
               <p className="text-gray-700">
-                We follow enterprise-grade coding standards learned from giants like TCS
-                and Infosys to ensure high-quality deliverables.
+                We follow enterprise-grade coding standards learned from giants
+                like TCS and Infosys to ensure high-quality deliverables.
               </p>
             </div>
           </div>
@@ -99,9 +118,10 @@ const CoreVerticals: React.FC = () => {
           </header>
 
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            Technology is useless without the right people. Our recruitment division
-            is a strategic partner to HR departments globally, technically vetting
-            candidates to match skill requirements and company culture.
+            Technology is useless without the right people. Our recruitment
+            division is a strategic partner to HR departments globally,
+            technically vetting candidates to match skill requirements and
+            company culture.
           </p>
 
           <div className="space-y-3 text-sm sm:text-base">
