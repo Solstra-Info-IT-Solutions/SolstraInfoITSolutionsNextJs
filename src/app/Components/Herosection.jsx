@@ -38,9 +38,7 @@ export default function Herosection() {
 
   return (
     <section className="w-full mt-20 ">
-
       <div className="relative w-full">
-
         {/* BUTTONS → now hidden on mobile */}
         {/* <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
   Previous Slide
@@ -59,7 +57,6 @@ export default function Herosection() {
              <img src="/icons8-right-arrow-24.png" alt="Next" className="w-6 h-6"/>
           </button>
       </div> */}
-
 
         {/* SLIDER */}
         <div className="flex overflow-hidden ">
@@ -91,6 +88,18 @@ export default function Herosection() {
                   />
                 )}
 
+                {/* DOT INDICATORS (BOTTOM CENTER) */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrent(index)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all
+  ${current === index ? "bg-white w-6 rounded-full" : "bg-white/50"}`}
+                    />
+                  ))}
+                </div>
+
                 {/* OVERLAY */}
                 <div className="absolute inset-0  bg-black/40 flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-20 ">
                   <div className="max-w-xl">
@@ -106,15 +115,12 @@ export default function Herosection() {
                         Talk To Consultant
                       </button>
                     )}
-
                   </div>
                 </div>
-
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

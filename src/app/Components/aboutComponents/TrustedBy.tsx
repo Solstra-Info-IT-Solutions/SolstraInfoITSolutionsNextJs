@@ -20,12 +20,16 @@ const TrustedBy: React.FC = () => {
             Leading Companies
           </span>
         </h2>
-        <span className="mt-3 text-black max-w-3xl font-semibold m-4  text-sm sm:text-xl">
+        <span
+          className="block mt-3 text-black max-w-3xl mx-auto
+  px-4 sm:px-0
+  text-sm sm:text-xl"
+        >
           Trust is earned through consistency. We adhere to strict SLAs and
           deliver quality with the agility of a startup and the reliability of a
           seasoned enterprise partner.
         </span>
-        <p className="text-xl mb-10 mt-10">
+        <p className="text-xl mb-10 font-semibold mt-10">
           Join thousands of professionals working at top organizations
         </p>
       </div>

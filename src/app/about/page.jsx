@@ -25,15 +25,16 @@ export default function AboutPage() {
         //   { src: "/orangeemail.png", alt: "Email", link: "mailto:test@gmail.com" },
         // ]}
       />
-      <AboutHero />
+      {/* <AboutHero /> */}
       <AboutSection />
       <CoreVerticals />
-      {/* <MissionVision /> */}
+      <MissionVision />
       <MeetTheTeam />
       <TrustedBy />
       <TrustedLeadingCompany />
-      <AboutValues />
+
       <CultureSection />
+      <AboutValues />
       <ContactSection />
       <OurOffices />
       <FooterSection />

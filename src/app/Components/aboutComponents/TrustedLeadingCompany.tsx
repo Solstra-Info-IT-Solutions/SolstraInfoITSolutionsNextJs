@@ -52,7 +52,7 @@ function TrustedLeadingCompany() {
                   alignItems: "center",
                 }}
               >
-                <img src={logo} alt={`Logo ${index}`} className=" w-40" />
+                <img src={logo} alt={`Logo ${index}`} className=" w-40 " />
               </SwiperSlide>
             ))}
           </Swiper>

@@ -26,7 +26,7 @@ export default function MeetTheTeam() {
     <section className="py-10">
       {/* TOP IMAGE */}
       <div className="flex justify-center">
-        <div className="relative w-[280px] h-[280px] sm:w-[330px] sm:h-[330px]">
+        <div className="relative w-[280px] h-[280px]  sm:w-[330px] sm:h-[330px]">
           <Image
             src="/aboutpage/Meet.jpg"
             alt="Solstra Info IT Solutions Team"
