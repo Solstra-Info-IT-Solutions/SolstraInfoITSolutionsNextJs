@@ -5,7 +5,7 @@ import React from "react";
 
 export default function DesignSection() {
   return (
-    <section className="relative py-28 bg-gradient-to-b from-indigo-50 to-white overflow-hidden">
+    <section className="relative py-28 bg-linear-to-b from-indigo-50 to-white overflow-hidden">
 
       {/* Background Blobs */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
@@ -57,7 +57,7 @@ export default function DesignSection() {
 
           <a
             href="#"
-            className="inline-block mt-10 px-10 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full shadow-xl hover:scale-105 transition"
+            className="inline-block mt-10 px-10 py-4 bg-linear-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full shadow-xl hover:scale-105 transition"
           >
             Start Your Design Journey
           </a>

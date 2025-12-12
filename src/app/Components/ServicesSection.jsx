@@ -76,7 +76,7 @@ export default function Services() {
           {infiniteItems.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl  overflow-hidden relative flex-shrink-0 group
+              className="bg-white rounded-2xl  overflow-hidden relative shrink-0 group
                 w-[60vw] sm:w-72 md:w-80"
             >
               <div className="h-72 sm:h-80 md:h-96 overflow-hidden">

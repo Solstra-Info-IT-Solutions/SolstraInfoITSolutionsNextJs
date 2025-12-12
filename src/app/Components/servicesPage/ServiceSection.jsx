@@ -26,7 +26,7 @@ export default function ServiceSection({
 
   return (
     <section
-      className={`w-full bg-gradient-to-br ${bg} py-20`}
+      className={`w-full bg-linear-to-br ${bg} py-20`}
       aria-labelledby="service-title"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">

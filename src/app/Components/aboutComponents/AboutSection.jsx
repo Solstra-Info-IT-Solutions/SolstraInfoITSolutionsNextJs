@@ -20,7 +20,7 @@ export default function AboutSection() {
         <div
           className="
                   absolute bottom-2 right-2 sm:bottom-4 sm:right-4
-                  bg-gradient-to-b from-sky-400 to-blue-600 text-white
+                  bg-linear-to-b from-sky-400 to-blue-600 text-white
                   p-4 sm:p-6 w-[92%] sm:w-[70%]
                   rounded-xl
 

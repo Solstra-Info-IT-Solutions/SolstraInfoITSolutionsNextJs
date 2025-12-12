@@ -112,7 +112,7 @@ export default function Navbar({ type = "home", extraIcons = [] }) {
             {/* CALL MODAL */}
             {isCallModalOpen && (
               <div
-                className="absolute right-0 top-full mt-3 z-[60]"
+                className="absolute right-0 top-full mt-3 z-60"
                 onClick={(e) => e.stopPropagation()} // modal click se close nahi hoga
               >
                 <div className="w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4">

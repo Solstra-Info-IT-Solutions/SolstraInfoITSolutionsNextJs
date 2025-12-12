@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 export default function termspage(){
     return(
-        <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <main className="grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         
               {/* Intro Text */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-12">
@@ -22,7 +22,7 @@ export default function termspage(){
 
        <div className="grid md:grid-cols-12 gap-8">
         {/* Main Content */}
-      <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8 flex justify-center">
+      <main className="grow py-12 px-4 sm:px-6 lg:px-8 flex justify-center">
         <div className="w-full max-w-3xl text-justify">
           
           {/* Welcome Block */}

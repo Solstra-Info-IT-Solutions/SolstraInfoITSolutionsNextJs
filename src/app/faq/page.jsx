@@ -8,6 +8,7 @@ export const metadata = {
     "Frequently asked questions about Solstra Info IT Solutions – services, IT development, recruitment, and company info.",
 };
 
+
 export default function FAQPage() {
   return (
     <>

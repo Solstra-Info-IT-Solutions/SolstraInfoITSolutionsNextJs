@@ -11,7 +11,7 @@ export default function FAQItem({ question, answer }) {
     <div className="border rounded-xl shadow-sm mb-4">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center p-4 text-lg font-semibold text-[#06114f] hover:bg-gray-50 transition"
+        className="w-full flex justify-between items-center p-4 text-lg font-semibold text-[#06114f] hover:bg-gray-100 transition rounded-2xl"
       >
         {question}
         <motion.span

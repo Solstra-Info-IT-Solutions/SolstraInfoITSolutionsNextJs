@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 
 export default function Herosection() {
   const [current, setCurrent] = useState(0);
-  const router = useRouter(); 
+  const router = useRouter();
 
   const slides = [
     {
@@ -42,7 +42,7 @@ export default function Herosection() {
       <div className="relative w-full">
 
         {/* BUTTONS → now hidden on mobile */}
-       {/* <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
+        {/* <div className="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 z-20 e">
   Previous Slide
         <button
             onClick={prevSlide}
@@ -98,9 +98,15 @@ export default function Herosection() {
                       {slide.title}
                     </h1>
 
-                    <button className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30 transition w-full sm:w-48 md:w-56 cursor-pointer transition-transform active:scale-95">
+                    {/* <button className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30  w-full sm:w-48 md:w-56 cursor-pointer transition-transform active:scale-95">
                       Talk To Consultant
-                    </button>
+                    </button> */}
+                    {slide.type === "video" && (
+                      <button className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30  w-full sm:w-48 md:w-56 cursor-pointer transition-transform active:scale-95">
+                        Talk To Consultant
+                      </button>
+                    )}
+
                   </div>
                 </div>
 

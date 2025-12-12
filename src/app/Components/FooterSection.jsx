@@ -5,7 +5,7 @@ import { RiMailLine, RiPhoneLine, RiMapPinLine } from "react-icons/ri";
 import { useState } from "react";
 
 export default function FooterSection() {
-  const [status, setStatus] = useState("");
+  // const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubscribe = async (e) => {
@@ -25,11 +25,13 @@ export default function FooterSection() {
     );
 
     if (res.ok) {
-      setStatus("Subscribed successfully!!");
+      // setStatus(alert("Subscribed successfully!!"));
+      alert("Subscribed successfully!!")
       form.reset();
       setTimeout(() => setStatus(""), 3000);
     } else {
-      setStatus("Something went wrong!");
+      // setStatus("Something went wrong!");
+      alert("Something went wrong!")
       form.reset();
       setTimeout(() => setStatus(""), 3000);
     }
@@ -81,7 +83,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {status && <p className="text-sm text-green-600 mb-4 ">{status}</p>}
+        {/* {status && <p className="text-sm text-green-600 mb-4 ">{status}</p>} */}
 
         {/* ================= NEWSLETTER END ================= */}
 
@@ -215,18 +217,18 @@ export default function FooterSection() {
               {[
                 {
                   label: "Mobile Application Development",
-                  href: "/",
+                  href: "/services",
                 },
-                { label: "ServiceNow", href: "/" },
+                { label: "ServiceNow", href: "/services" },
                 {
                   label: "Blockchain Development",
-                  href: "/",
+                  href: "/services",
                 },
-                { label: "POS Development Solution", href: "/" },
-                { label: "AI Development", href: "/" },
-                { label: "ICO Development", href: "/" },
-                { label: "Custom Web Development", href: "/" },
-                { label: "Web Development", href: "/" },
+                { label: "POS Development Solution", href: "/services" },
+                { label: "AI Development", href: "/services" },
+                { label: "ICO Development", href: "/services" },
+                { label: "Custom Web Development", href: "/services" },
+                { label: "Web Development", href: "/services" },
               ].map((link, i) => (
                 <li key={i}>
                   <Link

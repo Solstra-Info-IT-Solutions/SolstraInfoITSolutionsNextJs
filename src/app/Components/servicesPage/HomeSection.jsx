@@ -15,7 +15,7 @@ export default function HomeSection({
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-r from-[#f7f4e9] to-[#eef3f7] py-30">
+      <section className="w-full bg-linear-to-r from-[#f7f4e9] to-[#eef3f7] py-30">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
           {/* Left Text */}
@@ -31,13 +31,13 @@ export default function HomeSection({
 
           {/* Right Images */}
           {/* Hero Images - Premium Official Look */}
-<div className="relative flex justify-center md:justify-end mt-8">
-  <div className="grid grid-cols-2 gap-6 md:gap-8 justify-items-center items-center">
+          <div className="relative flex justify-center md:justify-end mt-8">
+            <div className="grid grid-cols-2 gap-6 md:gap-8 justify-items-center items-center">
 
-    {heroImages.map((img, index) => (
-      <div
-        key={index}
-        className={`
+              {heroImages.map((img, index) => (
+                <div
+                  key={index}
+                  className={`
           relative
           w-32 md:w-40 lg:w-48
           rounded-full
@@ -45,24 +45,24 @@ export default function HomeSection({
           transition-transform duration-500
           ${index % 2 === 0 ? "md:-translate-y-4" : "md:translate-y-4"}
         `}
-      >
-        {/* Inner white circle */}
-        <div className="bg-white rounded-full overflow-hidden w-full h-full">
-          <img
-            src={img.src}
-            alt={`Hero ${index}`}
-            className="w-full h-full object-cover rounded-full"
-            loading="lazy"
-          />
-        </div>
+                >
+                  {/* Inner white circle */}
+                  <div className="bg-white rounded-full overflow-hidden w-full h-full">
+                    <img
+                      src={img.src}
+                      alt={`Hero ${index}`}
+                      className="w-full h-full object-cover rounded-full"
+                      loading="lazy"
+                    />
+                  </div>
 
-        {/* Optional subtle glow */}
-        <div className="absolute inset-0 rounded-full pointer-events-none ring-2 ring-white/20"></div>
-      </div>
-    ))}
+                  {/* Optional subtle glow */}
+                  <div className="absolute inset-0 rounded-full pointer-events-none ring-2 ring-white/20"></div>
+                </div>
+              ))}
 
-  </div>
-</div>
+            </div>
+          </div>
 
 
 
@@ -177,7 +177,7 @@ export default function HomeSection({
               {services.map((service, i) => (
                 <a
                   key={i}
-                  className="bg-white shadow-md hover:bg-orange-200 hover:text-white hover:shadow-xl rounded-xl p-6 text-center duration-300"
+                  className="bg-white shadow-md hover:bg-orange-200 hover:text-white hover:shadow-xl rounded-xl p-6 text-center duration-500"
                 >
                   <img src={service.img} className="w-16 mx-auto mb-3" />
                   <h5 className="font-semibold text-gray-800">

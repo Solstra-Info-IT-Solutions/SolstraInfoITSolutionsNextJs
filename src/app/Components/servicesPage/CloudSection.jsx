@@ -18,7 +18,7 @@ export default function CloudSection() {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-black/60 to-black/20"></div>
 
       {/* Text Content */}
       <div className="relative z-10 h-full flex items-center px-6 md:px-10">

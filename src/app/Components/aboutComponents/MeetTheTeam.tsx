@@ -72,7 +72,7 @@ const MeetTheTeam: React.FC = () => {
 
         {/* Tech Innovators */}
         <div
-          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border shadow-black/50 border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition-all p-6 border shadow-black/50 border-gray-100 flex flex-col gap-3 transform  duration-700 ease-out
             ${visibleCards[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           style={{ transitionDelay: "200ms" }}
         >
@@ -104,7 +104,7 @@ const MeetTheTeam: React.FC = () => {
 
         {/* Talent Scouts */}
         <div
-          className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 border shadow-black/50 border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
+          className={`bg-white rounded-2xl shadow-md hover:shadow-xl  p-6 border shadow-black/50 border-gray-100 flex flex-col gap-3 transform transition-all duration-700 ease-out
             ${visibleCards[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           style={{ transitionDelay: "300ms" }}
         >

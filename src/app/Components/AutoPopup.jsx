@@ -39,7 +39,7 @@ export default function AutoPopup() {
         <button
           onClick={closePopup}
           aria-label="Close Popup"
-          className="absolute top-3 right-3 bg-gray-200 hover:bg-orange-500 w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center z-[50]"
+          className="absolute top-3 right-3 bg-gray-200 hover:bg-orange-500 w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center z-50"
         >
           <RiCloseLine className="text-xl md:text-2xl" />
         </button>
@@ -71,7 +71,7 @@ export default function AutoPopup() {
               },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4">
-                <RiArrowRightCircleFill className="text-blue-700 text-3xl flex-shrink-0" />
+                <RiArrowRightCircleFill className="text-blue-700 text-3xl shrink-0" />
                 <div>
                   <h3 className="text-lg font-bold">{item.title}</h3>
                   <p className="text-gray-600 text-sm mt-1">{item.desc}</p>

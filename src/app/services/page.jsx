@@ -94,7 +94,7 @@ export default function HomePage() {
 
       {/* 2 */}
 
-      <ServiceSection
+      <ServiceSection  id="Mobile-App-Development"
         title="Mobile App Development"
         subtitle="Transforming Ideas into Powerful Mobile Experiences."
         description="                    In a mobile-first world, a powerful app is essential for connecting with your audience. Solstra Info

@@ -271,10 +271,10 @@ export default function TalkToConsultantSection() {
             </div>
 
             {/* RIGHT SECTION */}
-            <div className="bg-white text-gray-900 rounded-[2rem] p-6 sm:p-8 shadow-lg">
+            <div className="bg-white text-gray-900 rounded-4xl p-6 sm:p-8 shadow-lg">
               <div className="flex items-center gap-2">
-                <span className="w-12 h-[2px] bg-gradient-to-r from-orange-400 to-blue-950"></span>
-                <p className="text-sm  uppercase bg-clip-text text-transparent bg-gradient-to-r font-bold from-orange-500 to-blue-950 tracking-wide">
+                <span className="w-12 h-0.5 bg-linear-to-r from-orange-400 to-blue-950"></span>
+                <p className="text-sm  uppercase bg-clip-text text-transparent bg-linear-to-r font-bold from-orange-500 to-blue-950 tracking-wide">
                   Office
                 </p>
               </div>

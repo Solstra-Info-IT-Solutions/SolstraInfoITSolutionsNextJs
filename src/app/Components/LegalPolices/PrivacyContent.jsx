@@ -1,6 +1,7 @@
 // app/privacy-policy/page.jsx
 
 import { Metadata } from "next";
+import { useState } from "react";
 
 export const metadata = {
   title: "Privacy Policy - Solstra Info IT Solution LLP",
@@ -22,9 +23,12 @@ export const metadata = {
   },
 };
 
+
 export default function PrivacyContent() {
+  const [active, setActive] = useState("collection");
+
   return (
-    <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <main className="grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 
       {/* Intro Text */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-12">
@@ -43,38 +47,31 @@ export default function PrivacyContent() {
         {/* Left Side Navigation */}
         <aside className="hidden md:block md:col-span-3">
           <div className="sticky top-28 space-y-1">
-            <a
-              href="#collection"
-              className="block px-4 py-2 rounded-md text-sm font-medium text-[#2e2a69] bg-blue-50 border-l-4 border-brand-orange"
-            >
-              Data Collection
-            </a>
-            <a
-              href="#usage"
-              className="block px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-[#2e2a69]"
-            >
-              How We Use Data
-            </a>
-            <a
-              href="#protection"
-              className="block px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-[#2e2a69]"
-            >
-              Data Protection
-            </a>
-            <a
-              href="#cookies"
-              className="block px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-[#2e2a69]"
-            >
-              Cookies Policy
-            </a>
-            <a
-              href="#disclosure"
-              className="block px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-[#2e2a69]"
-            >
-              Third-Party Disclosure
-            </a>
+
+            {[
+              { id: "collection", label: "Data Collection" },
+              { id: "usage", label: "How We Use Data" },
+              { id: "protection", label: "Data Protection" },
+              { id: "cookies", label: "Cookies Policy" },
+              { id: "disclosure", label: "Third-Party Disclosure" },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => setActive(item.id)}
+                className={`block px-4 py-2 rounded-md text-sm font-medium border-l-4 
+          ${active === item.id
+                    ? "text-[#2e2a69] bg-blue-50 border-brand-orange"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-[#2e2a69] border-transparent"
+                  }`}
+              >
+                {item.label}
+              </a>
+            ))}
+
           </div>
         </aside>
+
 
         {/* Content */}
         <div className="md:col-span-9 space-y-10">
@@ -158,7 +155,7 @@ export default function PrivacyContent() {
               </h2>
             </div>
 
-            <div className="bg-gradient-to-r from-[#2e2a69] to-[#1e1b4b] rounded-xl p-8 text-white relative overflow-hidden">
+            <div className="bg-linear-to-r from-[#2e2a69] to-[#1e1b4b] rounded-xl p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
                 <p className="mb-4 text-blue-100">
                   Your personal information is stored securely…

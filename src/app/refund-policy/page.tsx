@@ -41,7 +41,7 @@ const RefundPolicy = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8 flex justify-center">
+      <main className="grow py-12 px-4 sm:px-6 lg:px-8 flex justify-center">
         <div className="w-full max-w-3xl text-justify">
           
           {/* Intro Block */}

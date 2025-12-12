@@ -50,7 +50,7 @@ const MissionVision: React.FC = () => {
 
         {/* Vision */}
         <div
-          className={`bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition shadow-black/50 p-6 flex flex-col gap-3 transform transition-all duration-700 ease-out
+          className={`bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all shadow-black/50 p-6 flex flex-col gap-3 transform  duration-700 ease-out
             ${visibleCards[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           style={{ transitionDelay: "200ms" }}
         >
