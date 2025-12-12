@@ -120,7 +120,7 @@ const GetQuoteDialog: React.FC = () => {
       {/* TRIGGER BUTTON */}
       <button
         onClick={() => setOpen(true)}
-        className="group relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_5px_15px_rgba(37,99,235,0.5)] transition-all hover:translate-y-[1px] hover:shadow-[0_5px_10px_rgba(37,99,235,0.6)]"
+        className="group relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_5px_15px_rgba(37,99,235,0.5)] transition-all hover:translate-y-px hover:shadow-[0_5px_10px_rgba(37,99,235,0.6)]"
       >
         <span className="flex text-sm">Get a Premium Quote</span>
         <span className="pointer-events-none absolute -inset-px rounded-full border border-white/40 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -137,12 +137,12 @@ const GetQuoteDialog: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
             className="relative mx-4 flex w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-slate-900/80 shadow-[0_24px_80px_rgba(15,23,42,0.85)] backdrop-blur-2xl animate-scaleIn"
           >
-            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/25 via-transparent to-purple-500/25" />
+            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-linear-to-br from-blue-500/25 via-transparent to-purple-500/25" />
 
             <div className="relative flex w-full flex-col md:flex-row">
               
               {/* LEFT PANEL (UNCHANGED) */}
-              <aside className="flex flex-1 flex-col justify-between bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-2 md:max-w-sm md:px-7 md:py-7  ">
+              <aside className="flex flex-1 flex-col justify-between bg-linear-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 px-6 py-2 md:max-w-sm md:px-7 md:py-7  ">
                 <div>
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-sky-100">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -438,7 +438,7 @@ const GetQuoteDialog: React.FC = () => {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-400 to-blue-950 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_5px_10px_rgba(56,189,248,0.6)] transition hover:translate-y-[1px] hover:shadow-[0_6px_12px_rgba(56,189,248,0.7)] disabled:cursor-not-allowed disabled:opacity-60"
+                      className="flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-orange-400 to-blue-950 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_5px_10px_rgba(56,189,248,0.6)] transition hover:translate-y-px hover:shadow-[0_6px_12px_rgba(56,189,248,0.7)] disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {submitting ? (
                         <>

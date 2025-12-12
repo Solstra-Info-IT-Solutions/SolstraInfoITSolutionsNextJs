@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+
 export default function AboutSection() {
   const ref = useRef();
   const router = useRouter();

@@ -15,7 +15,7 @@ export default function HomeSection({
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-r from-[#f7f4e9] to-[#eef3f7] py-30">
+      <section className="w-full bg-linear-to-r from-[#f7f4e9] to-[#eef3f7] py-30">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Text */}
           <div className="space-y-6">

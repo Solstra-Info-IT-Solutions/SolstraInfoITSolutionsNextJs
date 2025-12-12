@@ -14,7 +14,7 @@ export default function ContactHero() {
           priority
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 to-blue-900/60"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-blue-900/80 to-blue-900/60"></div>
       </div>
 
       {/* Content */}

@@ -1,6 +1,6 @@
 export default function CTASection({ title, subtitle, primaryBtn, secondaryBtn }) {
   return (
-    <section className="text-center py-16 bg-gradient-to-r from-blue-900 to-orange-500 text-white mt-12 px-4">
+    <section className="text-center py-16 bg-linear-to-r from-blue-900 to-orange-500 text-white mt-12 px-4">
       <h2 className="text-3xl font-bold mb-4">{title}</h2>
 
       {subtitle && <p className="text-lg mb-8">{subtitle}</p>}

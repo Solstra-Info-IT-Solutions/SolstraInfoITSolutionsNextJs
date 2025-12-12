@@ -18,6 +18,7 @@ import StatsCounter from "./Components/StatsCounter"
 export default function HomePage() {
   return (
     <div>
+      
       <AutoPopup />
       <Navbar type="home" />
       <Herosection />

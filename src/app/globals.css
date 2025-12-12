@@ -200,7 +200,7 @@ body {
     stroke-dashoffset: 0;
   }
 }
-/* Force light mode */
+/* Force light mode */  
 body {
   @apply bg-white text-black;
 }
@@ -229,3 +229,4 @@ body {
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background: #64748b; /* slate-500 */
 }
+

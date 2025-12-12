@@ -17,7 +17,7 @@ export default function CloudKeyOfferings() {
       </div>
 
       {/* White Fog Gradient with Blur */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/70 backdrop-blur-xl"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-white/40 to-white/70 backdrop-blur-xl"></div>
 
       {/* Content */}
       <div className="relative max-w-6xl mx-auto px-6 md:px-10">

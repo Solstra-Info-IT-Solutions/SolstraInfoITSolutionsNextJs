@@ -32,7 +32,7 @@ export default function ContactSection() {
 
           {/* LEFT BLUE PANEL */}
           <div
-            className="p-8 md:p-10 text-white bg-gradient-to-b from-sky-400 to-blue-700 bg-cover"
+            className="p-8 md:p-10 text-white bg-linear-to-b from-sky-400 to-blue-700 bg-cover"
             style={{
               backgroundImage:
                 "url('https://nextbigtechnology.com/wp-content/themes/nbt/images/perfect-business-bg.jpg')",

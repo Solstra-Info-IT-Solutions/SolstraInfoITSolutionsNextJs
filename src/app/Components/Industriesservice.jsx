@@ -38,12 +38,12 @@ export default function Industriesservice() {
       {/* Heading */}
       <div className="space-y-3 mb-12">
         <div className="flex items-center gap-2">
-          <span className="w-10 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full"></span>
+          <span className="w-10 h-1 bg-linear-to-r from-blue-600 to-orange-500 rounded-full"></span>
           <p className="text-gray-700 text-2xl font-semibold">Industries</p>
         </div>
         <h2 className="text-3xl md:text-6xl font-bold leading-tight">
           We Serve All{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-700">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-blue-700">
             Industries
           </span>
         </h2>
@@ -61,7 +61,7 @@ export default function Industriesservice() {
           {loopedCards.map((card, index) => (
             <div
               key={index}
-              className="relative w-[250px] sm:w-[300px] md:w-[230px] h-[330px] md:h-[360px] rounded-xl overflow-hidden shadow-lg flex-shrink-0 group"
+              className="relative w-[250px] sm:w-[300px] md:w-[230px] h-[330px] md:h-[360px] rounded-xl overflow-hidden shadow-lg shrink-0 group"
             >
               <img
                 src={card.img}

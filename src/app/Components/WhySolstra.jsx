@@ -33,11 +33,11 @@ export default function WhySolstra() {
           }`}
       >
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-10 h-1 bg-gradient-to-r from-blue-950 to-orange-500 rounded-full"></span>
+          <span className="w-10 h-1 bg-linear-to-r from-blue-950 to-orange-500 rounded-full"></span>
           <p className="text-gray-700 font-semibold text-sm sm:text-base">Why Solstra</p>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-950">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-blue-950">
             Why Solstra Info IT Solutions?
           </span>
         </h2>
