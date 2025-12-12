@@ -13,14 +13,14 @@ export default function QuestionBox() {
         <p className="text-gray-800 text-base md:text-lg">
           <span className="font-semibold">Get Free Consultation :</span>{" "}
           <span className="text-orange-500 font-semibold">
-            Sales@nextbigtechnology.com
+            sjain01ajmer@gmail.com
           </span>
         </p>
 
         <p className="text-gray-800 text-base md:text-lg">
           <span className="font-semibold">For Job Inquiry :</span>{" "}
           <span className="text-orange-500 font-semibold">
-            hr@nextbigtechnology.com
+            sjain01ajmer@gmail.com
           </span>
         </p>
 

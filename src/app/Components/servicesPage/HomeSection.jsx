@@ -10,41 +10,35 @@ export default function HomeSection({
   services = [],
   serviceImage,
   offerings = [],
-  offeringImages = []
+  offeringImages = [],
 }) {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-linear-to-r from-[#f7f4e9] to-[#eef3f7] py-30">
+      <section className="w-full bg-gradient-to-r from-[#f7f4e9] to-[#eef3f7] py-30">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
           {/* Left Text */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               {heroTitle}
             </h1>
-
-            <p className="text-gray-600 leading-relaxed">
-              {heroDescription}
-            </p>
+            <p className="text-gray-600 leading-relaxed">{heroDescription}</p>
           </div>
 
           {/* Right Images */}
-          {/* Hero Images - Premium Official Look */}
           <div className="relative flex justify-center md:justify-end mt-8">
             <div className="grid grid-cols-2 gap-6 md:gap-8 justify-items-center items-center">
-
               {heroImages.map((img, index) => (
                 <div
                   key={index}
                   className={`
-          relative
-          w-32 md:w-40 lg:w-48
-          rounded-full
-          hover:scale-105 hover:shadow-2xl
-          transition-transform duration-500
-          ${index % 2 === 0 ? "md:-translate-y-4" : "md:translate-y-4"}
-        `}
+              relative
+              w-32 md:w-40 lg:w-48
+              rounded-full
+              hover:scale-105 hover:shadow-2xl
+              transition-transform duration-500
+              ${index % 2 === 0 ? "md:-translate-y-4" : "md:translate-y-4"}
+            `}
                 >
                   {/* Inner white circle */}
                   <div className="bg-white rounded-full overflow-hidden w-full h-full">
@@ -56,23 +50,18 @@ export default function HomeSection({
                     />
                   </div>
 
-                  {/* Optional subtle glow */}
+                  {/* Subtle glow */}
                   <div className="absolute inset-0 rounded-full pointer-events-none ring-2 ring-white/20"></div>
                 </div>
               ))}
-
             </div>
           </div>
-
-
-
         </div>
       </section>
 
       {/* Why Section */}
-      <section className="w-full px-6 lg:px-20 py-20">
+      <section className="w-full px-6 lg:px-20 py-20 w-ful">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-
           {/* Left */}
           <div>
             <h2 className="text-3xl lg:text-5xl font-semibold leading-tight">
@@ -81,7 +70,9 @@ export default function HomeSection({
 
             <div className="mt-8 space-y-3 text-sm">
               {whyPoints.map((item, i) => (
-                <p key={i}>✅ <strong>{item.title}:</strong> {item.text}</p>
+                <p key={i}>
+                  ✅ <strong>{item.title}:</strong> {item.text}
+                </p>
               ))}
             </div>
 
@@ -92,41 +83,41 @@ export default function HomeSection({
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-6 p-2">
             {stats.map((item, i) => (
               <div
                 key={i}
                 className="
-        group
-        bg-white 
-        rounded-2xl 
-        p-6 
-        text-center 
-        border 
-        border-gray-100 
-        shadow-sm
-        hover:shadow-xl
-        hover:-translate-y-1
-        transition-all 
-        duration-300
-      "
+                  group
+                  bg-white 
+                  rounded-2xl 
+                  p-6 
+                  text-center 
+                  border 
+                  border-gray-100 
+                  shadow-sm
+                  hover:shadow-xl
+                  hover:-translate-y-1
+                  transition-all 
+                  duration-300
+                "
               >
                 {/* Icon wrapper */}
                 <div
                   className={`
-          w-16 h-16 mx-auto flex items-center justify-center 
-          rounded-full 
-          bg-gray-100
-          text-${item.color}-600
-          text-3xl
-          shadow-sm
-          ring-4 ring-${item.color}-500/10
-          group-hover:ring-${item.color}-500/30
-          transition-all duration-300
-          animate-softFloat
-        `}
+                      w-16 h-16 mx-auto flex items-center justify-center 
+                      rounded-full 
+                      bg-gray-100
+                      // text-${item.color}-600
+                      text-3xl
+                      shadow-sm
+                      // ring-4 ring-${item.color}-500/10
+                      // group-hover:ring-${item.color}-500/30
+                      transition-all duration-300
+                      animate-softFloat
+                    `}
                 >
-                  <i >{item.icon}</i>
+                  {item.icon}
                 </div>
 
                 {/* Number */}
@@ -155,14 +146,12 @@ export default function HomeSection({
               </div>
             ))}
           </div> */}
-
         </div>
       </section>
 
       {/* Services */}
       <section className="w-full bg-[#fdf5ef] py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
           {/* Left */}
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
@@ -170,7 +159,10 @@ export default function HomeSection({
             </h2>
 
             <p className="text-gray-700 text-lg mb-10">
-              The Solstra Advantage: We build for performance, security, and scalability. Our agile development process ensures transparency and rapid delivery, while our focus on clean code guarantees a sustainable product that grows with your business.
+              The Solstra Advantage: We build for performance, security, and
+              scalability. Our agile development process ensures transparency
+              and rapid delivery, while our focus on clean code guarantees a
+              sustainable product that grows with your business.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -196,14 +188,12 @@ export default function HomeSection({
               alt="Service Illustration"
             />
           </div>
-
         </div>
       </section>
 
       {/* Offerings */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
           {/* Images */}
           <div className="grid grid-cols-2 gap-6">
             {offeringImages.map((img, i) => (
@@ -230,7 +220,6 @@ export default function HomeSection({
               ))}
             </div>
           </div>
-
         </div>
       </section>
     </>

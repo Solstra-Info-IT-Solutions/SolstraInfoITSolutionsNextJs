@@ -12,19 +12,18 @@ export const metadata = {
 export default function FAQPage() {
   return (
     <>
-       <Navbar
-                   type="other"
-                   extraIcons={[
-                     { src: "/telephone2.png", alt: "Email", link: "mailto:test@gmail.com" },
-                     { src: "/whatsapp.png", alt: "WhatsApp", link: "https://wa.me/9999" },
-                     { src: "/skype.png", alt: "Skype", link: "skype:live:username" },
-                     { src: "/orangeemail.png", alt: "Email", link: "mailto:test@gmail.com" },
-                   ]}
-                 />
+      <Navbar
+        type="home"
+        //  extraIcons={[
+        //    { src: "/telephone2.png", alt: "Email", link: "mailto:test@gmail.com" },
+        //    { src: "/whatsapp.png", alt: "WhatsApp", link: "https://wa.me/9999" },
+        //    { src: "/skype.png", alt: "Skype", link: "skype:live:username" },
+        //    { src: "/orangeemail.png", alt: "Email", link: "mailto:test@gmail.com" },
+        //  ]}
+      />
 
       <main className="py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-
           {/* MAIN HEADING */}
           <header className="text-center mb-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-orange-500 mb-3">
@@ -48,10 +47,13 @@ export default function FAQPage() {
                 answer={
                   <>
                     We specialize in two major verticals:
-                    <br /><br />
-                    <strong>1. IT Services & Product Development:</strong> Websites, apps, software.
                     <br />
-                    <strong>2. Recruitment & Staffing:</strong> We hire skilled IT & non-IT talent.
+                    <br />
+                    <strong>1. IT Services & Product Development:</strong>{" "}
+                    Websites, apps, software.
+                    <br />
+                    <strong>2. Recruitment & Staffing:</strong> We hire skilled
+                    IT & non-IT talent.
                   </>
                 }
               />
@@ -75,7 +77,6 @@ export default function FAQPage() {
             </h2>
 
             <div className="max-w-3xl mx-auto">
-
               <FAQItem
                 question="Do you work with startups on MVP development?"
                 answer="Yes, we help startups build market-ready MVPs quickly and budget-friendly."
@@ -88,8 +89,7 @@ export default function FAQPage() {
                     ● Web: React, Angular, Node.js, PHP, Python.
                     <br />
                     ● Mobile: Flutter, Swift, Kotlin.
-                    <br />
-                    ● Cloud: AWS, Azure, Google Cloud.
+                    <br />● Cloud: AWS, Azure, Google Cloud.
                   </>
                 }
               />

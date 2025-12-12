@@ -7,12 +7,15 @@ export default function OfficeLocations() {
     {
       name: "JAIPUR",
       img: "https://nextbigtechnology.com/wp-content/uploads/2022/09/usafay.png.webp",
-      address: ["48-B, Uday Nagar - A, Jaipur", "302019 Rajasthan, India"],
+      address: ["48-B, Uday Nagar - A, Jaipur", " Rajasthan, India", "302019"],
     },
     {
       name: "NOIDA",
       img: "https://nextbigtechnology.com/wp-content/uploads/2022/09/australiafay.png.webp",
-      address: ["B-59, Sector 2, Noida", "201301"],
+      address: [
+        "B - 59, 3rd Floor, B Block, Sector 2, Noida ,UTTAR PRADESH",
+        "201301",
+      ],
     },
     {
       name: "BIHAR",
@@ -24,7 +27,6 @@ export default function OfficeLocations() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-
         <div className="flex flex-wrap justify-center gap-10">
           {offices.map((office, index) => (
             <div
@@ -71,7 +73,6 @@ export default function OfficeLocations() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

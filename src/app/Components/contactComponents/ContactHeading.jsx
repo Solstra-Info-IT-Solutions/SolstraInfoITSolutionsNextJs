@@ -10,7 +10,6 @@ export default function ContactPage() {
 
       {/* Contact Cards */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-
         {/* Email Box */}
         <div className="bg-white shadow-sm p-6 rounded-lg flex items-center gap-4">
           <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-200">
@@ -23,7 +22,7 @@ export default function ContactPage() {
           </div>
           <div>
             <h3 className="font-semibold text-lg">Email</h3>
-            <p className="text-gray-600 text-sm">Sales@nextbigtechnology.com</p>
+            <p className="text-gray-600 text-sm">sjain01ajmer@gmail.com</p>
           </div>
         </div>
 
@@ -39,10 +38,9 @@ export default function ContactPage() {
           </div>
           <div>
             <h3 className="font-semibold text-lg">Call</h3>
-            <p className="text-gray-600 text-sm">+1-3054826524</p>
+            <p className="text-gray-600 text-sm">+91-9001638396</p>
           </div>
         </div>
-
       </div>
     </main>
   );

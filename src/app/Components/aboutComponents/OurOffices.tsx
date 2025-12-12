@@ -8,23 +8,26 @@ import { IoIosMail } from "react-icons/io";
 export default function OurOffices() {
   const offices = [
     {
-      country: "Jaipur",
+      country: "JAIPUR",
       image: "/usa.png.webp",
-      address1: "2710 Pace West Dr, Tucson",
-      address2: "AZ 85730",
+      address1: "48-B, Uday Nagar - A, Jaipur",
+      address2: "Rajasthan, India",
+      address3: "302019",
     },
     {
-      country: "Noida",
+      country: "NOIDA",
       image: "/australia.png.webp",
-      address1: "21 benalia Cres Marayong",
-      address2: "2148",
+      address1: "B - 59, 3rd Floor, B Block, Sector 2",
+      address2: "Noida, Uttar Pradesh",
+      address3: "201301",
     },
-   
+
     {
-      country: "INDIA",
+      country: "BIHAR",
       image: "/india.png.webp",
-      address1: "Bawani Nagar, Jaipur,",
-      address2: "Rajasthan",
+      address1: "Shandilya Complex, Pandaul",
+      address2: "Madhubani ,Bihar ",
+      address3: "847234",
     },
   ];
 
@@ -36,14 +39,13 @@ export default function OurOffices() {
       </h2> */}
 
       <p className="text-4xl md:text-4xl lg:text-4xl font-poppins text-center font-normal ">
-        Our <span className="font-semibold text-[#E28217]">Offices</span> 
-        </p>
+        Our <span className="font-semibold text-[#E28217]">Offices</span>
+      </p>
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 ">
         {offices.map((office, index) => (
           <div key={index} className="text-left">
-            
             {/* Image */}
             <div className="rounded-xl overflow-hidden shadow-sm  bg-gray-100">
               <img
@@ -59,29 +61,34 @@ export default function OurOffices() {
               {office.country}
             </h3>
 
-            <p className="text-sm text-gray-600 justify-center flex leading-relaxed mt-2">
+            <p className="text-sm text-gray-600 leading-relaxed mt-2 text-center">
               {office.address1} <br />
-              {office.address2}
+              {office.address2} <br />
+              {office.address3}
             </p>
 
             {/* Icons */}
-            <div className="flex gap-4 mt-3 text-[#06114f] justify-center flex text-lg cursor-pointer">
-
+            <div className="flex gap-4 mt-3 justify-center text-[#06114f] text-lg cursor-pointer">
               {/* Location */}
-              <Link href="https://maps.google.com" target="_blank">
-              <MdLocationPin className="w-6 h-6"/>
+              <Link href="/" target="_blank">
+                <MdLocationPin className="w-5 h-5" />
               </Link>
 
               {/* Phone */}
-              <Link href="tel:+919999999999">
-              <IoMdCall className="w-6 h-6" />
-              </Link>
+              <button
+                onClick={() => alert("+91-9001638396")}
+                className="cursor-pointer"
+              >
+                <IoMdCall className="w-5 h-5" />
+              </button>
 
-              {/* Email */}
-              <Link href="mailto:example@gmail.com">
-              <IoIosMail className="w-6 h-6" />
-              </Link>
-
+              {/* Email → alert only */}
+              <button
+                onClick={() => alert("sjain01ajmer@gmail.com")}
+                className="cursor-pointer"
+              >
+                <IoIosMail className="w-5 h-5" />
+              </button>
             </div>
           </div>
         ))}

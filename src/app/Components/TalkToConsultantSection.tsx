@@ -11,26 +11,29 @@ const offices = [
   {
     country: "Noida",
     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
-    address1: "21 Benalia Cres Marayong",
-    address2: "2148",
-    phone: "+91 9001638396",
-    email: "sjain01ajmer@gmail.com ",
+    address1: "B - 59, 3rd Floor, B Block, Sector 2",
+    address2: "Noida ,UTTAR PRADESH",
+    address3: "201301",
+    phone: "+919001638396",
+    email: "sjain01ajmer@gmail.com",
   },
   {
     country: "Jaipur",
     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
-    address1: "Uday Nagar",
-    address2: "A Mansarovar",
-    phone: "+91 9001638396",
-    email: "sjain01ajmer@gmail.com ",
+    address1: "48-B, Uday Nagar - A",
+    address2: "Jaipur ,Rajasthan",
+    address3: "302019",
+    phone: "+919001638396",
+    email: "sjain01ajmer@gmail.com",
   },
   {
     country: "Indore",
     img: "https://nextbigtechnology.com/wp-content/uploads/2021/08/Indiay.jpg",
-    address1: "Sikar Road, Jaipur",
-    address2: "Rajasthan",
+    address1: "B - 59, 3rd Floor, B Block, Sector 2",
+    address2: "Noida ,UTTAR PRADESH",
+    address3: "201301",
     phone: "+91 9001638396",
-    email: "sjain01ajmer@gmail.com ",
+    email: "sjain01ajmer@gmail.com",
   },
 ];
 
@@ -305,24 +308,29 @@ export default function TalkToConsultantSection() {
                     </div>
 
                     <p className="text-sm mt-2 leading-snug py-1">
-                      {office.address1}
+                      {office.address1} <br />
+                      {office.address2} <br />
+                      {office.address3}
                     </p>
 
-                    <div className="flex gap-4 mt-3 text-[#06114f]  text-lg cursor-pointer">
+                    <div className="flex gap-4 mt-3 text-[#06114f] text-lg cursor-pointer">
                       {/* Location */}
-                      <Link href="https://maps.google.com" target="_blank">
+                      <Link href="/" target="_blank">
                         <MdLocationPin className="w-5 h-5" />
                       </Link>
 
                       {/* Phone */}
-                      <Link href="tel:+919999999999">
+                      <a href={`tel:${office.phone}`}>
                         <IoMdCall className="w-5 h-5" />
-                      </Link>
+                      </a>
 
-                      {/* Email */}
-                      <Link href="mailto:example@gmail.com">
+                      {/* Email → alert only */}
+                      <button
+                        onClick={() => alert(`Email: ${office.email}`)}
+                        className="cursor-pointer"
+                      >
                         <IoIosMail className="w-5 h-5" />
-                      </Link>
+                      </button>
                     </div>
                   </li>
                 ))}
