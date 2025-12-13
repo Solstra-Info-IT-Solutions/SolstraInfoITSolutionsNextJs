@@ -4,6 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 
+const scrollToConsultant = () => {
+    const section = document.getElementById("consultant");
+    section.scrollIntoView({ behavior: "smooth" });}
+
 // Tab data with updated icons structure (src + label)
 const tabData = [
   {
@@ -198,7 +202,8 @@ export default function TabsSection() {
 
 
             <button
-              onClick={() => setIsModalOpen(true)}
+              // onClick={() => setIsModalOpen(true)}
+              onClick={scrollToConsultant}
               className=" cursor-pointer
                 vibrate-hover
                 flex items-center gap-2 

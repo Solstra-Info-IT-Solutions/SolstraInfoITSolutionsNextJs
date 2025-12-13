@@ -4,7 +4,7 @@ export default function HomeSection({
   heroTitle = "Building Your Digital Foundation for the Future.",
   heroDescription,
   heroImages = [],
-  whyTitle = "Why Solstra Info Technology?",
+  whyTitle = "Why Solstra Info IT Solutions?",
   whyPoints = [],
   stats = [],
   services = [],

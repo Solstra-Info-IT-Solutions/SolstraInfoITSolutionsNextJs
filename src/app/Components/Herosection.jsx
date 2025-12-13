@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 export default function Herosection() {
   const [current, setCurrent] = useState(0);
   const router = useRouter();
-
+  const scrollToConsultant = () => {
+    const section = document.getElementById("consultant");
+    section.scrollIntoView({ behavior: "smooth" });}
   const slides = [
     {
       type: "video",
@@ -111,7 +113,7 @@ export default function Herosection() {
                       Talk To Consultant
                     </button> */}
                     {slide.type === "video" && (
-                      <button className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30  w-full sm:w-48 md:w-56 cursor-pointer transition-transform active:scale-95">
+                      <button onClick={scrollToConsultant} className="mt-6 sm:mt-8 md:mt-10 py-2.5 sm:py-3 border border-white rounded-full text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/30  w-full sm:w-48 md:w-56 cursor-pointer transition-transform active:scale-95">
                         Talk To Consultant
                       </button>
                     )}

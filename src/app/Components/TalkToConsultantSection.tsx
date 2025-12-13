@@ -132,7 +132,7 @@ export default function TalkToConsultantSection() {
   };
 
   return (
-    <section className=" px-4 sm:px-6 lg:px-8 pb-10">
+    <section className=" px-4 sm:px-6 lg:px-8 pb-10" id="consultant">
       <div className="max-w-7xl mx-auto">
         <div className="bg-[#003A63] text-white rounded-[2.5rem] shadow-xl p-6 sm:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

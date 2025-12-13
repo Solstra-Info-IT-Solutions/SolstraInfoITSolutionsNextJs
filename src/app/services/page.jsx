@@ -275,7 +275,7 @@ export default function HomePage() {
           },
           {
             title: "The Solstra Advantage:",
-            text: "                            We are vendor-agnostic, meaning we recommend the cloud platform and solutions that best fit your specific business needs and budget. Our focus is on creating a secure, resilient, and cost-optimized cloud foundation for your growth.",
+            text: "We are vendor-agnostic, meaning we recommend the cloud platform and solutions that best fit your specific business needs and budget. Our focus is on creating a secure, resilient, and cost-optimized cloud foundation for your growth.",
           },
         ]}
         images={[
