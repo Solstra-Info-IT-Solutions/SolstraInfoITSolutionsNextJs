@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[70vh] mt-20">
       <Image
-        src="/about-banner.jpg"
+        src="/aboutpage/bgabout.png"
         alt="About Solstra"
         fill
         className="object-cover"

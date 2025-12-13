@@ -12,7 +12,7 @@ export default function MissionVision() {
       <div className="bg-[#1E2A57] py-10 text-center">
         <h2
           id="mission-vision-heading"
-          className="text-3xl md:text-4xl font-extrabold text-white"
+          className="sm:text-4xl md:text-5xl font-extrabold text-white"
         >
           Our Mission & Vision
         </h2>
@@ -43,7 +43,7 @@ export default function MissionVision() {
             width={500}
             height={350}
             className="
-              rounded-xl object-cover
+              rounded-2xl object-cover
               w-full
               sm:w-[90%]
               md:w-[85%]

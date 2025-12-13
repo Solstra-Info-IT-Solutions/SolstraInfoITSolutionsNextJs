@@ -2,7 +2,7 @@
 
 export default function CoreVerticals() {
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative pt-12 pb-28 md:pt-8 md:pb-20 bg-white overflow-hidden">
       {/* LEFT TOP TRIANGLE */}
 
       {/* RIGHT SIDE TRIANGLES */}
@@ -16,7 +16,7 @@ export default function CoreVerticals() {
       {/* CONTENT */}
       <div className="max-w-7xl mx-auto px-5 relative z-10">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#1E2A57] leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1E2A57] leading-tigh">
           Our Two Core <br /> Verticals
         </h2>
 

@@ -13,6 +13,7 @@ import CultureSection from "../Components/aboutComponents/CultureSection";
 import OurOffices from "../Components/aboutComponents/OurOffices";
 import TrustedLeadingCompany from "../Components/aboutComponents/TrustedLeadingCompany";
 import FooterSection from "../Components/FooterSection";
+import CallToAction from "../Components/aboutComponents/CalltoAction";
 export default function AboutPage() {
   return (
     <main>
@@ -35,9 +36,10 @@ export default function AboutPage() {
 
       <CultureSection />
       <AboutValues />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <OurOffices />
-      <FooterSection />
+      {/* <FooterSection /> */}
+      <CallToAction />
     </main>
   );
 }

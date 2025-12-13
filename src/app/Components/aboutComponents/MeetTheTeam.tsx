@@ -23,7 +23,7 @@ export default function MeetTheTeam() {
   }, []);
 
   return (
-    <section className="py-10">
+    <section className="py-2">
       {/* TOP IMAGE */}
       <div className="flex justify-center">
         <div className="relative w-[280px] h-[280px]  sm:w-[330px] sm:h-[330px]">
@@ -38,7 +38,7 @@ export default function MeetTheTeam() {
       </div>
 
       {/* BLUE SECTION */}
-      <div className="text-center bg-blue-950 mt-[-40px] pt-24 pb-16 px-4">
+      <div className="text-center bg-blue-950 mt-[-80px] pt-24 pb-16 px-4">
         <h2 className="text-white text-3xl sm:text-4xl font-bold">
           Meet <span className="text-orange-500">The Team</span>
         </h2>
