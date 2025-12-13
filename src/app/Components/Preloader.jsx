@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Preloader({
   logoSrc = "/logo.png",
-  companyName = "Gift BX Consultancy",
-  duration = 4000, // full circle duration in ms
+  companyName = "Solstra Info IT Solutions ",
+  duration = 2000, // full circle duration in ms
 }) {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(true);
