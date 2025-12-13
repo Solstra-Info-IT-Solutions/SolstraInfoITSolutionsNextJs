@@ -14,6 +14,7 @@ import OurOffices from "../Components/aboutComponents/OurOffices";
 import TrustedLeadingCompany from "../Components/aboutComponents/TrustedLeadingCompany";
 import FooterSection from "../Components/FooterSection";
 import CallToAction from "../Components/aboutComponents/CalltoAction";
+import CoreLeaders from "../Components/aboutComponents/CoreLeaders";
 export default function AboutPage() {
   return (
     <main>
@@ -35,9 +36,10 @@ export default function AboutPage() {
       <TrustedLeadingCompany />
 
       <CultureSection />
-      <AboutValues />
+      {/* <AboutValues /> */}
+      <CoreLeaders />
       {/* <ContactSection /> */}
-      <OurOffices />
+      {/* <OurOffices /> */}
       {/* <FooterSection /> */}
       <CallToAction />
     </main>
