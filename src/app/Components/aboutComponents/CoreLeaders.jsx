@@ -6,7 +6,7 @@ const leaders = [
     img: "/aboutpage/user.png",
   },
   {
-    name: "Amit Verma",
+    name: "Bharti Sarawgi",
     role: "Founder",
     desc: "Visionary leader with 10+ years of industry experience.",
     img: "/aboutpage/user.png",
